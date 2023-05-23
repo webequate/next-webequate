@@ -56,7 +56,7 @@
     "tags": "Web Development, PHP, MySQL, HTML, CSS, JavaScript",
     "description": "Home page and portfolio site for Fireman Creative, a creative agency where I was Senior Web Developer for two years.",
     "mainImage": "images/portfolio/modals/m-fireman.jpg",
-    "details": "http://www.webequate.com/samplework/#fireman",
+    "details": "http://www.webequate.com/samplework/index.html#fireman",
     "status": {
       "active": true,
       "activeOrder": 3,
@@ -167,7 +167,7 @@
     "tags": "Web Design, Web Development, HTML, CSS, Responsive Design",
     "description": "A responsive web site for artist Anna Elise Johnson, built with Next.js, React, TypeScript, and MongoDB.",
     "mainImage": "images/portfolio/modals/m-anna-2.jpg",
-    "details": "http://www.webequate.com/samplework/#anna",
+    "details": "http://www.webequate.com/samplework/index.html#anna",
     "link": "http://www.annaelisejohnson.com",
     "status": {
       "active": true,
@@ -229,7 +229,7 @@
     "tags": "Web Development, JavaScript, jQuery",
     "description": "Developed landing pages for lead generation in ten international markets.",
     "mainImage": "images/portfolio/modals/m-intela.jpg",
-    "details": "http://www.webequate.com/samplework/#intela",
+    "details": "http://www.webequate.com/samplework/index.html#intela",
     "status": {
       "active": true,
       "activeOrder": 11
@@ -244,7 +244,7 @@
     "tags": "Web Development, PHP, MySQL, HTML, CSS",
     "description": "Developed a bingo game concurrent with two seasons of the Survivor television series, and one Dead or Alive bingo game, both backed with private game administration and statistics functionality.",
     "mainImage": "images/portfolio/modals/m-bingo.jpg",
-    "details": "http://www.webequate.com/samplework/#bingo",
+    "details": "http://www.webequate.com/samplework/index.html#bingo",
     "status": {
       "active": true,
       "activeOrder": 12
