@@ -1,0 +1,2494 @@
+/* Replaced all identifier selectors with class selectors to resolve REI code errors */
+/* CSS rewrite 07/05/06, compared against latest REI CSS delivered with New Graduates 
+* Rewrite by Jeffrey Fidler, contact: jeffrey.fidler@highmark.com
+* Note: Rewrite restricted to REI declarations and definitions to speed up rewrite process. This CSS could be
+* written much more compactly and correctly! 
+*/
+
+/* define style rules for body tag, outermost container element
+* container box will be 100% of html canvas, minimum width to support content tables if user shrinks browser 
+* window, default background and foreground colors set, and will set text presentation defaults. 
+*/
+
+body {
+width: 100%;
+min-width: 752px;
+margin:10px 0;
+background-color:#FFFFFF;
+/* font-size:; */
+/*  It appears that REI has used a 12px font as the base size for general body content. */
+font-size: 12px; 
+font-family:Verdana, Arial, Helvetica, sans-serif;
+color:#000000;
+text-decoration:none; 
+font-weight:normal;
+}
+
+/* Added declaration to meet CM-10001 requirements on 10/10/06 */
+
+a {
+text-decoration: none;
+}
+
+/* Added declaration to meet CM-10001 requirements on 10/10/06 */
+
+a:visited {
+text-decoration: underline;
+}
+
+hr {color:#999999; height:1px;}
+
+input.srchInput 
+{
+margin:0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+width:143px;
+height:17px;
+}
+
+.noscriptText{width:752px; border:1px solid #DC4D08; padding:3px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#DC4D08; text-decoration:none; font-weight:bold;}
+
+
+
+/* Text Resizer Elements */
+.text_resize {background:#E7ECEF;}
+.text_resize img {
+/* changed right margin from 0px to 6px to match REI screen capture in use cases Requested by Mahe. */
+/* Changed margin-right back to 0px -- REI original declaration -- as requested by Praveen, Renjish, Mahe 06/19/06. */
+margin-right: 0px; 
+cursor:pointer;padding:4px 5px 5px 4px;}
+.text_resize img:hover {background:#FFFFFF;}
+.text_resizertext{background:#E7ECEF; padding:5px 1px 7px 4px; margin-right:0px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; color:#2DA5E3; font-weight:normal;}
+
+
+
+/* Footer Elements */
+.footer{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFFF; margin:0px; padding:0px; text-transform:uppercase;}
+.footer a, .footer a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.footer a:hover, .footer a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.footer p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+
+/* Added the following declaration to resolve SD-10078 on 11/01/06 */
+
+.footer td {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+color: #FFFFFF; 
+text-decoration: none; 
+font-weight: normal;
+text-transform: uppercase;
+font-size: 10px;
+}
+
+
+/* Added the following declaration on 06-11-07 for WRV for July 07 release to gray unveried users footer links */
+
+.footerGrayed{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px; color:#cccccc; margin:0px; padding:0px; text-transform:uppercase;}
+
+
+/* Home Elements */
+.menu_top {width:458px;}
+.menu_top img {display:inline;}
+
+
+.hm_CalloutBlue{background-image: url(/redesign/images/home_bluecallout_bg.gif); background-repeat: no-repeat; background-color:#1F89CA; height:auto;}
+.hm_CalloutBlueContent{
+font-family:Verdana, Arial, Helvetica, sans-serif; 
+font-size:12px; 
+color:#FFFFFF; 
+margin:0px; 
+padding:13px 25px 0px 17px; 
+width:201px;
+}
+.hm_CalloutBlueContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.hm_CalloutBlueContent a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; 
+/* text-decoration:underline; */
+text-decoration: none;
+ font-weight:normal;}
+.hm_CalloutBlueContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.hm_CalloutBlueContent img {padding:2px;}
+.hm_CalloutBlueContent ol {list-style-position:outside;}
+.hm_CalloutBlueContent ul {list-style-image: url(/redesign/images/home_bullet.gif);list-style-position:outside;}
+.hm_CalloutBlueContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal; margin-top:4px;}
+
+.hm_CalloutOrange{background-image: url(/redesign/images/home_orangecallout_bg.gif); background-repeat: no-repeat; background-color:#D14610; height:auto;}
+.hm_CalloutOrangeContent{
+font-family:Verdana, Arial, Helvetica, sans-serif; 
+font-size:12px; 
+color:#FFFFFF; 
+margin:0px; padding:13px 25px 0px 17px; 
+width:201px;
+}
+.hm_CalloutOrangeContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.hm_CalloutOrangeContent a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; 
+/* text-decoration:underline; */
+text-decoration: none;
+font-weight:normal;}
+.hm_CalloutOrangeContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.hm_CalloutBlueContent img {padding:2px;}
+.hm_CalloutOrangeContent ol {list-style-position:outside;}
+.hm_CalloutOrangeContent ul {list-style-image: url(/redesign/images/home_bullet.gif);list-style-position:outside;}
+.hm_CalloutOrangeContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal; margin-top:4px;}
+
+.hm_CalloutGreen{background-image: url(/redesign/images/home_greencallout_bg.gif); background-repeat: no-repeat; background-color:#598F0B; height:auto;}
+.hm_CalloutGreenContent{
+font-family:Verdana, Arial, Helvetica, sans-serif; 
+font-size:12px; 
+color:#FFFFFF; 
+margin:0px; padding:13px 25px 0px 17px; 
+width:201px;
+}
+.hm_CalloutGreenContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.hm_CalloutGreenContent a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; 
+/* text-decoration:underline; */
+text-decoration: none;
+ font-weight:normal;}
+.hm_CalloutGreenContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.hm_CalloutBlueContent img {padding:2px;}
+.hm_CalloutGreenContent ol {list-style-position:outside;}
+.hm_CalloutGreenContent ul {list-style-image: url(/redesign/images/home_bullet.gif);list-style-position:outside;}
+.hm_CalloutGreenContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal; margin-top:4px;}
+
+
+
+/*Login Page - Column One Elements*/
+
+/* Created subheader class selector to style non-hyperlink sub headers consistently with hyperlink subheaders as requested by * Padma and Mahe. J. Fidler 08/09/06 
+*/
+
+.subheader {
+color: #1484C7; 
+text-decoration: none;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-weight: normal; 
+font-size: 12px;
+}
+
+.ColumnOneContent{padding:0px 9px 0px 9px; margin:0px 0px 15px; width:482px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal;}
+.ColumnOneContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:12px;}
+.ColumnOneContent a, .ColumnOneContent a:visited{color:#1484C7; 
+/* text-decoration:underline; */
+text-decoration:none;
+}
+.ColumnOneContent a:hover, .ColumnOneContent a:visited:hover{color:#98C8E4; 
+text-decoration:underline;
+}
+.ColumnOneContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.ColumnOneContent ol {list-style-position:outside;}
+.ColumnOneContent ul {list-style-position:outside;}
+
+.ColumnOneContent li {
+	padding: 0px 0px 2px 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	margin-top: 4px
+}
+
+/* Created this because the li above is overriding the error class */
+.ColumnOneContent li.error {
+	color: red;
+	font-weight: bold;
+	font-size:12px;
+}
+
+.ColumnOneContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.ColumnOneContent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.ColumnOneContent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.ColumnOneContent h4{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+
+
+/* Login Page - Not Registered Elements */
+.WelcomeHeader{border-bottom:1px dashed #79A827; padding:0px 0px 5px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; color:#000000; text-decoration:none; font-weight:normal; width:482px;}
+.notregisteredHeader{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13px; color:#FFFFFF; text-decoration:none; font-weight:bold; padding:5px 0px 5px 0px;}
+.notregisteredBorder{border-bottom:1px dashed #2DA5E4; border-top:1px dashed #2DA5E4; padding:7px 10px 7px 10px;}
+
+.notregisteredContent{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#000000; text-decoration:none; font-weight:normal; padding:5px 10px 5px 10px;}
+.notregisteredContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.notregisteredContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+/* Changed link color to blue from white. White was unreadable on the gray background. This is for CR00039981. 5/22/09 DG */
+.notregisteredContent a {
+color: #1484C7; 
+/* text-decoration:underline; */
+text-decoration:none;
+}
+
+/* Broke this away from above declaration to conform to CM-10001 on 10/10/06 */
+
+.notregisteredContent a:visited {
+color: #1484C7; 
+text-decoration: underline;
+}
+
+.notregisteredContent a:hover, .notregisteredContent a:visited:hover{color:#98C8E4; text-decoration:underline;}
+.notregisteredContent ol {list-style-position:outside;}
+.notregisteredContent ul {list-style-position:outside;}
+.notregisteredContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+
+
+.buttonNotRegistered {font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:9px; font-weight:normal; text-decoration:none; color:#FFFFFF; padding:4px 4px 4px 4px; background-color:#2DA5E4;}
+.buttonNotRegistered a{font-family:Verdana,Arial,Helvetica,Sans-Serif; font-weight:normal; text-decoration:none; color:#FFFFFF;}
+
+
+/* Login Page - Feature Elements */
+.LoginFeatureHeader{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; color:#1484C7; text-decoration:none; font-weight:normal;}
+.LoginFeatureBG{background-color:#EDECD7; padding:3px 0px 3px 5px;}
+.LoginFeatureBGnopad{background-color:#EDECD7;}
+
+.LoginFeatureContent{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#000000; text-decoration:none; font-weight:normal; padding:10px 0px 10px 5px;}
+.LoginFeatureContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.LoginFeatureContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.LoginFeatureContent a, .LoginFeatureContent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; /* text-decoration:underline;  */
+text-decoration:none; 
+font-weight:normal;}
+.LoginFeatureContent a:hover, .LoginFeatureContent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+.LoginFeatureContent ol{list-style-position:outside;}
+.LoginFeatureContent ul{list-style-position:outside;}
+.LoginFeatureContent li{padding:0 0 2px 0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#000000;text-decoration:none;font-weight:normal;margin-top:4px;}
+
+
+/*Login Page - Column Two Elements*/
+.ColumnTwoContent{background-color:#E4E4E5; padding:7px 6px 5px 6px; margin:0px; width:232px; border-left:2px solid #FFFFFF; font-size:11px; color:#000000;}
+.ColumnTwoContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:11px;}
+.ColumnTwoContent a, .ColumnTwoContent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; /* text-decoration:underline;  */
+text-decoration:none; 
+font-weight:normal;}
+.ColumnTwoContent a:hover, .ColumnTwoContent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+.ColumnTwoContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.ColumnTwoContent ol {list-style-position:outside;}
+.ColumnTwoContent ul {list-style-position:outside;}
+.ColumnTwoContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.ColumnTwoContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:17px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.ColumnTwoContent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.ColumnTwoContent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+.quickresourcesHeader{padding:0px 10px 12px 10px; width:212px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+
+
+/* Changed id selector to class selector below to correct multiple instance of unique id violation.  Simply converted id 
+* selector to class selector and wrote additional css to ensure inheritance.  Change requested by Suresh Y. on 06/29/06. 
+*/
+
+.quickresources {
+background-color:#639A04;
+/* background-color: inherit; */
+ padding:7px 10px 7px 10px; margin:0px; width:212px; border-top:1px dashed #A1C268; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.quickresources td{background-color:#639A04; font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.quickresources p{background-color:#639A04; font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.quickresources a {font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+
+
+
+.quickresourcesWRVGrayedLink {
+background-color:#639A04;
+
+ padding:7px 10px 7px 10px; margin:0px; width:212px; border-top:1px dashed #A1C268; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#cccccc; text-decoration:none; font-weight:normal;}
+
+/* Broke this away from above declaration to conform to CM-10001 on 10/10/06 */
+
+.quickresources a:visited {
+font-family:Verdana, Arial, Helvetica, sans-serif; 
+color:#FFFFFF; 
+text-decoration: underline; 
+font-weight:normal;
+}
+
+.quickresources a:hover, .quickresources a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#366801; text-decoration:underline; font-weight:normal;}
+
+
+/*Greater Health*/
+.ColumnTwoContentYellow{background-color:#F4A61E; padding:0px; margin:0px; }
+
+.yellowgreaterhealth{background-color:#F4A61E; padding:7px 10px 0px 10px; margin:0px; width:212px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+.yellowgreaterhealth td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+.yellowgreaterhealth p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+.yellowgreaterhealth a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; 
+/* text-decoration:underline;  */text-decoration:none; font-weight:bold;}
+
+/* Added the below declarations to resolve SD-10094.
+Additions on 11/03/06 by Jeff Fidler.
+*/
+
+.yellowgreaterhealth a:visited, .yellowgreaterhealth a:hover, .yellowgreaterhealth a:active {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+color: #FFFFFF; 
+text-decoration: underline;
+font-weight: bold;
+}
+
+.yellowgreaterhealth ol {list-style-position:outside;}
+.yellowgreaterhealth ul {list-style-position:outside;}
+.yellowgreaterhealth li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal; margin-top:4px;}
+
+.srchInputGreaterHealth
+{
+margin:0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+width:170px;
+height:17px;
+}
+
+
+/*POST LOGIN TEMPLATE*/
+/*Whats New Area*/
+.whatsnewHeader{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13px; color:#FFFFFF; text-decoration:none; font-weight:bold; padding:5px 5px 5px 0px; width:226px;}
+.whatsnewBorder{border-bottom:1px dashed #2DA5E4; padding:10px 10px 10px 10px;}
+
+.buttonWhatsNew {font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:9px; font-weight:normal; text-transform:uppercase; text-decoration:none; color:#FFFFFF; padding:2px; background-color:#2DA5E4;}
+.buttonWhatsNew a{font-family:Verdana,Arial,Helvetica,Sans-Serif; font-weight:normal; text-transform:uppercase; text-decoration:none; color:#FFFFFF;}
+
+
+.whatsnewcontent{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#000000; text-decoration:none; font-weight:normal; padding:4px 0px 4px 0px;}
+.whatsnewcontent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.whatsnewcontent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.whatsnewcontent a, .whatsnewcontent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; /* text-decoration:underline;  */
+text-decoration:none; 
+font-weight:normal;}
+.whatsnewcontent a:hover, .whatsnewcontent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+.whatsnewcontent ol{list-style-position:outside;}
+.whatsnewcontent ul{list-style-position:outside;}
+.whatsnewcontent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+
+
+/* Key Site Features Elements */
+.PostLoginFeatureHeader{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; color:#1484C7; text-decoration:none; font-weight:normal;}
+.PostLoginFeatureBG{background-color:#EDECD7; padding:3px 0px 3px 5px;}
+.PostLoginFeatureBGnopad{background-color:#EDECD7;}
+
+.PostLoginFeatureContent{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#000000; text-decoration:none; font-weight:normal; padding:5px 0px 5px 5px; border-bottom:1px dashed #CFCFD4;}
+.PostLoginFeatureContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.PostLoginFeatureContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.PostLoginFeatureContent a, .PostLoginFeatureContent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; text-decoration:none; font-weight:normal;}
+.PostLoginFeatureContent a:hover, .PostLoginFeatureContent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+.PostLoginFeatureContent ul{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.PostLoginFeatureContent li{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+
+.PostLoginMoreFeatures{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; color:#000000; text-decoration:none; font-weight:normal; padding:8px 5px 8px 5px;}
+.PostLoginMoreFeatures a, .PostLoginMoreFeatures a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; text-decoration:none; font-weight:normal;}
+.PostLoginMoreFeatures a:hover, .PostLoginMoreFeatures a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+
+/* added div.PostLoginFeatureContentWRVGrayedLink by lidwmq7 on 06-20-07 for July 07 realease to gray out clinician and unverified users. */
+
+.PostLoginFeatureContentWRVNonDivGrayedLink{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#999999; text-decoration:none; font-weight:normal;}
+
+.PostLoginFeatureContentWRVNonDivGrayedLinkBold{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#999999; text-decoration:none; font-weight:bold;}
+
+/* added div.PostLoginFeatureContentWRVGrayedLink by lidwmq7 on 06-06-07 for July 07 realease to gray out clinician and unverified users. */
+
+div.PostLoginFeatureContentWRVGrayedLink{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#999999; text-decoration:none; font-weight:normal;}
+
+div.PostLoginFeatureContentWRVGrayedLinkBold{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#999999; text-decoration:none; font-weight:bold;}
+
+/* Top Secure Mail Elements */
+.securemail {background:#E7ECEF;}
+.securemail img {margin-right:0px; cursor:pointer; padding:4px 5px 5px 4px;}
+.securemail img:hover {background:#E7ECEF;}
+.securemail_text{background:#E7ECEF; padding:5px 1px 7px 4px; margin-right:0px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; color:#2DA5E3; font-weight:normal;}
+.securemail_text a, .securemail_text a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#2DA5E3; font-weight:normal; text-decoration:none;}
+.securemail_text a:hover, .securemail_text a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#2DA5E3; font-weight:normal; 
+/* text-decoration:none; */
+text-decoration:underline;
+}
+
+/* Top Message Elements */
+.topmessage {background:#E7ECEF;}
+.topmessage img {margin-right:0px; cursor:pointer; padding:4px 5px 5px 4px;}
+.topmessage img:hover {background:#FFFFFF;}
+.topmessage_text{background:#E7ECEF; padding:5px 1px 7px 4px; margin-right:0px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; color:#2DA5E3; font-weight:normal;}
+
+
+/* Log Out Link Element */
+.logoutLink {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; color:#1484C7; text-decoration:none; font-weight:normal; padding:7px 2px 5px 0px;}
+.logoutLink a, .logoutLink a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; text-decoration:none; font-weight:normal;}
+.logoutLink a:hover, .logoutLink a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+
+
+/* Breadcrumbs Element */
+.breadcrumbs {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; color:#1484C7; text-decoration:none; font-weight:normal; padding:11px 0px 13px 0px; border-bottom:1px dashed #79A826;}
+.breadcrumbs a, .breadcrumbs a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; /* text-decoration:underline;  */
+text-decoration:none; 
+font-weight:normal;}
+.breadcrumbs a:hover, .breadcrumbs a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+
+
+
+
+/*MY BENEFITS TEMPLATE*/
+/*Orange Callout Find Providers*/
+.myBenefits_CalloutOrange{background-image: url(/redesign/images/myBenefits_orangecallout_bg.gif); background-repeat: no-repeat; background-color:#D34A13; height:auto;}
+.myBenefits_CalloutOrangeContent{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; margin:0px; padding:13px 25px 0px 17px; width:301px;}
+.myBenefits_CalloutOrangeContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.myBenefits_CalloutOrangeContent a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; 
+/* text-decoration:underline; */
+text-decoration: none;
+ font-weight:normal;}
+.myBenefits_CalloutOrangeContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.myBenefits_CalloutOrangeContent img {padding:2px;}
+.myBenefits_CalloutOrangeContent ol {list-style-position:outside;}
+.myBenefits_CalloutOrangeContent ul {list-style-image: url(/redesign/images/home_bullet.gif);list-style-position:outside;}
+.myBenefits_CalloutOrangeContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal; margin-top:4px;}
+
+
+/*Green Callout Manage Your Coverage*/
+.myBenefits_CalloutGreen{background-image: url(/redesign/images/myBenefits_greencallout_bg.gif); background-repeat: no-repeat; background-color:#5B920D; height:auto;}
+.myBenefits_CalloutGreenContent{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; margin:0px; padding:13px 25px 0px 17px; width:301px;}
+.myBenefits_CalloutGreenContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.myBenefits_CalloutGreenContent a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; 
+/* text-decoration:underline; */
+text-decoration: none;
+ font-weight:normal;}
+.myBenefits_CalloutGreenContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.myBenefits_CalloutGreenContent img {padding:2px;}
+.myBenefits_CalloutGreenContent ol {list-style-position:outside;}
+.myBenefits_CalloutGreenContent ul {list-style-image: url(/redesign/images/home_bullet.gif);list-style-position:outside;}
+.myBenefits_CalloutGreenContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal; margin-top:4px;}
+
+/* style for login unavailable state block */
+
+.loginUnavailable {
+			background-color: #C96235;
+color: #FFF;
+font-size: 17px;
+font-family: inherit;
+}
+
+/* Appended below additional styles from New Graduates Your Spending CSS as requested by Suresh Y. 06/22/06 */
+
+/*THREE COLUMN TEMPLATE INDIVIDUALS & FAMILIES*/
+/*Content*/
+.ThreeColumnTemplate_ContentArea{padding:0px; margin:0px 0px 15px; 
+width:380px;
+ font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal;}
+.ThreeColumnTemplate_ContentArea td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:12px;}
+.ThreeColumnTemplate_ContentArea a, .ThreeColumnTemplate_ContentArea a:visited{color:#1484C7; 
+/* text-decoration:underline; */
+text-decoration:none;
+}
+.ThreeColumnTemplate_ContentArea a:hover, .ThreeColumnTemplate_ContentArea a:visited:hover{color:#98C8E4; text-decoration:underline;}
+.ThreeColumnTemplate_ContentArea p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.ThreeColumnTemplate_ContentArea ol {list-style-position:outside;}
+.ThreeColumnTemplate_ContentArea ul {list-style-position:outside;}
+.ThreeColumnTemplate_ContentArea li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.ThreeColumnTemplate_ContentArea h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.ThreeColumnTemplate_ContentArea h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.ThreeColumnTemplate_ContentArea h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.ThreeColumnTemplate_ContentArea h4{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+
+/*Three column template Callout Area*/
+.ThreeColumnTemplate_CalloutArea{background-color:#E4E4E5; padding:7px 6px 5px 6px; margin:10px 0px 0px 0px; width:159px; font-size:11px; color:#000000;}
+.ThreeColumnTemplate_CalloutArea td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:11px;}
+.ThreeColumnTemplate_CalloutArea a, .ThreeColumnTemplate_CalloutArea a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; 
+/* text-decoration:underline; font-weight:normal; */
+text-decoration:none; font-weight:normal;
+}
+.ThreeColumnTemplate_CalloutArea a:hover, .ThreeColumnTemplate_CalloutArea a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+.ThreeColumnTemplate_CalloutArea p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.ThreeColumnTemplate_CalloutArea ol {list-style-position:outside;}
+.ThreeColumnTemplate_CalloutArea ul {list-style-position:outside;}
+.ThreeColumnTemplate_CalloutArea li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.ThreeColumnTemplate_CalloutArea h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:17px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.ThreeColumnTemplate_CalloutArea h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.ThreeColumnTemplate_CalloutArea h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+
+/*Three column template Quick Resources*/
+.quickresources_threecolumntemplate_Header{padding:5px 10px 5px 10px; width:139px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+.quickresources_threecolumntemplate_DottedLine{border-top:1px dashed #A1C268; padding:8px 0px 8px 0px;}
+.quickresources_threecolumntemplate{background-color:#639A04; padding:7px 10px 7px 10px; width:139px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.quickresources_threecolumntemplate a, .quickresources_threecolumntemplate a:visited{color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.quickresources_threecolumntemplate a:hover, .quickresources_threecolumntemplate a:visited:hover{color:#366801; /* text-decoration:none;  */
+text-decoration:underline;  
+font-weight:normal;}
+
+
+/*Three column template Insurance Quote*/
+.insurancequote_threecolumntemplate_Header{padding:5px 10px 5px 10px; width:139px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+.insurancequote_threecolumntemplate_DottedLine{border-bottom:1px dashed #EBB97C; padding:7px 0px 7px 0px;}
+.insurancequote_threecolumntemplate{background-color:#DD8A24; padding:0px 10px 0px 10px; width:139px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.insurancequote_threecolumntemplate a, .insurancequote_threecolumntemplate a:visited{color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.insurancequote_threecolumntemplate a:hover, .insurancequote_threecolumntemplate a:visited:hover{color:#FCD3A0; /* text-decoration:none;  */
+text-decoration:underline; 
+font-weight:normal;}
+
+
+.insurancequote_blurb_SolidRedLine{border-top:1px solid #D97116; border-bottom:1px solid #D97116; padding:5px 0px 5px 0px;}
+.insurancequote_blurb{background-color:#DD8A24; padding:7px 10px 7px 10px; width:139px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.insurancequote_blurb a, .insurancequote_blurb a:visited{color:#FFFFFF; 
+/* text-decoration:underline;  */
+text-decoration:none; 
+font-weight:normal;}
+.insurancequote_blurb a:hover, .insurancequote_blurb a:visited:hover{color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+
+
+
+/*Three column template Left Navigation*/
+div.LeftNavHeading
+{
+font-family: Verdana,Arial,Helvetica,Sans-Serif;
+font-size: 11px;
+color:#8BAD5A;
+background-image: url(/redesign/images/LeftNavHeading_bg.gif);
+background-repeat: no-repeat;
+background-color:#FFFFFF;
+padding:3px 5px 5px 23px;
+font-weight:bold;
+}
+a.LeftNavHeadingLink:link, a.LeftNavHeadingLink:visited, a.LeftNavHeadingLink:active{font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:11px; color:#8BAD5A; text-decoration:none; 
+font-weight:bold; 
+}
+a.LeftNavHeadingLink:hover{font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:11px; color:#8BAD5A; text-decoration:underline; font-weight:bold; }
+
+
+div.LvOneNav
+{
+font-family: Verdana,Arial,Helvetica,Sans-Serif;
+font-size: 10px;
+color:#FFFFFF;
+background-image: url(/redesign/images/lv_One_leftnav_bg.gif);
+background-repeat: no-repeat;
+background-color:#EFEFEF;
+padding:3px 5px 3px 14px;
+font-weight:normal;
+}
+a.LvOneNavLink:link, a.LvOneNavLink:visited, a.LvOneNavLink:active{font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:10px; color:#0E80C5; text-decoration:none; font-weight:normal;}
+a.LvOneNavLink:hover{font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:10px; color:#0E80C5; text-decoration:underline; font-weight:normal;}
+
+/* Link styling for base class added by Dana Grueser w/ Ciber on 10/08/07. 
+Several of the left navs do not use the LvOneNavLink class & therefore the link styling
+does not work. These pseudo classes duplicate the styling of the LvOneNavLink classes. Do not remove the 
+LvOneNavLink classes as they are used in the site too. */
+
+.LvOneNav A:link {color:#0E80C5; text-decoration:none; font-weight:normal;}
+.LvOneNav A:visited {color:#0E80C5; text-decoration:none; font-weight:normal;}
+.LvOneNav A:active {color:#0E80C5; text-decoration:none; font-weight:normal;}
+.LvOneNav A:hover {color:#0E80C5; text-decoration:underline; font-weight:normal;}
+
+
+/* added div.LvOneNavOnWRVGrayedLink by lidwmq7 on 06-06-07 for July 07 realease to gray out clinician and unverified users. */
+
+div.LvOneNavOnWRVGrayedLink
+{
+font-family: Verdana,Arial,Helvetica,Sans-Serif;
+font-size: 10px;
+color:#999999;
+background-image: url(/redesign/images/lv_One_leftnav_bg.gif);
+background-repeat: no-repeat;
+background-color:#EFEFEF;
+padding:3px 5px 3px 14px;
+font-weight:bold;
+}
+
+div.LvOneNavOn
+{
+font-family: Verdana,Arial,Helvetica,Sans-Serif;
+font-size: 10px;
+color:#FFFFFF;
+background-image: url(/redesign/images/lv_One_leftnav_bg.gif);
+background-repeat: no-repeat;
+background-color:#EFEFEF;
+padding:3px 5px 3px 14px;
+font-weight:bold;
+}
+a.LvOneNavOnLink:link, a.LvOneNavOnLink:visited, a.LvOneNavOnLink:active{font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:10px; color:#0E80C5; text-decoration:none; font-weight:bold;}
+a.LvOneNavOnLink:hover{font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:10px; color:#0E80C5; text-decoration:underline; font-weight:bold;}
+
+/* Use this class to styling left navigation for step by step processes */
+/* This class added by Dana Grueser w/ Ciber on 7/12/07 to correct styling issues with applying the LvOneNav to step by step processes */
+
+/* Base class */
+.LvOneNavSteps
+{
+/*font-family: Verdana,Arial,Helvetica,Sans-Serif;*/
+font-size: 10px;
+color:#0E80C5;
+background-color:#EFEFEF;
+padding:3px 0px 3px 0px;
+font-weight:normal;
+}
+
+/* Use for the step a user is currently on */
+
+.LvOneNavStepsOn
+{
+/*font-family: Verdana,Arial,Helvetica,Sans-Serif;*/
+font-size: 10px;
+color:#0E80C5;
+background-color:#EFEFEF;
+padding:3px 0px 3px 0px;
+font-weight:bold;
+}
+
+/* Once the user has completed a step, the step is now a link so the user can go back. */
+/* The following will style the links */
+.LvOneNavSteps A:link {color:#0E80C5; text-decoration:none; font-weight:normal;}
+.LvOneNavSteps A:visited {color:#0E80C5; text-decoration:none; font-weight:normal;}
+.LvOneNavSteps A:active {color:#0E80C5; text-decoration:none; font-weight:normal;}
+.LvOneNavSteps A:hover {color:#0E80C5; text-decoration:underline; font-weight:normal;}
+
+/* This class uses gray text steps that have not been completed yet */
+/* We will use this class if the business team decides they want to have a different color text for these steps */
+
+.LvOneNavStepsGrayed
+{
+/*font-family: Verdana,Arial,Helvetica,Sans-Serif;*/
+font-size: 10px;
+color:#999999;
+background-color:#EFEFEF;
+padding:3px 0px 3px 0px;
+font-weight:normal;
+}
+
+/* End 7/12 additions */
+
+
+div.LvTwoNav
+{
+font-family: Verdana, Arial, Helvetica,Sans-Serif;
+font-size: 10px;
+color:#FFFFFF;
+background-color:#BBBBBC;
+padding:4px 5px 4px 17px;
+font-weight:normal;
+}
+a.LvTwoNavLink:link, a.LvTwoNavLink:visited, a.LvTwoNavLink:active{font-family:Verdana, Arial, Helvetica,Sans-Serif; font-size:10px; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+a.LvTwoNavLink:hover{font-family:Verdana, Arial, Helvetica,Sans-Serif; font-size:10px; color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+
+
+
+div.LvTwoNavOn
+{
+font-family: Verdana, Arial, Helvetica,Sans-Serif;
+font-size: 10px;
+color:#FFFFFF;
+background-color:#BBBBBC;
+padding:4px 5px 4px 17px;
+font-weight:bold;
+}
+a.LvTwoNavOnLink:link, a.LvTwoNavOnLink:visited, a.LvTwoNavOnLink:active{font-family:Verdana, Arial, Helvetica,Sans-Serif; font-size:10px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+a.LvTwoNavOnLink:hover{font-family:Verdana, Arial, Helvetica,Sans-Serif; font-size:10px; color:#FFFFFF; text-decoration:underline; font-weight:bold;}
+
+
+
+
+div.LvThreeNav
+{ 
+font-family: Verdana, Arial, Helvetica,Sans-Serif;
+font-size: 10px;
+color:#FFFFFF;
+background-color:#AFAFB0;
+padding:4px 5px 4px 22px;
+font-weight:normal;
+}
+a.LvThreeNavLink:link, a.LvThreeNavLink:visited, a.LvThreeNavLink:active{font-family:Verdana, Arial, Helvetica,Sans-Serif; font-size:10px; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+a.LvThreeNavLink:hover{font-family:Verdana, Arial, Helvetica,Sans-Serif; font-size:10px; color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+
+
+div.LvThreeNavOn
+{
+font-family: Verdana, Arial, Helvetica,Sans-Serif;
+font-size: 10px;
+color:#FFFFFF;
+background-color:#AFAFB0;
+padding:4px 5px 4px 22px;
+font-weight:bold;
+}
+a.LvThreeNavOnLink:link, a.LvThreeNavOnLink:visited, a.LvThreeNavOnLink:active{font-family:Verdana, Arial, Helvetica,Sans-Serif; font-size:10px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+a.LvThreeNavOnLink:hover{font-family:Verdana, Arial, Helvetica,Sans-Serif; font-size:10px; color:#FFFFFF; text-decoration:underline; font-weight:bold;}
+
+
+
+
+
+
+
+
+
+/*PROVIDER DIRECTORY TEMPLATES*/
+/*header with breadcrumb Area*/
+.DIR_ColspanTwoContent{padding:0px 1px 0px 5px; margin:0px 0px 0px; width:746px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal;}
+.DIR_ColspanTwoContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:12px;}
+.DIR_ColspanTwoContent a, .DIR_ColspanTwoContent a:visited{color:#1484C7; 
+/* text-decoration:underline; */
+text-decoration:none;
+}
+.DIR_ColspanTwoContent a:hover, .DIR_ColspanTwoContent a:visited:hover{color:#98C8E4; text-decoration:underline;}
+.DIR_ColspanTwoContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.DIR_ColspanTwoContent ol {list-style-position:outside;}
+.DIR_ColspanTwoContent ul {list-style-position:outside;}
+.DIR_ColspanTwoContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.DIR_ColspanTwoContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px 0px 9px 0px; margin:7px 0px 7px 0px; border-bottom:1px dashed #79A826;}
+.DIR_ColspanTwoContent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColspanTwoContent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColspanTwoContent h4{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+
+/*Data Table Area*/
+.DIR_ColspanTwoContentDataTables{padding:0px 1px 0px 5px; margin:0px 0px 0px; width:746px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal;}
+.DIR_ColspanTwoContentDataTables td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:12px;}
+.DIR_ColspanTwoContentDataTables a, .Dir_ColspanTwoContentDataTables a:visited{color:#1484C7; 
+/* text-decoration:underline; */
+text-decoration:none;
+}
+.DIR_ColspanTwoContentDataTables a:hover, .DIR_ColspanTwoContentDataTables a:visited:hover{color:#98C8E4; text-decoration:underline;}
+.DIR_ColspanTwoContentDataTables p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.DIR_ColspanTwoContentDataTables ol {list-style-position:outside;}
+.DIR_ColspanTwoContentDataTables ul {list-style-position:outside;}
+.DIR_ColspanTwoContentDataTables li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.DIR_ColspanTwoContentDataTables h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px 0px 9px 0px; margin:7px 0px 7px 0px; border-bottom:1px dashed #79A826;}
+.DIR_ColspanTwoContentDataTables h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColspanTwoContentDataTables h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColspanTwoContentDataTables h4{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+
+
+
+/*Column One Area*/
+.DIR_ColumnOneContent{padding:0px 0px 0px 5px; margin:0px 0px 15px; width:495px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal;}
+.DIR_ColumnOneContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:12px;}
+.DIR_ColumnOneContent a, .DIR_ColumnOneContent a:visited{color:#1484C7; 
+/* text-decoration:underline; */
+text-decoration:none;
+}
+.DIR_ColumnOneContent a:hover, .DIR_ColumnOneContent a:visited:hover{color:#98C8E4; text-decoration:underline;}
+.DIR_ColumnOneContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.DIR_ColumnOneContent ol {list-style-position:outside;}
+.DIR_ColumnOneContent ul {list-style-position:outside;}
+.DIR_ColumnOneContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.DIR_ColumnOneContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColumnOneContent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColumnOneContent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColumnOneContent h4{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+/*Column Two Area*/
+.DIR_ColumnTwoContent{background-color:transparent; padding:0px 1px 5px 0px; margin:0px; width:231px; font-size:11px; color:#000000;}
+.DIR_ColumnTwoContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:11px;}
+.DIR_ColumnTwoContent a, .DIR_ColumnTwoContent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; /* text-decoration:underline;  */
+text-decoration:none; 
+font-weight:normal;}
+.DIR_ColumnTwoContent a:hover, .DIR_ColumnTwoContent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+.DIR_ColumnTwoContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.DIR_ColumnTwoContent ol {list-style-position:outside;}
+.DIR_ColumnTwoContent ul {list-style-position:outside;}
+.DIR_ColumnTwoContent li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.DIR_ColumnTwoContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:17px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColumnTwoContent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColumnTwoContent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+
+/*Diretory Template One White Table Headers*/
+.DIR_tableheaderwhite {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; font-weight:normal; padding:0px 9px 0px 9px;}
+
+
+
+/*Diretory Template One White Table Headers BOLD*/
+.DIR_tableheaderwhiteBOLD {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; font-weight:bold; padding:0px 9px 0px 9px;}
+
+
+
+/*Diretory Disclaimer Footer*/
+.DIR_footer_disclaimer {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; color:#000000; text-decoration:none; font-weight:normal; padding:10px 25px 20px 25px; width:702px;}
+.DIR_footer_disclaimer p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.DIR_footer_disclaimer td{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; color:#000000; text-decoration:none; font-weight:normal;}
+.DIR_footer_disclaimer a, .DIR_footer_disclaimer a:visited{color:#1484C7; 
+/* text-decoration:underline; */
+text-decoration:none;
+}
+.DIR_footer_disclaimer a:hover, .DIR_footer_disclaimer a:visited:hover{color:#98C8E4; text-decoration:underline;}
+
+
+
+/*Directory Template Text Field Styles*/
+input.DIR_01fields {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:260px; height:17px;}
+input.DIR_Search_lgFields {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:215px; height:17px;}
+input.DIR_Search_smFields {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:125px; height:17px;}
+input.DIR_Search_PracticeNameField {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:215px; height:17px;}
+.DIR_Search_dropdownState {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:185px; height:19px;}
+.DIR_Search_dropdownMiles {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:55px; height:19px;}
+.DIR_Search_dropdownGeneral {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:125px; height:19px;}
+.DIR_Search_dropdownGeneralLarge {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:215px; height:19px;}
+.DIR_SearchResults_dropdown {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:55px; height:19px;}
+.DIR_Search_dropdownChooseSpecialty {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:263px; height:19px;}
+.DIR_Search_dropdownSpecialty {margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; width:219px; height:19px;}
+
+
+
+
+/*Directory Template One Button Styles*/
+/* I made modifications to the blue button; see below this group. - Dana Grueser */
+/*.DIR_button_blue {font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:12px; font-weight:bold; text-decoration:none; color:#FFFFFF; padding:0px; background-color:#139BDF;}*/
+.DIR_button_orange {font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:12px; font-weight:bold; text-decoration:none; color:#FFFFFF; padding:0px; background-color:#F05F18;}
+
+/* Made modifications to the Green buttons to correct padding & other issues. Used same attributes as blue button except background color. BEC July 09 Release 5/08/09 DG */
+.DIR_button_green {padding: 0px 5px 0px 5px; font-weight:bold; text-decoration:none; color:#FFFFFF; text-align: center; background-color:#139BDF; width: auto; overflow: visible; font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:12px;  background-color:#74A816;}
+
+/* Updated the DIR_button_blue class to include some padding & centering for the text */
+/* Modifications made by by Dana Grueser w/ Ciber on 7/16/07 */
+
+/* Added width & overflow to make button render correctly in IE - IE was stretching the buttons.  -Dana Grueser w/ Ciber. Added 7/31/07 */
+
+.DIR_button_blue
+{
+	  padding: 0px 5px 0px 5px;
+	  font-weight:bold; 
+	  text-decoration:none; 
+	  color:#FFFFFF; 
+	  text-align: center; 
+	  background-color:#139BDF;
+	  width: auto;
+	  overflow: visible;
+	  font-family:Verdana,Arial,Helvetica,Sans-Serif;
+	  font-size:12px; 
+}
+
+/* Commented this for now - IE seems to be playing nice w/ the width & overflow above. 
+   We'll use this later if we run into issues. */
+
+/* Added conditional style for ie browser. IE stretches the button. */
+/*
+<!--[if IE]>
+.DIR_button_blue
+{
+	  width: 1px;
+}
+<![endif]-->
+*/
+
+/* end 7/31 modifications */
+
+/* Added this gray button for s2e requirements. This signifies the button cannot be clicked. - Dana Grueser w/ Ciber. 8/27/2007 */
+
+.DIR_button_gray
+{
+	padding: 0px 5px 0px 5px;
+	font-weight:bold; 
+	text-decoration:none; 
+	color:#FFFFFF; 
+	text-align: center; 
+	background-color:#bdbdbe;
+	width: auto;
+	overflow: visible;
+	font-family:Verdana,Arial,Helvetica,Sans-Serif;
+	font-size:12px; 
+}
+
+/*Provider Directory Templates SubHeader Style*/
+.DIR_Subheader_Blue{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#139BDF; padding:0px; margin:10px 0px 0px 0px;}
+.DIR_Subheader_Orange{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#F05F18; padding:0px; margin:10px 0px 0px 0px;}
+.DIR_Subheader_Green{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#74A816; padding:0px; margin:10px 0px 0px 0px;}
+
+
+/* Provider Directory Advanced Search Row Padding Style*/
+.DIR_Search_Padding{padding:3px 0px 3px 0px;}
+
+
+/*Provider Diretory Advanced Search Blue Table Headers*/
+.DIR_Search_BlueTableHeaderBG {background-color:#139BDF; padding:4px 0px 5px 0px;}
+
+
+.DIR_Search_textSMALL {font-family:Verdana,Arial,Helvetica,Sans-Serif; font-size:9px; font-weight:normal; text-decoration:none; color:#000000; padding:0px;}
+
+/*Provider Diretory Search Results Column Two Search Options Box*/
+.DIR_ColumnTwoContentSearchOptions{background-color:#E4E4E5; padding:7px 6px 5px 6px; margin:10px 0px 0px 0px; width:232px; border-left:2px solid #FFFFFF; font-size:11px; color:#000000;}
+.DIR_ColumnTwoContentSearchOptions td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:11px;}
+.DIR_ColumnTwoContentSearchOptions a, .DIR_ColumnTwoContentSearchOptions a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; 
+/* text-decoration:underline;  */
+text-decoration:none; 
+font-weight:normal;}
+.DIR_ColumnTwoContentSearchOptions a:hover, .DIR_ColumnTwoContentSearchOptions a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4; text-decoration:underline; font-weight:normal;}
+.DIR_ColumnTwoContentSearchOptions p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.DIR_ColumnTwoContentSearchOptions ol {list-style-position:outside;}
+.DIR_ColumnTwoContentSearchOptions ul {list-style-position:outside;}
+.DIR_ColumnTwoContentSearchOptions li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.DIR_ColumnTwoContentSearchOptions h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:17px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColumnTwoContentSearchOptions h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.DIR_ColumnTwoContentSearchOptions h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+
+
+.DIR_searchoptionsHeader{padding:5px 10px 5px 10px; width:212px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+.DIR_searchoptionsDottedLine{border-top:1px dashed #66BEE9; padding:8px 0px 8px 0px;}
+.DIR_searchoptions{background-color:#0093DB; padding:7px 10px 7px 10px; width:212px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.DIR_searchoptions a, .DIR_searchoptions a:visited{color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.DIR_searchoptions a:hover, .DIR_searchoptions a:visited:hover{color:#AADEF7; 
+/* text-decoration:none;  */
+text-decoration:underline; 
+font-weight:normal;}
+
+
+
+
+/*Provider Directory Search Results Table Headers*/
+.DIR_Resultstableheaderwhite {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; font-weight:bold; padding:8px;}
+
+
+
+/*Provider Directory Search Results Table Header Background */
+.DIR_ResultsDistanceHeaderColumn{background-color:#139BDF;}
+.DIR_ResultsNameHeaderColumn{background-color:#139BDF;}
+.DIR_ResultsSpecialtyHeaderColumn{background-color:#139BDF;}
+.DIR_ResultsPracticeHeaderColumn{background-color:#139BDF;}
+
+
+/*Provider Directory Search Results Table Header Background */
+.DIR_ResultsDistanceColumn{background-color:#DBDBDB; border-top:4px solid #FFFFFF;}
+.DIR_ResultsNameColumn{background-color:#EFEFEF; border-top:4px solid #FFFFFF;}
+.DIR_ResultsSpecialtyColumn{background-color:#DBDBDB; border-top:4px solid #FFFFFF;}
+.DIR_ResultsPracticeColumn{background-color:#EFEFEF; border-top:4px solid #FFFFFF;}
+
+
+/*Provider Directory Search Results Content*/
+.DIR_ResultstableContent {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#000000; text-decoration:none; font-weight:normal;}
+.DIR_ResultstableContent p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal; padding:0px;}
+.DIR_ResultstableContent td{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:#000000; text-decoration:none; font-weight:normal; padding:0px;}
+.DIR_ResultstableContent a, .DIR_ResultstableContent a:visited{color:#1484C7; 
+/* text-decoration:underline; */
+text-decoration:none;
+}
+.DIR_ResultstableContent a:hover, .DIR_ResultstableContent a:visited:hover{color:#98C8E4; text-decoration:underline;}
+
+
+.DIR_ResultstableContentPadding {padding:8px;}
+
+
+
+
+/* Two Column Content - new class as of 09-21-06 */
+.TwoColumnTemplate_ContentArea{padding:0px; margin:0px 0px 15px; 
+width: 580px;
+ font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal;
+}
+.TwoColumnTemplate_ContentArea td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; font-size:12px;}
+.TwoColumnTemplate_ContentArea a, .TwoColumnTemplate_ContentArea a:visited{color:#1484C7; 
+text-decoration:none;
+}
+.TwoColumnTemplate_ContentArea a:hover, .TwoColumnTemplate_ContentArea a:visited:hover{color:#98C8E4; text-decoration:underline;}
+.TwoColumnTemplate_ContentArea p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.TwoColumnTemplate_ContentArea ol {list-style-position:outside;}
+.TwoColumnTemplate_ContentArea ul {list-style-position:outside;}
+.TwoColumnTemplate_ContentArea li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.TwoColumnTemplate_ContentArea h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.TwoColumnTemplate_ContentArea h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+.TwoColumnTemplate_ContentArea h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.TwoColumnTemplate_ContentArea h4{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#000000; padding:0px; margin:10px 0px 10px 0px;}
+
+/* Created registerNowLink class selector to resolve SD-10095 registration link.
+* Created on 11/03/06 by Jeff Fidler.
+*/
+
+a.registerNowLink, a.registerNowLink:visited, a.registerNowLink:hover, a.registerNowLink:active {
+color: #0000ff;
+text-decoration: underline;
+}
+
+/* Member Sitemap Styles 
+* Implemented 11/21/06
+* Written by Jeff Fidler
+*/
+
+.container {
+width: 150px;
+height: 375px;
+}
+
+.container ul {
+margin: 3px 0;
+padding-left: 0;
+}
+
+.container ul ul {
+margin: 6px 0;
+padding-left: 7px;
+	}
+
+.container li {
+margin: 5px 0;
+list-style-type: none;
+text-align: left;
+font-size: 12px;
+}
+
+.container a {
+background-color: #ffffff;
+color: #0000FF;
+font-size: 12px;
+text-decoration: none;
+}
+
+.container a:hover {
+background-color: #0000FF;
+color: #ffffff;
+text-decoration: underline;
+}
+
+.subnav {
+display: none;
+}
+
+#expandButton {
+display: block;
+width: 80px;
+margin: 5px 0;
+border: 2px solid #000000;
+padding: 3px;
+background-color: #8BAD5A;
+color: #ffffff;
+font-size: 11px;
+font-weight: bold;
+text-align: center;
+}
+
+#collapseButton {
+display: none;
+width: 80px;
+margin: 5px 0;
+border: 2px solid #000000;
+padding: 3px;
+background-color: #F4A61E;
+color: #ffffff;
+font-size: 11px;
+font-weight: bold;
+text-align: center;
+}
+
+.boxes {
+width: 130px;
+display: block;
+margin: 0;
+		border: 2px solid #000000;
+		padding: 5px 0;
+font-size: 12px;
+font-weight: bold;
+	text-align: center;
+	}
+
+#memberLandingWrapper {
+display: block;
+width: 130px;
+margin: 12px 0;
+border: 0;
+padding: 0;
+}
+
+#memberLandingWrapper ul li {
+margin: 5px 0;
+list-style-type: none;
+text-align: left;
+font-size: 12px;
+}
+
+		#memberLandingBox {
+		background-color: #0000FF;
+color: #ffffff;
+}
+
+#yourCoverageBox {
+		background-color: #8BAD5A;
+color: #ffffff;
+}
+
+#yourSpendingBox {
+		background-color: #F4A61E;
+color: #ffffff;
+}
+
+#yourHealthBox {
+		background-color: #66BEE9;
+color: #ffffff;
+}
+
+#chooseProviderBox {
+		background-color: #D97116;
+color: #ffffff;
+}
+
+#healthTopicsBox {
+		background-color: #087dc4;
+color: #ffffff;
+}
+
+/* Additional Promotion Boxes
+* Written by Jeff Fidler, 11/22/06
+* updated 11/27/06 to adjust heading font size and padding, requested by Anish
+* updated 11/28/06 to include a content class with no bottom border, requested by Anish
+*/
+
+.eClaimsBox {
+margin: 0; 
+padding: 0; 
+background-color: #cc9933; 
+}
+
+.eClaimsBoxHeader {
+border-bottom: 1px solid #996633;
+width: 212px; 
+margin: 0; 
+padding: 7px 10px 7px 10px; 
+background-color: #cc9933; 
+color: #ffffff;
+font-size: 14px; 
+font-weight: bold;
+} 
+
+.eClaimsContent {
+border-bottom: 1px solid #996633;
+padding: 7px 10px;
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+}
+
+.eClaimsContent a:link {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+}
+
+.eClaimsContent a:hover, .eClaimsContent a:visited, .eClaimsContent a:visited:hover, .eClaimsContent a:active {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: underline; 
+}
+
+.eClaimsContent li {color:#FFFFFF;}
+
+.eClaimsContentNoLine {
+padding: 7px 10px;
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+}
+
+.eClaimsContentNoLine a:link {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+}
+
+.eClaimsContentNoLine a:hover, .eClaimsContentNoLine a:visited, .eClaimsContentNoLine a:visited:hover, .eClaimsContentNoLine a:active {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: underline; 
+}
+
+.eClaimsContentCentered {
+padding: 7px 10px;
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+text-align: center;
+}
+
+.eClaimsContentCentered a:link {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+text-align: center;
+}
+
+.eClaimsContentCentered a:hover, .eClaimsContentCentered a:visited, .eClaimsContentCentered a:visited:hover, .eClaimsContentCentered a:active {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: underline; 
+text-align: center;
+}
+
+.lookingHealthwardBox {
+margin: 0; 
+padding: 0; 
+background-color: #cc6633; 
+}
+
+.lookingHealthwardBoxHeader {
+border-bottom: 1px solid #996633;
+width: 212px; 
+margin: 0; 
+padding: 7px 10px 7px 10px; 
+background-color: #cc6633; 
+color: #ffffff;
+font-size: 14px; 
+font-weight: bold;
+} 
+
+.lookingHealthwardContent {
+border-bottom: 1px solid #996633;
+padding: 7px 10px;
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+}
+
+.lookingHealthwardContent a:link {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+}
+
+.lookingHealthwardContent a:hover, .lookingHealthwardContent a:visited, .lookingHealthwardContent a:visited:hover, .lookingHealthwardContent a:active {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: underline; 
+}
+.lookingHealthwardContent li {color:#FFFFFF;}
+
+.lookingHealthwardContentNoLine {
+padding: 7px 10px;
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+}
+
+.lookingHealthwardContentNoLine a:link {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+}
+
+.lookingHealthwardContentNoLine a:hover, .lookingHealthwardContentNoLine a:visited, .lookingHealthwardContentNoLine a:visited:hover, .lookingHealthwardContentNoLine a:active {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: underline; 
+}
+
+.lookingHealthwardContentCentered {
+padding: 7px 10px;
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+text-align: center;
+}
+
+.lookingHealthwardContentCentered a:link {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: none; 
+text-align: center;
+}
+
+.lookingHealthwardContentCentered a:hover, .lookingHealthwardContentCentered a:visited, .lookingHealthwardContentCentered a:visited:hover, .lookingHealthwardContentCentered a:active {
+color: #ffffff;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 13px;
+font-weight:bold;
+text-decoration: underline; 
+text-align: center;
+}
+
+
+/*-----------------------------------------------------------------*/
+/*Lifestyle Returns Site Styles*/
+/*-----------------------------------------------------------------*/
+
+/*LSR Welcome Text*/
+.LSR_WelcomeHelpButton_Padding{padding:15px 0px 0px 0px; margin:0px 0px 0px 0px;}
+.LSR_WelcomeContent_Padding{padding:15px 20px 0px 0px; margin:0px 0px 0px 0px;}
+.LSR_WelcomeContent{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:14px; text-decoration:none; font-weight:normal; width:535px; overflow:hidden;}
+.LSR_WelcomeContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:14px; text-decoration:none; font-weight:normal; border-color:#424545;}
+.LSR_WelcomeContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+
+
+.btn_ShowCompletedActivities{text-align:right; margin-right:40px;}
+
+
+
+/*LSR Content Area*/
+.LSR_ContentArea_Padding{padding:0px 0px 15px 0px; margin:0px 0px 0px 0px;}
+.LSR_ContentArea{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; padding:0px; margin:0px; font-weight:normal; width:560px; overflow:hidden;}
+.LSR_ContentArea td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; padding-bottom:4px; margin:0px; font-weight:normal; border-color:#424545;}
+.LSR_ContentArea img{padding:3px; border:0px;}
+.LSR_ContentArea table{border-color:#424545;}
+.LSR_ContentArea p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_ContentArea a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; text-decoration:underline; font-weight:normal;}
+.LSR_ContentArea a:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#98C8E4 !important; text-decoration:underline; font-weight:normal;}
+.LSR_ContentArea a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#1484C7; text-decoration:underline; font-weight:normal;}
+.LSR_ContentArea ol{list-style-position:outside;}
+.LSR_ContentArea ul{list-style-position:outside;}
+.LSR_ContentArea li{padding:0px 0px 2px 0px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; font-weight:normal; margin-top:4px;}
+.LSR_ContentArea h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px; margin:20px 0px 0px 0px;}
+.LSR_ContentArea h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#000000; padding:0px; margin:20px 0px 0px 0px;}
+.LSR_ContentArea h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#70A219; padding:0px; margin:20px 0px 0px 0px;}
+.LSR_ContentArea h4{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 0px 0px;}
+.LSR_ContentArea h5{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; color:#000000; padding:0px; margin:10px 0px 0px 0px;}
+.LSR_ContentArea hr{background-color:#424545; color:#424545; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+.LSR_ContentArea input {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#424545;}
+.LSR_ContentArea input.radio {width:auto;}
+.LSR_ContentArea input.checkbox {width:auto;}
+.LSR_ContentArea textarea {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#424545;}
+.LSR_ContentArea select {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#424545;}
+.LSR_ContentArea select.option {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#424545;}
+.LSR_ContentArea input.formbutton, .LSR_ContentArea input.formbutton:hover, .LSR_ContentArea button.formbutton, .LSR_ContentArea button.formbutton:hover { cursor:pointer; width:auto; border:1px solid #139BDF; background:#139BDF; color:#FFFFFF; margin:10px 0px 0px 0px; padding:2px 3px 2px 3px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; text-decoration:none;}
+
+
+
+
+/*Grey Point Program Table Style*/
+div.LSR_greytable_pointsprogram{background-image: url(../images/lsr_greytable_BGshadow.gif); background-repeat: repeat-y; padding:0px; margin:0px 0px 7px 0px; width:534px;}
+div.LSR_greytable_pointsprogram div.topcurve{background-image: url(../images/lsr_greytable_topshadow.gif); background-repeat: no-repeat;width:534px;height:9px;font-size:0;}
+div.LSR_greytable_pointsprogram div.botcurve{background-image: url(../images/lsr_greytable_botshadow.gif); background-repeat: no-repeat;width:534px;height:9px;font-size:0;}
+.LSR_tablepadding{padding:6px 0px 0px 12px;}
+.LSR_ContentPointsHeader{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:15px; text-decoration:none; font-weight:normal; width:410px; padding-left:12px; padding-bottom:8px; overflow:hidden;}
+.LSR_PointsHeader{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:15px; text-decoration:none; font-weight:normal; width:75px; padding-bottom:8px; overflow:hidden;}
+.LSR_PointsCompletedHeader{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:14px; text-decoration:none; font-weight:normal; width:75px; padding-bottom:8px; overflow:hidden;}
+.LSR_PointsPossibleHeader{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:15px; text-decoration:none; font-weight:normal; width:477px; padding:3px 0px 8px 0px; overflow:hidden;}
+div.LSR_WhiteTableDivider{background-image: url(../images/lsr_WhiteTableDivider.gif); background-repeat: no-repeat;}
+
+
+
+/*Active Styles*/
+div.LSR_Active{background-image: url(../images/lsr_BG_active.gif); background-repeat: repeat-y;}
+div.LSR_Active div.topcurve{background-image: url(../images/lsr_topcurve_active.gif); background-repeat: no-repeat; width:509px; height:17px; font-size:0;}
+div.LSR_Active div.botcurve{background-image: url(../images/lsr_botcurve_active.gif); background-repeat: no-repeat; width:509px; height:25px; font-size:0;}
+
+
+.LSR_Active_padding{padding:0px 0px 0px 12px; margin:0px 0px 0px 0px; width:510px;}
+.LSR_ActiveHeader_padding{padding:0px 0px 13px 0px; margin:0px 0px 0px 0px;}
+.LSR_ActiveHeader{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:15px; text-decoration:none; font-weight:normal; width:385px; overflow:hidden;}
+.LSR_ActiveHeader td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:15px; text-decoration:none; font-weight:normal;}
+.LSR_ActiveHeader p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveHeader a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActiveHeader a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveHeader a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActiveHeader a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveHeader h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveHeader h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveHeader h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveHeader img{padding:0px;}
+.LSR_ActiveHeader hr{background-color:#FFFFFF; color:#FFFFFF; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_ActiveHeaderPoints_padding{padding:0px 0px 10px 0px; margin:0px 0px 0px 0px;}
+.LSR_ActiveHeaderPoints{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:15px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_ActiveHeaderPoints td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:15px; text-decoration:none; font-weight:normal;}
+.LSR_ActiveHeaderPoints p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveHeaderPoints a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActiveHeaderPoints a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveHeaderPoints a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActiveHeaderPoints a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveHeaderPoints h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveHeaderPoints h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveHeaderPoints h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveHeaderPoints img{padding:0px;}
+.LSR_ActiveHeaderPoints hr{background-color:#FFFFFF; color:#FFFFFF; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_ActiveContent_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_ActiveContent{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:11px; text-decoration:none; font-weight:normal; width:367px; overflow:hidden;}
+.LSR_ActiveContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_ActiveContent p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveContent a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActiveContent a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveContent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActiveContent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveContent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveContent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveContent img{padding:0px;}
+.LSR_ActiveContent hr{background-color:#FFFFFF; color:#FFFFFF; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_ActiveContent_Indent_padding{padding:0px 0px 8px 15px; margin:0px 0px 0px 0px;}
+.LSR_ActiveContent_Indent{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:11px; text-decoration:none; font-weight:normal; width:352px; overflow:hidden;}
+.LSR_ActiveContent_Indent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_ActiveContent_Indent p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveContent_Indent a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActiveContent_Indent a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveContent_Indent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActiveContent_Indent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActiveContent_Indent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveContent_Indent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveContent_Indent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActiveContent_Indent img{padding:0px;}
+.LSR_ActiveContent_Indent hr{background-color:#FFFFFF; color:#FFFFFF; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_ActivePoints_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_ActivePoints{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:11px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_ActivePoints td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_ActivePoints p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActivePoints a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActivePoints a:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActivePoints a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActivePoints a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActivePoints h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActivePoints h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActivePoints h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActivePoints img{padding:0px;}
+.LSR_ActivePoints hr{background-color:#FFFFFF; color:#FFFFFF; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_ActivePoints_Indent_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_ActivePoints_Indent{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:11px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_ActivePoints_Indent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_ActivePoints_Indent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActivePoints_Indent a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActivePoints_Indent a:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActivePoints_Indent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ActivePoints_Indent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ActivePoints_Indent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActivePoints_Indent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActivePoints_Indent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#FFFFFF; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_ActivePoints_Indent img{padding:0px;}
+.LSR_ActivePoints_Indent hr{background-color:#FFFFFF; color:#FFFFFF; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+
+
+
+
+
+/*Completed Styles*/
+
+div.LSR_Completed{background-image: url(../images/lsr_BG_completed.gif); background-repeat: repeat-y;}
+div.LSR_Completed div.topcurve{background-image: url(../images/lsr_topcurve_completed.gif); background-repeat: no-repeat; width:509px; height:17px; font-size:0;}
+div.LSR_Completed div.botcurve{background-image: url(../images/lsr_botcurve_completed.gif); background-repeat: no-repeat; width:509px; height:25px; font-size:0;}
+
+
+.LSR_Completed_padding{padding:0px 0px 0px 12px; margin:0px 0px 0px 0px; width:510px;}
+.LSR_CompletedHeader_padding{padding:0px 0px 13px 0px; margin:0px 0px 0px 0px;}
+.LSR_CompletedHeader{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:15px; text-decoration:none; font-weight:normal; width:385px; overflow:hidden;}
+.LSR_CompletedHeader td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:15px; text-decoration:none; font-weight:normal;}
+.LSR_CompletedHeader p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedHeader a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedHeader a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedHeader a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedHeader a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedHeader h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedHeader h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedHeader h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedHeader img{padding:0px;}
+.LSR_CompletedHeader hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_CompletedHeaderPoints_padding{padding:0px 0px 10px 0px; margin:0px 0px 0px 0px;}
+.LSR_CompletedHeaderPoints{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:15px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_CompletedHeaderPoints td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:15px; text-decoration:none; font-weight:normal;}
+.LSR_CompletedHeaderPoints p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedHeaderPoints a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedHeaderPoints a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedHeaderPoints a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedHeaderPoints a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedHeaderPoints h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedHeaderPoints h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedHeaderPoints h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedHeaderPoints img{padding:0px;}
+.LSR_CompletedHeaderPoints hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_CompletedContent_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_CompletedContent{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal; width:367px; overflow:hidden;}
+.LSR_CompletedContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_CompletedContent p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedContent a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedContent a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedContent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedContent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedContent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedContent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedContent img{padding:0px;}
+.LSR_CompletedContent hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_CompletedContent_Indent_padding{padding:0px 0px 8px 15px; margin:0px 0px 0px 0px;}
+.LSR_CompletedContent_Indent{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal; width:352px; overflow:hidden;}
+.LSR_CompletedContent_Indent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_CompletedContent_Indent p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedContent_Indent a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedContent_Indent a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedContent_Indent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedContent_Indent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedContent_Indent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedContent_Indent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedContent_Indent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedContent_Indent img{padding:0px;}
+.LSR_CompletedContent_Indent hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_CompletedPoints_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_CompletedPoints{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_CompletedPoints td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_CompletedPoints p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedPoints a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedPoints a:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedPoints a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedPoints a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedPoints h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedPoints h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedPoints h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedPoints img{padding:0px;}
+.LSR_CompletedPoints hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_CompletedPoints_Indent_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_CompletedPoints_Indent{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_CompletedPoints_Indent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_CompletedPoints_Indent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedPoints_Indent a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedPoints_Indent a:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedPoints_Indent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_CompletedPoints_Indent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_CompletedPoints_Indent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedPoints_Indent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedPoints_Indent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_CompletedPoints_Indent img{padding:0px;}
+.LSR_CompletedPoints_Indent hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+
+
+/*inActive Styles*/
+div.LSR_inActive{background-image: url(../images/lsr_BG_inactive.gif); background-repeat: repeat-y;}
+div.LSR_inActive div.topcurve{background-image: url(../images/lsr_topcurve_inactive.gif); background-repeat: no-repeat; width:509px; height:17px; font-size:0;}
+div.LSR_inActive div.botcurve{background-image: url(../images/lsr_botcurve_inactive.gif); background-repeat: no-repeat; width:509px; height:25px; font-size:0;}
+
+.LSR_inActive_padding{padding:0px 0px 0px 12px; margin:0px 0px 0px 0px; width:510px;}
+
+
+.LSR_inActiveHeader_padding{padding:0px 0px 13px 0px; margin:0px 0px 0px 0px;}
+.LSR_inActiveHeader{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:15px; text-decoration:none; font-weight:normal; width:385px; overflow:hidden;}
+.LSR_inActiveHeader td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:15px; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeader p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeader a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveHeader a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeader a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveHeader a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeader h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeader h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeader h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeader img{padding:0px;}
+.LSR_inActiveHeader hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_inActiveHeaderPoints_padding{padding:0px 0px 10px 0px; margin:0px 0px 0px 0px;}
+.LSR_inActiveHeaderPoints{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:15px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_inActiveHeaderPoints td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:15px; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeaderPoints p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeaderPoints a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveHeaderPoints a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeaderPoints a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveHeaderPoints a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeaderPoints h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeaderPoints h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeaderPoints h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeaderPoints img{padding:0px;}
+.LSR_inActiveHeaderPoints hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_inActiveHeader_CurrentTotal_padding{padding:0px 0px 13px 0px; margin:0px 0px 0px 0px;}
+.LSR_inActiveHeader_CurrentTotal{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:15px; text-decoration:none; font-weight:normal; width:385px; overflow:hidden;}
+.LSR_inActiveHeader_CurrentTotal td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:15px; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeader_CurrentTotal p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeader_CurrentTotal a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveHeader_CurrentTotal a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeader_CurrentTotal a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveHeader_CurrentTotal a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeader_CurrentTotal h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeader_CurrentTotal h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeader_CurrentTotal h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeader_CurrentTotal img{padding:0px;}
+.LSR_inActiveHeader_CurrentTotal hr{background-color:#000000; color:#000000; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+/* Changed font size from 15px to 12px per business team. This should have never been set to 15px.  DG 3/24/09 */
+.LSR_inActiveHeaderPoints_CurrentTotal_padding{padding:0px 0px 10px 0px; margin:0px 0px 0px 0px;}
+.LSR_inActiveHeaderPoints_CurrentTotal{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_inActiveHeaderPoints_CurrentTotal td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeaderPoints_CurrentTotal p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeaderPoints_CurrentTotal a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveHeaderPoints_CurrentTotal a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeaderPoints_CurrentTotal a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveHeaderPoints_CurrentTotal a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveHeaderPoints_CurrentTotal h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeaderPoints_CurrentTotal h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeaderPoints_CurrentTotal h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:15px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveHeaderPoints_CurrentTotal img{padding:0px;}
+.LSR_inActiveHeaderPoints_CurrentTotal hr{background-color:#000000; color:#000000; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_inActiveContent_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_inActiveContent{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal; width:367px; overflow:hidden;}
+.LSR_inActiveContent td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_inActiveContent p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveContent a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveContent a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveContent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveContent a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActiveContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveContent h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveContent h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveContent img{padding:0px;}
+.LSR_inActiveContent hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+.LSR_inActivePoints_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_inActivePoints{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal; width:75px; overflow:hidden;}
+.LSR_inActivePoints td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_inActivePoints p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActivePoints a{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_inActivePoints a:hover{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActivePoints a:visited{font-family:Verdana, Arial, Helvetica, sans-serif; color:#929191; text-decoration:underline; font-weight:normal;}
+.LSR_inActivePoints a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#929191; text-decoration:none; font-weight:normal;}
+.LSR_inActivePoints h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActivePoints h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActivePoints h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#929191; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActivePoints img{padding:0px;}
+.LSR_inActivePoints hr{background-color:#929191; color:#929191; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+
+
+
+/*Enjoy the Rewards - inActive Styles*/
+.LSR_inActiveContentEnjoyRewards_padding{padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
+.LSR_inActiveContentEnjoyRewards{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:11px; text-decoration:none; font-weight:normal; width:367px; overflow:hidden;}
+.LSR_inActiveContentEnjoyRewards td{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:11px; text-decoration:none; font-weight:normal;}
+.LSR_inActiveContentEnjoyRewards p{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveContentEnjoyRewards a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveContentEnjoyRewards a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveContentEnjoyRewards a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:underline; font-weight:normal;}
+.LSR_inActiveContentEnjoyRewards a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#000000; text-decoration:none; font-weight:normal;}
+.LSR_inActiveContentEnjoyRewards h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveContentEnjoyRewards h2{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveContentEnjoyRewards h3{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#000000; padding:0px; margin:5px 0px 5px 0px;}
+.LSR_inActiveContentEnjoyRewards img{padding:0px;}
+.LSR_inActiveContentEnjoyRewards hr{background-color:#A9A9A9; color:#A9A9A9; height:1px; line-height:1px; margin-bottom:5px; font-size:0px; border:0px;}
+
+
+
+/*Scrollable Div*/
+.ScrollDiv {margin:10px 0px 15px 0px; padding:10px 10px 10px 10px; width:450px; height:165px; overflow:auto; background-color:#FFFFFF; border-color: #CCCCCC #666666 #666666 #CCCCCC; border: 1px solid;}
+.form_LSR{margin:0px; padding:0px;}
+
+
+
+/*Wireframe 12 - Health Improvement Program Table*/
+/*Added the LSR_ProgramResultsHeadingTable & LSR_ProgramResultsContentTable styles & modified the padding & widths on other classes in this group as part of the LSR April 09 project. This table rec'd a facelift as part of the Apr. 09 release, & existing issues w/ Firefox rendering were fixed.  DG  */
+.LSR_ProgramResultsScrollableDiv{overflow-x: hidden; overflow-y: auto; height: 400px; width: 575px;}
+
+.LSR_ProgramResultsHeadingTable{width:575px; margin-top:40px; padding-bottom:5px;}
+.LSR_ProgramResultsContentTable{width:550px;} 
+
+
+.LSR_ProgramResultsHeader_Goal_Padding{width:100px; padding:0px;}
+.LSR_ProgramResultsHeader_Goal{font-family:Verdana, Arial, Helvetica, sans-serif; color:#70A219; font-size:12px; text-decoration:none; font-weight:bold; overflow:hidden;}
+
+.LSR_ProgramResultsHeader_Program_Padding{width:340px; padding:0px;}
+.LSR_ProgramResultsHeader_Program_Padding_ALT{width:475px;}
+.LSR_ProgramResultsHeader_Program{font-family:Verdana, Arial, Helvetica, sans-serif; color:#70A219; font-size:12px; text-decoration:none; font-weight:bold; overflow:hidden;}
+
+.LSR_ProgramResultsHeader_Participate_Padding{width:135px; padding:0px;}
+.LSR_ProgramResultsHeader_Participate{font-family:Verdana, Arial, Helvetica, sans-serif; color:#70A219; font-size:12px; text-decoration:none; font-weight:bold; overflow:hidden;}
+
+.LSR_ProgramResultsContent_Goal_Padding{width:100px; padding:0px 5px 12px 0px; margin:0px; vertical-align:top;}
+.LSR_ProgramResultsContent_Goal{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal; overflow:hidden;}
+
+.LSR_ProgramResultsContent_Program_Padding{width:340px; padding:0px 5px 12px 0px; margin:0px; vertical-align:top;}
+.LSR_ProgramResultsContent_Program_Padding_ALT{width:450px; padding:0px 5px 12px 0px; margin:0px; vertical-align:top;}
+.LSR_ProgramResultsContent_Program{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal; overflow:hidden;}
+
+.LSR_ProgramResultsContent_Participate_Padding{width:110px; padding:0px 5px 12px 0px; margin:0px; vertical-align:top; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; font-size:12px; text-decoration:none; font-weight:normal; overflow:hidden;}
+
+.LSR_ProgramResults_CompletedText_GreenItalic{font-family:Verdana, Arial, Helvetica, sans-serif; color:#70A219; font-size:12px; text-decoration:none; font-weight:normal; font-style: italic;}
+.LSR_ProgramResults_RecommendedText_Orange{font-family:Verdana, Arial, Helvetica, sans-serif; color:#EF5205; font-size:12px; text-decoration:none; font-weight:bold;}
+
+.noscript{border:1px solid #DC4D08; padding:3px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#DC4D08; text-decoration:none; font-weight:bold;}
+
+
+
+/*////////////////////////////////////////////////////////////////////*/
+/*LSR Wireframe 15*/
+/* Modified 08/10/07 for LSR Outcomes October 2007 release by Jeffrey Fidler to comply w/ new business requirements for presentation */
+/*Data Table Header*/
+/* added to give black border around table */
+table.screening{border:1px solid #000000;margin:10px 0;}
+
+.LSR_ScreeningTableHeader_Padding{margin:0;padding:2px 7px;background-color:#139BDF;}
+.LSR_ScreeningTableHeader, .LSR_ScreeningTableHeader td, .LSR_ScreeningTableHeader p{font-family:Verdana, Arial, Helvetica, sans-serif;color:#FFFFFF;font-size:12px;text-decoration:none;padding:0;margin:0;font-weight:bold;}
+.LSR_ScreeningTableHeader a{font-family:Verdana, Arial, Helvetica, sans-serif;color:#FFFFFF;text-decoration:none;font-weight:bold;}
+.LSR_ScreeningTableHeader a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;color:#FFFFFF;text-decoration:underline;font-weight:bold;}
+.LSR_ScreeningTableHeader ol, .LSR_ScreeningTableHeader ul{list-style-position:outside;}
+.LSR_ScreeningTableHeader li{padding:0 0 2px 0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#FFFFFF;text-decoration:none;font-weight:bold;margin-top:4px;}
+.LSR_ScreeningTableHeader img{padding:0;margin:0;}
+
+/*Data Table Content*/
+/* LSR Outcomes Screening tables */ 
+.LSR_ScreeningTableContent_Padding{margin:0;padding:2px 7px;background-color:#EFEFEF;}
+.LSR_ScreeningTableContent, .LSR_ScreeningTableContent td, .LSR_ScreeningTableContent p{font-family:Verdana, Arial, Helvetica, sans-serif;color:#000000;font-size:12px;text-decoration:none;padding:0;margin:0;font-weight:normal;}
+.LSR_ScreeningTableContent a{font-family:Verdana, Arial, Helvetica, sans-serif;color:#1484C7;text-decoration:none;font-weight:normal;}
+.LSR_ScreeningTableContent a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;color:#98C8E4;text-decoration:underline;font-weight:normal;}
+.LSR_ScreeningTableContent a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;color:#1484C7;text-decoration:underline;font-weight:normal;}
+.LSR_ScreeningTableContent ol, .LSR_ScreeningTableContent ul{list-style-position:outside;}
+.LSR_ScreeningTableContent li{padding:0 0 2px 0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#000000;text-decoration:none;font-weight:normal;margin-top:4px;}
+.LSR_ScreeningTableContent img{padding:0;margin:0;}
+
+/* rows with white background and black foreground, preserving other data table property/values */
+.LSR_ScreeningTableContentBW_Padding{margin:0;padding:2px 7px;background-color:#FFFFFF;}
+.LSR_ScreeningTableContentBW, .LSR_ScreeningTableContentBW td, .LSR_ScreeningTableContentBW p{font-family:Verdana, Arial, Helvetica, sans-serif;color:#000000;font-size:12px;text-decoration:none;padding:0;margin:0;font-weight:normal;}
+.LSR_ScreeningTableContentBW a{font-family:Verdana, Arial, Helvetica, sans-serif;color:#1484C7;text-decoration:none;font-weight:normal;}
+.LSR_ScreeningTableContentBW a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;color:#98C8E4;text-decoration:underline;font-weight:normal;}
+.LSR_ScreeningTableContentBW a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;color:#1484C7;text-decoration:underline;font-weight:normal;}
+.LSR_ScreeningTableContentBW ol, .LSR_ScreeningTableContentBW ul{list-style-position:outside;}
+.LSR_ScreeningTableContentBW li{padding:0 0 2px 0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#000000;text-decoration:none;font-weight:normal;margin-top:4px;}
+.LSR_ScreeningTableContentBW img{padding:0;margin:0;}
+
+/* Create indented class for Screening data */
+.LSR_ScreeningIndentData{padding-left:15px;}
+
+.LSR_Structure {FONT-WEIGHT:normal; FONT-SIZE: 11px;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none;}
+
+DIV.LSR_Structure DIV.topcurve{FONT-SIZE:0; BACKGROUND-IMAGE:url(/redesign/images/topcurve_inactive_590w.gif);WIDTH:590px;BACKGROUND-REPEAT:no-repeat;HEIGHT:17px;}
+.LSR_Structure_padding_graybg{BACKGROUND-IMAGE:url(/redesign/images/grayline_580w.gif);BACKGROUND-REPEAT:repeat-y;PADDING:8px;MARGIN:0;}
+.LSR_Structure_padding_whitebg {BACKGROUND-IMAGE:url(/redesign/images/whiteline_580w.gif);BACKGROUND-REPEAT:repeat-y;PADDING:8px;MARGIN:0;}
+.LSR_Structure_nopadding_whitebg {BACKGROUND-IMAGE:url(/redesign/images/whiteline_580w.gif);BACKGROUND-REPEAT:repeat-y;PADDING:0;MARGIN:0;}
+
+.LSR_datatableborder_15{border-bottom:4px #FFFFFF solid; margin:0px; padding:0px;}
+/* .LSR_Button_Padding{margin:0;padding:7px;}
+.LSR_Button_Padding{margin:0;width:440px;text-align:right;}
+
+/*New LSR Styles added for Protocols. Updated 9/30/08  DG*/
+
+.LSR_PointsEarnedBlock{background-color: #E4E4E5; padding: 5px 30px; font-weight:bold; margin:5px;}
+
+/*Screening Table */
+.LSR_ScreeningTableContent_Alt{border-right: 4px solid #FFFFFF; margin-top:10px; padding:20px 20px 20px 5px; background-color: #efefef;}
+
+.LSR_ScreeningTableContent_AltLast{margin-top:10px; padding:20px 20px 20px 5px; background-color: #efefef;}
+
+.LSR_PointsEarnedBlock{background-color: #E4E4E5; padding: 5px 30px; font-weight:bold; margin:5px;}
+
+/* Three Column Table */
+.LSR_ThreeColTable_header{border-collapse: collapse; text-align: center; width: 509px;}
+
+.LSR_ThreeColTable_header td.firstColumn{width: 92px;}
+
+.LSR_ThreeColTable_header td.middleColumn{width: 325px;}
+
+.LSR_ThreeColTable_header td.lastColumn{width: 92px;}
+
+.LSR_ThreeColTable{border-collapse: collapse; width: 509px;}
+
+.LSR_ThreeColTable td{padding:0px 0px 8px 0px; color:#FFFFFF; font-size:11px; text-align: center; vertical-align: top;}
+
+.LSR_ThreeColTable td.firstColumn{width: 92px;}
+
+.LSR_ThreeColTable td.middleColumn{width: 305px; text-align: left; padding:0px 8px 8px 12px;}
+
+.LSR_ThreeColTable td.lastColumn{width: 92px;}
+
+div.LSR_ThreeCol_tablepadding{padding:6px 0px 0px 12px;}
+
+div.LSR_ThreeColTable_Indent{padding-left: 15px;}
+
+div.LSR_ShowPoints{text-align: right; width: 534px;}
+
+.LSR_ThreeColTable a{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ThreeColTable a:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+.LSR_ThreeColTable a:visited{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:underline; font-weight:normal;}
+.LSR_ThreeColTable a:visited:hover{font-family:Verdana, Arial, Helvetica, sans-serif;  color:#FFFFFF; text-decoration:none; font-weight:normal;}
+
+/* Three column active classes */
+div.LSR_ActiveThreeCol{background-image: url(/redesign/images/lsr_3Col_BG_active.gif); background-repeat: repeat-y;}
+div.LSR_ActiveThreeCol div.topcurveThreeCol{background-image: url(/redesign/images/lsr_3col_topcurve_active.gif); background-repeat: no-repeat; width:509px; height:17px;}
+div.LSR_ActiveThreeCol div.botcurveThreeCol{background-image: url(/redesign/images/lsr_3col_botcurve_active.gif); background-repeat: no-repeat; width:509px; height:17px; margin: 0px 0px 8px 0px;}
+
+/* Points Table */
+.LSR_PointsTable{border-collapse: collapse; text-align: center; width: 650px;}
+
+.LSR_PointsTable th{background-color: #139BDF; border-bottom: 10px solid #FFFFFF; color: #FFFFFF; margin:0; padding:2px 10px; white-space: nowrap;}
+
+.LSR_PointsTable th.firstHeaderColumn{padding:2px 10px; text-align:left;}
+
+.LSR_PointsTable td{background-color: #efefef; border-right: 4px solid #FFFFFF; border-bottom: 4px solid #FFFFFF; padding:10px;}
+
+.LSR_PointsTable td.firstColumn{padding:10px 10px 10px 5px; text-align: left; width: 45%;}
+
+.LSR_PointsTable td.lastColumn{border-right: 0px;}
+
+.LSR_PointsTable td.yellowColumn{background-color: #ffffb0;}
+
+.LSR_PointsTable td.yellowColumnFirst{background-color: #ffffb0; padding:10px 10px 10px 5px; text-align: left;}
+
+.LSR_PointsTable td.yellowColumnLast{background-color: #ffffb0; border-right: 0px;}
+
+/*End new LSR Styles added for Protocols. DG*/
+
+/* Classes added temporarily for Venu to test changes 07/20/07 */
+.pceColumnContent{padding:0px 9px 0px 9px; margin:0px 0px 15px; width:750px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000; 
+font-size:12px; text-decoration:none; font-weight:normal;}
+.pceColumnContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px; margin:10px 0px 10px 
+0px;}
+
+
+/* PCE classes added 07/20/07 at the request of Venu 
+* these classes have been collectively written by PCE team
+*/
+.pceColumnContent{padding:0px 9px 0px 9px; margin:0px 0px 15px; width:750px; font-family:Verdana, Arial, Helvetica, sans-serif; color:#000000;font-size:12px; text-decoration:none; font-weight:normal;}
+.pceColumnContent h1{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px; margin:10px 0px 10px 0px;}
+.pce_errorMsg{color:red;font-size:12px;font-family:Verdana, "Times New Roman", sans-serif, Arial;font-style:normal;font-weight:normal}
+.pce_error_code{background-color:#F0E68C;}
+.pce_disabled_code{background-color: #DCDCDC;color: #000000;}
+.pce_w2emError{width:2em;background-color:#F0E68C;}
+.pce_w4emError{width:4em;background-color:#F0E68C;}
+.PceHealthInfoContent{padding:0px;margin:0px 0px 10px;width:580px;font-family:Verdana, Arial, Helvetica, sans-serif;color:#000000;font-size:12px;text-decoration:none;font-weight:normal;}
+.PceHealthInfoContent td{font-family:Verdana, Arial, Helvetica, sans-serif;color:#000000;text-decoration:none;font-weight:normal;font-size:12px;}
+.PceHealthInfoContent a, .PceHealthInfoContent a:visited{color:#000;text-decoration:none;}
+.PceHealthInfoContent a:hover, .PceHealthInfoContent a:visited:hover{color:#000;text-decoration:underline;}
+.PceHealthInfoContent h1{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;color:#70A219;padding:0px;margin:10px 0px 0px 0px;}
+.PceHealthInfoContent h2{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;color:#000000;padding:0px;margin:0px 0px 10px 0px;}
+.PceHealthInfoContent h3{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;color:#000000;padding:0px;margin:0px 0px 0px 0px;}
+.PceHealthInfoContent h4{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;color:#70A219;padding:0px;margin:0px 0px 0px 0px;}
+.PceHealthInfoContent h5{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;color:#000000;padding:0px;margin:0px 0px 0px 0px;}
+.pceHlthInfoSummTableTdHead {border: 1px solid #000000; background-color: #017AC2;}
+.pceHlthInfoSummTable {border-collapse: collapse;}
+.pceHlthInfoSummTableTdGrey {border: 1px solid #000000; background-color: #DCDCDC;color: #000000;}
+.pceHlthInfoSummTableTd {border: 1px solid #000000;}
+.pce_w2em_disabled_code {width:2em; background-color: #DCDCDC;color: #000000;}
+.pce_w4em_disabled_code {width:4em; background-color: #DCDCDC;color: #000000;}
+.PceHoverContent {color:#000;text-decoration:underline;}
+
+/*Defect SD-12617 - Button Styles were added by Huyen Luu 08/21/07 */
+.pce_DIR_button_blue {font-family:Verdana, Arial, Helvetica, Sans-Serif;font-size:12px;padding:1px 7px 1px 7px;font-weight:bold;text-decoration:none;color:#FFFFFF;text-align:center;background-color:#139BDF;width:auto;overflow:visible;}
+.pce_DIR_tab_button_blue {font-family:Verdana, Arial, Helvetica, Sans-Serif;font-size:12px;font-weight:bold;text-decoration:none;color:#FFFFFF;text-align:center;padding:2px 10px 2px 10px;background-color:#139BDF;width:auto;overflow:visible;}
+.pce_DIR_tab_button_green{font-family:Verdana, Arial, Helvetica, Sans-Serif;font-size:12px;font-weight:bold;text-decoration:none;color:#FFFFFF;text-align:center;padding:2px 10px 2px 10px;background-color:#74A816;width:auto;overflow:visible;}
+
+/*Defect SD-12789 - pcaGrayedLink was added by Huyen Luu 09/19/07 */
+.pcaGrayedLink {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#cccccc;padding:7px 10px 7px 10px;margin:0px;text-decoration:none; font-weight:normal;}
+
+
+/* START of Stylesheets for Estimate Member Liability (EML) */
+/* Added by lidlvn9 Allan Kilayko on 11/16/2007   */
+/* Modified by lidlvn9 Allan Kilayko on 12/20/2007 */
+table.EML_Table { border-top-color: #000000; border-top-width: thin; border-bottom-color: #000000; border-bottom-width: thin; }
+table.EML_Table th { font-weight: normal; padding: 4px;	border-top: 1px solid #000000; border-bottom: 1px solid #000000; background-color:  #98C8E4; vertical-align: bottom; }
+table.EML_Table td { border-left: 1px solid #FFFFFF; padding: 2px 4px; }
+.EML_Error_Header {	font-family:Verdana, Arial, Helvetica, Sans-Serif; font-size:12px; font-weight:bold; color: #FFFFFF; background-color: #FF0000;	padding:4px; margin-top: 10px; margin-bottom: 0px; margin-left: 4px; margin-right: 0px;	}	
+.EML_SubMenuHeader_Blue { font-family:Verdana, Arial, Helvetica, Sans-Serif; font-size: 12px; color:#139BDF; background-color:#FFFFFF; font-weight:normal; padding:6px; margin-top: 10px; margin-bottom: 0px; margin-left: 2px; margin-right: 0px; }
+.EML_Title h1 {	font-family:Verdana, Arial, Helvetica, Sans-Serif; font-size:20px; font-weight:normal; color:#70A219; padding:0px 0px 9px 0px; margin:7px 0px 7px 0px; }
+.EML_Subheader_Blue { font-family:Verdana, Arial, Helvetica, Sans-Serif; font-size:12px; font-weight:bold; color: #FFFFFF; background-color: #139BDF;	padding:4px; margin:10px 0px 0px 0px; }
+.EML_TblRowAClear {	background-color: #FFFFFF; padding: 2px 10px 2px 4px; border-left: 1px solid #FFFFFF; }
+.EML_TblRowBGrey { background-color: #EBEBEB; padding: 2px 10px 2px 4px; border-left: 1px solid #EBEBEB; }
+.EML_Link {	font-family: Verdana, Arial, Helvetica, Sans-Serif; font-size: 11px; color:#1484C7; text-decoration: none; font-weight: normal; }
+.EML_Link a, .EML_Link a:visited { font-family: Verdana, Arial, Helvetica, Sans-Serif; 	color: #1484C7; text-decoration: none; font-weight: normal; }
+.EML_Link a:hover, .EML_Link a:visited:hover { font-family: Verdana, Arial, Helvetica, Sans-Serif; 	color: #98C8E4; text-decoration: underline; font-weight: normal; }
+/* END of Stylesheets for Estimate Member Liability (EML) */
+
+/* Styles below were added by Dana Grueser w/ Ciber on 7/16/07 */
+/* Details, detailsbold, & linesOnSide were taken from hm_main.css */
+
+/* Error messages */
+.error
+{
+	color: red;
+	font-weight: bold;
+	font-family:Verdana, Arial, Helvetica, Sans-Serif;
+	font-size:12px;
+}
+
+/* Use this class for text that is red but not bold. Do NOT use this for error messages. Added for BEC July 09 Release. 5/08/09 DG */
+
+.redText{color:#FF0000; font-family:Verdana, Arial, Helvetica, Sans-Serif; font-size:12px;}
+
+/* details & detailsBold style our tabular data */
+
+.details /* this was originally 11px & #333333 but changed to 12 to meet Oct. release requirements. This is now the same as the body text so details is not necessary but is called widely throughout the site */
+{
+	font-size : 12px;   
+
+	font-weight : normal;
+
+	color : #000000;
+}
+
+.detailsbold  
+{
+	font-size : 12px;
+
+	font-weight : bold;
+
+	color : #000000;
+
+	text-decoration : none;
+}
+
+/*Added link styling for the details class to match ColumnOneContent - Dana Grueser w/ Ciber 10/30 */
+.details A:link {color:#1484C7; text-decoration:none; font-weight:normal;}
+.details A:visited {color:#1484C7; text-decoration:none; font-weight:normal;}
+.details A:active {color:#1484C7; text-decoration:none; font-weight:normal;}
+.details A:hover {color:#1484C7; text-decoration:underline; font-weight:normal;} 
+
+
+/* linesonSide is used in the Product Selection table*/
+.linesOnSide  
+{
+	border-color : #A0A0A4;
+	
+	border-width: 0 thin 0 thin;
+		
+	border-style : solid;
+}
+
+/*The following were added on 7/20 by Dana Grueser w/ Ciber */
+
+/* Additions for chart/table styling that uses blue & gray shaded rows */
+
+/* Changed blue & gray shades + border color to reflect new color requirements. Changes affect EP tables & headtext group. - Dana Grueser w/ Ciber 8/2 */
+
+/* EP Tables */		 
+.EPcompRsltTblHdr
+{
+	padding: 4px;
+	border-top: 1px solid #000000; 
+	border-bottom: 1px solid #000000;
+	background-color:  #98C8E4; 
+	vertical-align: top;
+}
+		 
+.EPcompRsltTblHdrEnd 	
+{
+	padding: 4px;
+	border: 1px solid #000000;
+	background-color:  #98C8E4; 
+	vertical-align: top;
+}
+
+.EPcompRsltTblSubHdr 	
+{
+	padding: 4px;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	background-color:  #98C8E4; 
+	vertical-align: top;
+}
+
+.EPcompRsltTblSubHdr2 	
+{
+	padding: 4px;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #ffffff;
+	background-color: #98C8E4;
+	vertical-align: top;
+}
+
+/* Left Border removed for left most td. The left border gives the illusion the tr is pushed over & is not necessary on the left most td. */
+.EPcompRsltTblSubHdr2Alt 	
+{
+	padding: 4px;
+	border-bottom: 1px solid #000000;
+	background-color: #98C8E4;
+	vertical-align: top;
+}
+
+.EPcompRsltTblSubHdrEnd 
+{
+	padding: 4px;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	background-color: #98C8E4; 
+	vertical-align: top;
+}
+
+.EPcompRsltTblSubHdrEnd2 
+{
+	padding: 4px;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #ffffff;
+	background-color: #98C8E4; 
+	vertical-align: top;
+}
+
+.comprsltTblRowA 	
+{
+	padding: 2px 10px 2px 4px; 
+	border-left: 1px solid #000000;
+}			
+
+.EPcomprsltTblRowAClear 
+{
+
+	padding: 2px 10px 2px 4px;
+}
+
+.EPcomprsltTblRowAEnd 	
+{
+	padding: 2px 10px 2px 4px; 
+	border-left: 1px solid #000000; 
+	border-right: 1px solid #000000;
+}
+
+.EPcomprsltTblRowAEndClear 
+{
+	padding: 2px 10px 2px 4px; 
+	border-right: 1px solid #000000;
+}
+
+.EPcomprsltTblRowB 	
+{
+	background-color: #E4E4E5;
+	padding: 2px 10px 2px 4px; 
+	border-left: 1px solid #000000;
+}
+
+.EPcomprsltTblRowBClear	
+{
+	background-color: #E4E4E5; 
+	padding: 2px 10px 2px 4px; 
+	border-left: 1px solid #ffffff;
+}
+
+.EPcomprsltTblRowBEnd 	
+{
+	background-color: #E4E4E5; 
+	padding: 2px 10px 2px 4px; 
+	border-left: 1px solid #000000; 
+	border-right: 1px solid #000000;
+}
+
+.EPcomprsltTblRowBEndClear 
+{
+	background-color: #E4E4E5; 
+	padding: 2px 10px 2px 4px; 
+	border-left: 1px solid #ffffff; 
+	border-right: 1px solid #000000;
+}
+
+.EPcomprsltTblItem 	
+{
+	padding-left:5px;
+}
+
+.EPcomprsltTblFooter 	
+{
+	border-top:1px solid #000000;
+}
+
+/* End EP Tables */		
+
+
+.text     
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+}
+
+.textgray 
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+	background-color : #E4E4E5; 
+}
+
+
+.headtext     
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+	font-weight: bold;
+}  
+
+.textblue     
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+	background-color : #98C8E4; 
+}
+
+.headtextgray     
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+	font-weight: bold;
+	background-color : #E4E4E5; 
+}
+
+.headtextblue     
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+	font-weight: bold;
+	background-color : #98C8E4; 
+}
+
+.headtextlblue     
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+	font-weight: bold;
+	background-color : #98C8E4; 
+}
+
+/* Added these classes to replace inline styles that are used throughout the producer portal. - Dana Grueser	8/15/07 */
+.headtextborder    
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+	font-weight: bold;
+	border-top: 1px solid #000000; 
+	border-bottom: 1px solid #000000;
+	border-collapse: collapse;
+}  
+
+
+.headtextgrayborder     
+{
+	font-family: verdana;
+	color: #000000;
+	font-size: 11px;
+	font-weight: bold;
+	background-color : #E4E4E5; 
+	border-top: 1px solid #000000; 
+	border-bottom: 1px solid #000000;
+	border-collapse: collapse;
+}
+
+
+/* Added this for use in the s2e quote headers, but it can be used anywhere you need a bordered table. Added on 9/14/2007 by Dana Grueser w/ Ciber. On 11/29 I added <th> styles. */
+table.borderTable
+{
+	border: 1px #000000 solid;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	font-size: 11px;	
+	color:#000000;
+}
+
+.borderTable tr.heading
+{
+	background-color: #98C8E4;
+}
+
+.borderTable tr.heading td
+{
+	font-weight: bold;
+}
+
+.borderTable tr.headingAlt
+{
+	background-color: #98C8E4;
+	border-bottom: 1px #000000 solid;
+	font-weight: bold;
+}
+
+.borderTable tr.headingAlt td
+{
+	font-weight: bold;
+}
+
+/* Use this class on the tds that need a bottom border. IE will not pick up the bottom border from .headingAlt */
+
+.borderTable tr.headingAlt td.addBorder
+{
+	border-bottom: 1px #000000 solid;
+}
+
+
+/* Preferably, use <th> tags for table headings - the <th> styles below duplicate the <tr> styles above */
+
+.borderTable th.heading
+{
+	background-color: #98C8E4;
+	text-align: left;
+}
+
+.borderTable th.heading td
+{
+	font-weight: bold;
+	text-align: left;
+}
+
+.borderTable th.headingAlt
+{
+	background-color: #98C8E4;
+	border-bottom: 1px #000000 solid;
+	font-weight: bold;
+	text-align: left;
+}
+
+.borderTable th.headingAlt td
+{
+	font-weight: bold;
+	text-align: left;
+}
+
+/* Use this class on the tds that need a bottom border. IE will not pick up the bottom border from .headingAlt */
+
+.borderTable th.headingAlt td.addBorder
+{
+	border-bottom: 1px #000000 solid;
+	text-align: left;
+}
+
+/*  end th styles */
+
+.borderTable td.whiteRow
+{
+	border-top: 1px #000000 solid;
+	border-right: 1px #000000 solid;
+}
+
+.borderTable td.blueRow
+{
+	font-weight: bold;
+	background-color: #98C8E4;
+	border-top: 1px #000000 solid;
+	border-right: 1px #000000 solid;
+}
+
+.borderTable th.blueRow
+{
+	font-weight: bold;
+	background-color: #98C8E4;
+	border-top: 1px #000000 solid;
+	border-right: 1px #000000 solid;
+	text-align: left;
+}
+
+.borderTable td.grayRow
+{
+	background-color: #E4E4E5;
+	border-top: 1px #000000 solid;
+	border-right: 1px #000000 solid;
+}
+
+/*Added on 1/12/09 by DG. This style removes side border from the td. Added for BEC April '09.  -DG */
+
+.borderTable td.whiteRowNoBorder
+{border-top: 1px #000000 solid;}
+
+.borderTable td.grayRowNoBorder
+{background-color: #E4E4E5; border-top: 1px #000000 solid;}
+
+/* Fix link styling to force black text. */
+.borderTable tr.headingAlt td A:link {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable tr.headingAlt td A:visited {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable tr.headingAlt td A:active {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable tr.headingAlt td A:hover {color:#000000; text-decoration:underline; font-weight:bold;} 
+
+.borderTable tr.heading td A:link {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable tr.heading td A:visited {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable tr.heading td A:active {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable tr.heading td A:hover {color:#000000; text-decoration:underline; font-weight:bold;} 
+
+.borderTable td.whiteRow A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.whiteRow A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.whiteRow A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.whiteRow A:hover {color:#000000; text-decoration:underline; font-weight:normal;} 
+
+.borderTable td.grayRow A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.grayRow A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.grayRow A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.grayRow A:hover {color:#000000; text-decoration:underline; font-weight:normal;} 
+
+.borderTable td.blueRow A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.blueRow A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.blueRow A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable td.blueRow A:hover {color:#000000; text-decoration:underline; font-weight:normal;} 
+
+.borderTable th.blueRow A:link {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable th.blueRow A:visited {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable th.blueRow A:active {color:#000000; text-decoration:none; font-weight:bold;}
+.borderTable th.blueRow A:hover {color:#000000; text-decoration:underline; font-weight:bold;}
+
+.borderTable tr.heading A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable tr.heading A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable tr.heading A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.borderTable tr.heading A:hover {color:#000000; text-decoration:underline; font-weight:normal;} 
+
+/* End borderTable style */
+
+
+/* Added the following to fix link text color issue by Dana Grueser w/ Ciber */
+
+.headtextblue A:link {color:#000000; text-decoration:none; font-weight:bold;}
+.headtextblue A:visited {color:#000000; text-decoration:none; font-weight:bold;}
+.headtextblue A:active {color:#000000; text-decoration:none; font-weight:bold;}
+.headtextblue A:hover {color:#000000; text-decoration:underline; font-weight:bold;} 
+
+.headtextgray A:link {color:#000000; text-decoration:none; font-weight:bold;}
+.headtextgray A:visited {color:#000000; text-decoration:none; font-weight:bold;}
+.headtextgray A:active {color:#000000; text-decoration:none; font-weight:bold;}
+.headtextgray A:hover {color:#000000; text-decoration:underline; font-weight:bold;} 
+
+.text A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.text A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.text A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.text A:hover {color:#000000; text-decoration:underline; font-weight:normal;} 
+
+.textgray A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.textgray A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.textgray A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.textgray A:hover {color:#000000; text-decoration:underline; font-weight:normal;} 
+
+.EPcompRsltTblHdr A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcompRsltTblHdr A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcompRsltTblHdr A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcompRsltTblHdr A:hover {color:#000000; text-decoration:underline; font-weight:normal;} 
+
+.EPcompRsltTblSubHdr2 A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcompRsltTblSubHdr2 A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcompRsltTblSubHdr2 A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcompRsltTblSubHdr2 A:hover {color:#000000; text-decoration:underline; font-weight:normal;} 
+
+.EPcomprsltTblRowAClear A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcomprsltTblRowAClear A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcomprsltTblRowAClear A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcomprsltTblRowAClear A:hover {color:#000000; text-decoration:underline; font-weight:normal;}  
+ 
+ 
+.EPcomprsltTblRowBClear A:link {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcomprsltTblRowBClear A:visited {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcomprsltTblRowBClear A:active {color:#000000; text-decoration:none; font-weight:normal;}
+.EPcomprsltTblRowBClear A:hover {color:#000000; text-decoration:underline; font-weight:normal;}
+
+/* End table/chart modifications by Dana Grueser */
+
+/* Added an alternate class to use for section titles that need to be green */
+
+.subheaderGreen {
+color: #70A219;  
+font-weight: bold;
+font-family:Verdana, Arial, Helvetica, Sans-Serif;
+font-size:12px;
+}
+
+/* added on 08/21/07 by Jeffrey Fidler, background color set to inherit so this style can be used anywhere. background color can also be set to transparent if browser renders improperly. */
+.grayedOut{background-color:inherit;color:#999999;}					
+
+/* Removing wellness styles until further notice; requirement shelved for now...	*/
+
+/* Added below styles from wellness.css in order for text resizer to pick up CSS classes, 09/27/07 Jeffrey Fidler 
+* Note that only the font-size property/value pairs are included here to minimize file size impact 
+*/
+/*
+.tda,.altBoldSm,.tableInner{font-size:12px;}
+.altBoldMed{font-size:16px;}
+.altBoldLg,.titleA{font-size:18px;}
+.elementTitle{font-size:13px;}
+.noteTitle,.noteText,.noteTextnoI{font-size:11px;}
+.titleB{font-size:22px;}
+*/
+
+/*Added this class to style disabled text inputs, etc - Dana Grueser w/ Ciber 10/30 */
+.disabled
+{
+ background-color: 	#F0F0F0;
+}
+/* lightbox styles, added 01-17-08 by Jeff Fidler */
+#info,#warning{color:#000000;background-color:#E9EEFF;z-index:100;padding:5px;border: 1px solid #000000;position:absolute;top:41%;left:41%;width:175px;height:auto;display:none;}
+iframe#shim{z-index:99;position:absolute;top:41%;left:41%;width:175px;height:auto;display:none;}
+#info button{float:right;display:block;width:18px;border:1px solid #000000;padding:1px;font-weight:bold;text-align:center;}
+#warning div{width:105px;margin:0 auto;}
+.lightboxContent{clear:both;}
+a.listener,a:link.listener,a:visited.listener,a:hover.listener{color:inherit;background-color:inherit;text-decoration:underline;}
+
+/* Added this group of classes for horizontal button nav. DG 6/06/08 */
+/* Modified for July 09 BEC release. Buttons are now fully left justified & are closer together to look like a status bar. 5/08/09 DG */
+
+.buttonNav ul{margin:0; padding:0; display:inline;}
+.buttonNav li{margin:0px; padding:0px; display:inline; list-style:none;}
+.buttonNav li.first{margin-left:-40px; padding:0; display:inline; list-style:none;}
+
+
+/* Added on 6/13/08 DG */
+
+/* These classes clears floated items */
+ul.clearedList{list-style:none; clear:both;}
+
+.cleared{clear: both;}
+
+/* buttonHolder class centers buttons under a form - you will have to include a width on the div you apply this too or it will not work! The width should be just wide enough to fit the buttons, not wide enough to encompass the width of the page. */
+
+.buttonHolder{margin: 0 auto;}
+
+/* Use this fieldset for forms on pages w/o a left nav. */
+fieldset.form{border: none; margin: 0 auto; width: 550px;}
+
+.form label{width: 250px; text-align: right; float: left; margin-right: 10px; clear: both;}
+
+/*End 6/13 Additions */
+
+/* Use this fieldset for forms on pages with a left nav. Added 8/21/08 DG.*/
+fieldset.formLeftNav{border: none; margin: 0 auto; width: 550px;}
+
+.formLeftNav label{width: 250px; text-align: right; float: left; margin-right:10px; clear: both;}
+
+/* Use this table style for forms that mix prepopulated data & inputs - these cannot go into a fieldset as the labels won't match. Added 8/18/08 DG. */
+table.formTable{border:none; margin:0 auto 30px; width:550px}
+
+.formTable td.right{text-align:right; width:250px;}
+
+/*This style will bind to <span> elements wrapping keyword hits returned from the new search functionality - added by Lynn Angelelli  070208*/
+.highlighter{font-weight:bold;}
+
+/* Style rules for link search text and anchor tag text formatting. Must be defined in global.css to be exposed to text resizer. CR00040398 GI November 2008, Jeff Fidler. */
+.linkSearchText{font-size:9px;}
+a.linkSearchAnchor{font-size:11px;}
+
+/* Match Bar added to show percentage match for plans. Added for BEC July 09 Release. 5/08/09 DG */
+.matchBar{background-color:#98C8E4; border:1px solid #000000; padding: 0; height: 10px;}
+
+/* Following classes added for OPD & BEC July 09. 5/21/09 DG */
+.alphaList{width:85%; text-align:center;}
+
+.smallText{font-size:9px; font-style:italic}
+
+.redText{color:#FF0000}
+
+.leftFloat{float:left}
+
+.rightFloat {float:right}
+
+.ColumnOneContent ul.inlineList{margin:0; padding:0; display:inline;}	
+
+.inlineList li{margin:0; padding:0 7px 0 0 ; display:inline; list-style:none;}
+
+/* End 5/21/09 Additions */
+
+/* keep the following styles at the bottom of the file! */
+/* moved to end of file to guarantee application when specificity calculated when using multiple class values in class attribute */
+/* To further increase specificity and weight calculation to ensure intended implementation, added descendent relationship, Jeff Fidler 2003 12-04, specific reason CR00026406 */
+html body .bold {font-weight: bold;}
+html body .italic {font-style: italic;}

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Medicare Boilerplate</title>
+<link href="/redesign/css/cosmic.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="/redesign/script/jquery.js"></script>
+<script type="text/javascript" src="/redesign/script/jquery.corners.js"></script>
+<script type="text/javascript" src="/redesign/script/emkt.js"></script>
+<script type="text/javascript" src="/redesign/script/emktMedicare.js"></script>
+</head>
+
+<!-- High Level Page Structure --
+
+<body class="medicare-page">
+	<div id="container">
+		<div id="header"></div>
+  	<div id="main">
+  		<div id="subnav"></div>
+    	<div id="content"></div>
+    	<div id="sidebar"></div>
+  	</div>
+  	<div id="footer"></div>
+	</div>
+</body>
+
+----------------------------->
+
+<body class="medicare-page">
+
+<!-- CONTAINER -->
+<div id="container">
+
+	<!-- HEADER -->
+	<div id="header">
+  
+  	<!-- Highmark Logo -->
+		<a href="javascript:logoClicked('https://wwwdev1.highmarkbcbs.com/cgi-bin/d1im5/chm/jsp/Splash.do');">
+			<img id="logo" src="/redesign/images/HMBCBS_logo.jpg" border="0" alt="Home" />
+		</a>
+
+		<!-- Skip to Main Content link -->
+		<a id="skiplink" href="#mainContent">Skip to Main Content</a>
+    
+    <!-- Main navigation bar -->
+		<ul class="tabnav">
+    	<li>
+        <a href="javascript:tabClicked('https://wwwdev1.highmarkbcbs.com/cgi-bin/d1im5/chm/jsp/medicare.do?tab=1');">
+        	Medicare Plans
+        </a>
+      </li>
+      <li>
+        <a href="javascript:tabClicked('https://wwwdev1.highmarkbcbs.com/cgi-bin/d1im5/chm/jsp/medicare.do?tab=2');">
+          Above &amp; Beyond
+        </a>
+      </li>
+      <li>
+        <a href="javascript:tabClicked('https://wwwdev1.highmarkbcbs.com/cgi-bin/d1im5/chm/jsp/medicare.do?tab=3');">
+          Education
+        </a>
+      </li>
+		</ul>
+      
+  </div>
+  <!-- end HEADER -->
+  
+  
+  <!-- MAIN -->
+  <div id="main">
+  
+  
+  	<!-- SUBNAV -->
+    <!-- 4/16 of the width of Main -->
+  	<div id="subnav" class="grid_4">
+			<ul>
+				<li class="LeftNavHeading">
+        	<a href="#" id="Above_&_Beyond">Above & Beyond</a>
+        </li>
+				<li class="LvOneNav">
+        	<a href="#" id="Live_Highmark-Healthy">Live Highmark-Healthy</a>
+        </li>
+				<li class="LvOneNav">
+        	<a href="#">In Your Community</a>
+        </li>
+			</ul>
+    </div>
+    <!-- end SUBNAV -->
+    
+    
+    <!-- CONTENT -->
+    <!-- 8/16 of the width of Main -->
+    <div id="content" class="grid_8">
+
+			<!-- Breadcrumbs -->
+			<ul id="breadcrumbs">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Medicare</a></li>				    
+				<li><a href="#">Above &amp; Beyond</a></li>				    
+				<li class="last">Town Meetings</li>
+			</ul>
+	
+  		<!-- Page Heading -->
+      <!-- ("Skip to Main Content" link jumps to here) -->
+			<h1 id="mainContent">Town Meetings</h1>
+      
+      <p>Lorem ipsum dolor sit amet...</p>
+
+			<!-- Form Sample -->
+			<form name="TownMeetingsSearchForm" action="https://wwwdev1.highmarkbcbs.com/cgi-bin/d1im5/chm/jsp/tmSearchAction.do" method="post">
+
+				<fieldset>
+        	<legend>Search Criteria</legend>
+					<!-- Zip Code -->
+					<label for="zipcode"><em class="required">*</em> Enter your Zip Code </label> 
+					<input id="zipcode" type="text" />		
+					<br />
+					<!-- Search Distance -->
+    			<label for="distance">Search within a Distance of </label> 
+    			<select name="distance" id="distance">
+          	<option selected="selected" value="5">5 miles</option>
+      			<option value="10">10 miles</option>
+      			<option value="20">20 miles</option>
+      			<option value="30">30+ miles</option>
+     			</select>
+        </fieldset>
+        
+        <fieldset>
+        	<legend>More Criteria</legend>
+					<!-- Products of Interest -->
+					<label>Product(s) of Interest</label>
+    			<div class="stack">
+						<input name="prodOfInterest" id="AllProducts" value="All" checked="checked" type="checkbox" class="checkbox" />
+            <label for="AllProducts" class="alt">All Products</label>
+      			<br />
+		 				<input name="prodOfInterest" id="MedicareAdvantage" value="Medicare Advantage" type="checkbox" class="checkbox" />
+            <label for="MedicareAdvantage" class="alt">Medicare Advantage</label>
+						<br />
+		 				<input name="prodOfInterest" id="MedigapBlueRxPDP" value="Medigap &amp; BlueRx PDP" type="checkbox" class="checkbox" />
+            <label for="MedigapBlueRxPDP" class="alt">Medigap &amp; BlueRx PDP</label>
+    			</div>
+					<!-- Number attending -->
+          <label for="NumberAttending">Number Attending</label> 
+					<input name="noAttending" id="NumberAttending" type="text" />
+        </fieldset>
+		
+				<button type="button" onClick="saveState();onSubmit();">Search</button>
+				<button type="button" onClick"saveState();displayPopup();">Cancel</button>
+
+			</form>
+      
+      <!-- Table Sample -->
+     	<table>
+	      <tr>
+	        <th>Name</th>
+	        <th>Email</th>
+	        <th>User Type</th>
+	      </tr>
+	      <tr>
+	        <td>Jane Doe</td>
+	        <td>jane.doe@email.com</td>
+	        <td><a href="#">Agent</a></td>
+	      </tr>
+	      <tr>
+	        <td>John Doe</td>
+	        <td>john.doe@email.com</td>
+	        <td><a href="#">Member</a></td>
+	      </tr>
+	    </table>
+  
+    </div>
+    <!-- end CONTENT -->
+    
+    
+    <!-- SIDEBAR --> 
+    <!-- 4/16 of the width of Main -->
+    <div id="sidebar" class="grid_4">
+    
+    	<div id="loginBox" class="red"></div>
+      
+      <div class="green">
+      	<h3>Quick Resources</h3>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+      </div>
+
+      <div class="yellow">
+      	<h3>Healthy Living Tip of the Week</h3>
+				<p>This is a tip.</p>
+      </div>
+      
+    </div>
+    <!-- end SIDEBAR -->
+    
+  </div>
+  <!-- end MAIN -->
+  
+  
+  <!-- FOOTER -->
+  <div id="footer">
+
+		<!-- Footer navigation links -->
+		<div>	
+			<ul>
+				<li><a href="#" target="_blank">HELP</a></li>
+				<li><a href="#" target="_blank">CONTACT US</a></li>
+				<li><a href="#" target="_blank">ABOUT HIGHMARK</a></li>
+				<li><a href="#" target="_blank">PRIVACY POLICY</a></li>
+				<li class="last"><a href="#">MEDICAL POLICY</a></li>		
+			</ul>
+  	</div>
+
+		<!-- Copyright and disclaimers -->
+		<p>&copy; <span id="copyright-value"></span> Highmark Inc., All Rights Reserved<br /><br />&reg; Blue Cross, Blue Shield and the Cross and Shield symbols are registered service marks of the Blue Cross and Blue Shield Association, an association of independent Blue Cross and Blue Shield Plans.</p>
+
+  </div>
+  <!-- end FOOTER -->
+  
+</div>
+<!-- end CONTAINER -->
+  
+</body>
+</html>

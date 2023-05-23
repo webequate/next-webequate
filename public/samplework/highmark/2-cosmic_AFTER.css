@@ -1,0 +1,1163 @@
+/**********************************************************************\
+
+	C O S M I C . C S S - 2009-11-23 - A work in progress...
+	
+	2009-10-01 -- First Handoff
+	2009-10-05 -- Updated tab structure to match new boilerplate
+	2009-10-06 -- Added classes to set grid width of subnav, content, sidebar
+	2009-10-06 -- Added float:left to container div to ensure white background throughout
+	2009-10-09 -- Fixed some substantial IE6 bugs
+	2009-10-12 -- Added some tentative CSS for the not registered box, etc...
+	2009-10-14 -- Adjusted CSS for sidebar promo boxes, etc...
+	2009-10-15 -- Increased minimum width, styled headings, styled program headers, etc...
+	2009-10-25 -- Didn't keep notes for the last week or so...
+	2009-10-26 -- Added gradients to navigation bar, added some missing grid system items
+	2009-10-27 -- Added group comments, color variables
+	2009-10-28 -- Attempted fix for IE sub-pixel rounding float drop, added extra margin throughout
+									changed footer styling, added new page background gradient and color,
+									added new footer background gradient and color, added approved fieldset styles
+	2009-10-29 -- Increased font size in form controls to 1em, styled and positioned skiplink
+	2009-10-30 -- Standardized headings H1-H4 styles for various layout locations, reduced footer height
+	2009-11-03 -- Commented out focus style on skiplink so Jeff can handle it with jQuery, completely restyled
+									program heading blocks to correspond to single anchor tag format with spans inside, styled
+									login box to work with jQuery show/hide
+	2009-11-04 -- Styled subnav to correspond to single level UL format with classes to control level styling
+	2009-11-05 -- Fleshed out form layout and styles
+	
+\**********************************************************************/
+
+
+
+/* Color Variables
+
+@colordef #16618d;	dark blue link color
+@colordef #70a219;	green H1 heading color, HR color, fieldset legend color
+@colordef #1484c7;	blue fieldset legend color,  blue heading color
+@colordef #e3ebf2;	light blue page background color
+
+@colordef #196b9f;	blue background color (tabs, footer, etc.)
+@colordef #497709;	green background color (tabs, etc.)
+
+@colordef #cc6633;	red-ish sidebar background color
+@colordef #639904;	green-ish sidebar background color
+@colordef #cc9933;	yellow-ish sidebar background color
+
+@colordef #b93e0e;	red-ish darker sidebar background color (obsolete)
+@colordef #497709;	green-ish darker sidebar background color (obsolete)
+@colordef #196b9f;	blue-ish darker sidebar background color (obsolete)
+
+@colordef #edecd7;	beige program header background color
+
+@colordef #98c8e4;	blue table header (TH) background color
+@colordef #e4e4e5;	gray table data (TD) alternate background color
+@colordef #999;			gray table border color
+
+*/
+
+
+
+/**********************************************************************\
+
+	@group Reset
+	
+\**********************************************************************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/**********************************************************************\
+
+	@group Basic Styles
+	
+\**********************************************************************/
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 87.5%; /* 14px = 1em */
+	line-height: 1.5;
+	background: url(/redesign/images/bg-image.gif) repeat-x #dbe6ef;
+}
+
+body.medicare-page {
+	font-size: 100%; /* 12pt = 16px = 1em */
+}
+
+h1 {
+
+	font-size: 1.5em;
+}
+
+h2 {
+	font-size: 1.2em;
+	margin-top: .5em;
+}
+
+h3 {
+	font-size: 1.1em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+a:link, a:visited {
+	color: #16618d; /* dark blue */
+	text-decoration: none;
+}
+a:hover, a:focus, a:active {
+	text-decoration: underline;
+}
+
+:focus {
+	outline: 1px dotted invert;
+}
+
+
+img {
+	border: none;
+}
+a img {
+	border: none;
+}
+
+hr {
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+
+li {
+	margin-left: 30px;
+}
+
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset {
+	margin-bottom: 20px;
+}
+
+
+
+/**********************************************************************\
+
+	@group Wrapper
+	
+\**********************************************************************/
+
+#wrapper {}
+
+
+
+/**********************************************************************\
+
+	@group Container
+	
+\**********************************************************************/
+
+#container {
+	display: inline;
+	float: left;
+	width: 92%;
+	margin-left: 4%;
+	margin-right: 4%;
+	background-color: #fff;
+	min-width: 960px;
+	max-width: 1400px;
+}
+
+
+
+/**********************************************************************\
+
+	@group Header
+	
+\**********************************************************************/
+
+#header {
+	display: inline;
+	float: left;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	width: 97%; /* 16 / 16 */
+	padding-top: 1em;
+	padding-bottom: 3px;
+}
+
+#header #logo {
+	float: left;
+	display: block;
+	clear: both;
+}
+
+#header a#skiplink {
+	position: absolute;
+/*	top: 0;*/
+	left: -1000px;
+	display:block;
+	background-color: #fff;
+	padding: .5em;
+}
+/*#header a#skiplink:focus {
+	left: 0;
+}*/
+
+#secureMail {
+	background-color: #e4e4e5;
+	float: right;
+	padding: 5px 2px;
+}
+
+#headerSearch {
+	float: right;
+	margin-top: 10px;
+	clear: right;
+}
+
+fieldset#headerSearch {
+	border: none;
+}
+
+#logout {
+	float: right;
+	clear: right;
+}
+
+ul.tabnav {
+	background: #196b9f url(/redesign/images/blue-gradient-bg.gif) repeat-x;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+	display: block;
+}
+
+ul.tabnav.empty {
+	height: 3px;
+	clear: both;
+}
+
+ul.tabnav li {
+	border-right: 1px solid #fff;
+	float: left;
+	margin: 0;
+	position: relative;
+	left: 3px;
+	cursor: pointer;
+	background: #196b9f url(/redesign/images/blue-gradient-bg.gif) repeat-x;
+}
+ul.tabnav li.selected {
+	background: #497709 url(/redesign/images/green-gradient-hover1.gif) repeat-x;
+}
+ul.tabnav li a {
+	font-size: 1.125em;
+}
+ul.tabnav li a:link, ul.tabnav li a:visited {
+	color: #fff;
+	display: block;
+	padding: 6px 12px 6px 12px;
+}
+ul.tabnav li a:hover, ul.tabnav li a:focus, ul.tabnav li a:active {
+	background: #497709 url(/redesign/images/green-gradient-hover1.gif) repeat-x;
+	text-decoration: none;
+}
+
+
+
+/**********************************************************************\
+
+	@group Main
+	
+\**********************************************************************/
+
+#main {
+	clear: both;
+}
+
+
+
+/**********************************************************************\
+
+	@group Subnav
+	
+\**********************************************************************/
+
+#subnav {
+	display: inline;
+	float: left;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	width: 15.75%; /* 3 / 16 */
+
+	color: #fff;
+	margin-top: 10px;
+	padding-top: 5px;
+}
+
+#subnav ul { /* remove bullets and list indents */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#subnav li {
+	margin-left: 0;
+	padding-top: 3px;
+}
+
+#subnav li a { /* remove bullets and list indents */
+	padding-right: 5px;
+}
+
+#subnav a {
+	display: block;
+	margin: 0;
+	padding-left: 1em;
+	padding-top: .3em;
+	padding-bottom: .3em;
+}
+
+#subnav li.LeftNavHeading {
+	background: url(/redesign/images/LeftNavHeading_bg.gif) no-repeat left center #fff;
+}
+
+#subnav li.LeftNavHeading a {
+	font-size: 1.2em;
+	color: #70a219;
+	padding-left: 24px;
+	font-weight: bold;
+}
+
+#subnav li.LvOneNav {
+	background-color: #efefef;
+	border-bottom: 1px dashed #ccc;
+}
+#subnav li.LvOneNav a {
+	margin-left: .5em;
+	background: url(/redesign/images/lv_One_leftnav_bg.gif) no-repeat left center #efefef;
+}
+#subnav li.LvOneNavOn {
+	background-color: #efefef;
+	border-bottom: 1px dashed #ccc;
+}
+#subnav li.LvOneNavOn a {
+	margin-left: .5em;
+	font-weight: bold;
+	background: url(/redesign/images/lv_One_leftnav_bg.gif) no-repeat left center #efefef;
+}
+#subnav li.LvOneNavOnWRVGrayedLink a {
+	margin-left: .5em;
+	color: #aaa;
+	background: url(/redesign/images/lv_One_leftnav_bg.gif) no-repeat left center #efefef;
+}
+
+#subnav li.LvTwoNav {
+	background-color: #bbb;
+	border-bottom: none;
+	margin: 0;
+}
+#subnav li.LvTwoNav a {
+	margin-left: .5em;
+	padding-left: 2em;
+	padding-top: .15em;
+	padding-bottom: .15em;
+	color: #fff;
+}
+#subnav li.LvTwoNavOn {
+	background-color: #bbb;
+	border-bottom: none;
+	margin: 0;
+}
+#subnav li.LvTwoNavOn a {
+	margin-left: .5em;
+	padding-left: 2em;
+	padding-top: .15em;
+	padding-bottom: .15em;
+	color: #fff;
+	font-weight: bold;
+}
+
+#subnav li.LvThreeNav {
+}
+#subnav li.LvThreeNavOn {
+}
+
+
+
+/**********************************************************************\
+
+	@group Content
+	
+\**********************************************************************/
+
+#content {
+	display: inline;
+	float: left;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	width: 59.5%; /* 10 / 16 */
+
+	margin-top: 10px;
+}
+
+#content a:link, #content a:visited {
+	color: #1484C7; /* old blue */
+}
+
+#content img {
+	position: relative;
+	left: -2px; /* temp adjustment to keep drop shadow from making image appear mis-aligned */
+	margin-bottom: 1em;
+}
+
+#content h1 {
+	color: #70a219; /* green */
+}
+#content h2 {
+	color: #70a219; /* green */
+}
+#content h3 {
+	color: #1484C7; /* blue */
+}
+#content h4 {
+	color: #1484C7; /* blue */
+}
+
+#content ul {
+	list-style-type: disc;
+}
+
+#content ul#breadcrumbs {
+	display: block;
+	list-style-type: none;
+	padding-bottom: 5px;
+	border-bottom: 1px dashed #70a219;
+}
+#content ul#breadcrumbs li {
+	display: inline;
+	font-size: 1em;
+	font-style: italic;
+	margin-right: 10px;
+	margin-left: 0;
+	padding-right: 10px;
+	border-right: 1px solid #16618d;
+}
+#content ul#breadcrumbs li.last {
+	border-right: none;
+	clear: both;
+}
+#content ul#breadcrumbs li a {
+	font-size: 1em;
+}
+
+h2.program-heading {
+	display: block;
+	background-color: #edecd7; /* beige */
+	margin-top: 1em;
+	margin-bottom: .5em;
+	padding: 6px;
+}
+h2.program-heading a {
+	display: block;
+	height: 1.4em;
+	text-decoration: none;
+}
+h2.program-heading a {
+	color: #16618d; /* dark blue */
+}
+
+h2.program-heading a span {
+	float: left;
+}
+h2.program-heading a span:hover, h2.program-heading a span:focus {
+	text-decoration: underline;
+	cursor: pointer;
+}
+h2.program-heading a span.go-link {
+	float: right;
+	font-size: 1em;
+	font-weight: normal;
+}
+h2.program-heading a span.go-link:hover, h2.program-heading a span.go-link:focus {
+	text-decoration: underline;
+}
+
+
+#notRegistered {
+	display: none;
+}
+
+
+
+/**********************************************************************\
+
+	@group Sidebar
+	
+\**********************************************************************/
+
+#sidebar {
+	display: inline;
+	float: left;
+	margin-left: 1.5%;
+	margin-right: 1.3%; /* Reduced by .2% to resolve IE sub-pixel rounding */
+	width: 15.75%; /* 3 / 16 */
+	color: #fff;
+	margin-top: 1em;
+}
+
+#sidebar div {
+	display: block;
+	padding: 0;
+	margin-bottom: 1em;
+}
+
+#sidebar div.red {
+	background: url(/redesign/images/red-gradient-bg.gif) repeat-x #cc6633;
+	padding: 10px; 
+}
+#sidebar div.green {
+	background: url(/redesign/images/green-gradient-bg.gif) repeat-x #639904;
+	padding: 10px;
+}
+#sidebar div.yellow {
+	background: url(/redesign/images/yellow-gradient-bg.gif) repeat-x #cc9933;
+	padding: 10px;
+}
+
+#sidebar div.login {
+	background: url(/redesign/images/login-gradient-bg.gif) repeat-x #ececec;
+	padding: 10px; 
+	border: 1px solid #da7925;
+}
+
+#sidebar div#loginBox {
+	padding: 10px;
+}
+
+#sidebar div#loginBox h3 {
+	margin-bottom: 0;
+	padding-bottom: 2px;
+}
+
+#sidebar div#loginBox div#loginModule {
+	text-align: left;
+	border-top: 0px solid #fff;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+#sidebar div#loginBox form#login {
+	width: 100%;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+#sidebar div#loginBox label {
+	width: 40%;
+}
+
+#sidebar div#loginBox input {
+	width: 75%;
+	border: 1px solid #da7925;
+}
+
+#sidebar div#loginBox a {
+	border: none;
+	padding: .25em 0 0;
+	color: #4071b9;
+}
+
+#sidebar div#loginBox button {
+	background: url(/redesign/images/001_58.gif) no-repeat;
+	border: none;
+	margin-top: 3.55em;
+}
+
+#sidebar h3 {
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+#sidebar div p {
+	font-style: italic;
+	margin: 8px 0;
+	padding: 8px 0;
+	border-top: 1px solid #fff;
+}
+
+#sidebar div a {
+	display: block;
+	color: #fff;
+	padding: 0;
+	text-decoration: none;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-top: 1px dashed #fff;
+}
+#sidebar div a:active, #sidebar div a:hover, #sidebar div a:focus {
+	text-decoration: underline;
+}
+
+#sidebar div hr {
+	border: 0;
+	border-top: 1px dashed #fff;
+	margin-bottom: 10px;
+}
+
+
+
+/**********************************************************************\
+
+	@group Footer
+	
+\**********************************************************************/
+
+#footer {
+	display: inline;
+	float: left;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	width: 97%; /* 16 / 16 */
+	clear: both;
+	color: #fff;
+
+	text-align: center;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	font-size: 1em;
+}
+
+#footer div {
+	height: 4em;
+	line-height: 4em;
+	background: url(/redesign/images/footer-bg-small.gif) repeat-x #328dcd;
+}
+
+
+#footer a {
+	color: #fff;
+	cursor: pointer;
+}
+
+#footer ul {
+	display: block;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+#footer li {
+	padding-right: 20px;
+	margin-left: 5px;
+	list-style: none;
+	display: inline;
+	border-right: #fff thin solid;
+	color: #fff; 
+}
+
+#footer li.last {
+	border-right: none;
+	padding-right: 0;
+}
+
+#footer p {
+	display: block;
+	margin: 0 1%;
+	text-align: left;
+	color: #000;
+	background-color: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+/**********************************************************************\
+
+	@group Grid Layout
+	
+\**********************************************************************/
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12,
+.grid_13,
+.grid_14,
+.grid_15,
+.grid_16
+{
+	display: inline;
+	float: left;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+}
+
+#main .grid_4 {
+	width: 22%;
+}
+#main .grid_8 {
+	width: 47%;
+}
+#main .grid_12 {
+	width: 72%;
+}
+#main .grid_16 {
+	width: 97%;
+}
+
+
+/* Grid - Alpha=First, Omega=Last */
+
+.alpha {
+	margin-left: 0;
+}
+
+.omega {
+	margin-right: 0;
+}
+
+
+#main .grid_1 {
+	width: 3.25%;
+}
+#main .grid_2 {
+	width: 9.5%;
+}
+#main .grid_3 {
+	width: 15.75%;
+}
+#main .grid_5 {
+	width: 28.25%;
+}
+#main .grid_6 {
+	width: 34.5%;
+}
+#main .grid_7 {
+	width: 40.75%;
+}
+#main .grid_9 {
+	width: 53.25%;
+}
+#main .grid_10 {
+	width: 59.5%;
+}
+#main .grid_11 {
+	width: 65.75%;
+}
+#main .grid_13 {
+	width: 78.25%;
+}
+#main .grid_14 {
+	width: 84.5%;
+}
+#main .grid_15 {
+	width: 90.75%;
+}
+
+
+
+/**********************************************************************\
+
+	@group Clear Floats
+	
+\**********************************************************************/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+html body * span.clear,
+html body * div.clear,
+html body * li.clear,
+html body * dd.clear
+{
+	background: none;
+	border: 0;
+	clear: both;
+	display: block;
+	float: none;
+	font-size: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* http://www.positioniseverything.net/easyclearing.html */
+
+.clearfix:after
+{
+	clear: both;
+	content: '.';
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+.clearfix
+{
+	display: inline-block;
+}
+
+* html .clearfix
+{
+	height: 1%;
+}
+
+.clearfix
+{
+	display: block;
+}
+
+
+
+/**********************************************************************\
+
+	@group Table Styles
+	
+\**********************************************************************/
+
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	text-align: center;
+	border: 1px solid #999;
+	margin: 0 auto;
+}
+
+caption {
+	font-weight: bold;
+	text-align: left;
+}
+
+table tr {
+	border-top: 1px solid #999;
+}
+
+table tr.alt {
+	background-color: #e4e4e5;
+}
+
+table th {
+	background-color: #98c8e4;
+	border: 1px solid #999;
+}
+
+table td {
+	border: 1px solid #999;
+	padding: 2px;
+}
+
+table td.left {
+	text-align: left;
+}
+table td.right {
+	text-align: right;
+}
+
+table td.alt {
+	background-color: #e4e4e5;
+}
+
+table td a:link, table td a:visited {
+	text-decoration: underline;
+}
+table td a:hover, table td a:active {
+	text-decoration: none;
+}
+
+div.matchBar {
+	background-color: #98C8E4;
+	border: 1px solid #000;
+	padding: 8px 0;
+}
+
+
+
+/**********************************************************************\
+
+	@group Form Styles
+	
+\**********************************************************************/
+
+form {
+	margin: 0 auto 10px;
+	width: 36em;
+	text-align: center;
+}
+
+fieldset {
+	border: #ccc thin solid;
+	margin: 0 auto 1em;
+	width: 36em;
+}
+
+/* Left justified form. This looks better on pages with really wide tables */
+fieldset.left {
+	margin: 0;
+}
+
+fieldset .no-border {
+	border: none;
+}
+
+fieldset legend {
+	color: #70a219;
+	font-weight: bold;
+}
+
+/* This pairs up with the no-border style for grouping checkboxes & radio buttons. Note that the width of a legend cannot be controlled in FF, so checkboxes & radio buttons must be on another line. */
+fieldset legend.no-style {
+	color: #000;
+	font-weight: normal;
+	text-align: right;
+	float: left;
+	margin: 13px 10px 0 0;
+	clear: both;
+	display: block;
+}
+
+form div, form p {
+	clear: left;
+}
+
+label {
+	width: 14em;
+	text-align: right;
+	float: left;
+	margin: 1em .5em 0 0;
+	clear: both;
+	cursor: pointer;
+}
+
+label.alt {	
+	text-align: left;
+	float: none;
+	text-indent: 0;
+	margin: 13px 10px 0 0;
+}
+
+fieldset br {
+	clear: both;
+	height: 1em;
+}
+
+input, select {
+	float: left;
+	margin: 1em .5em 0 0;
+	font-size: 1em;
+}
+
+table input, table select {
+	float: none;
+}
+
+input.radio, input.checkbox, input.submit {
+	float: none;
+}
+
+input.date {
+	margin: 1em 0 0 0;
+	float: none;
+}
+
+/* Mimic label look & feel for prepopulated information within forms (uneditable information) */
+form .data-label {
+	width: 200px;
+	text-align: right;
+	float: left;
+	margin: 13px 10px 0 0;
+	clear: both;
+}
+
+/* Use this for uneditable information. */
+form .populated-data {
+	margin-top: 13px;
+}
+
+form .stack {
+	text-align: left;
+	clear: none;
+	margin-left: 205px;
+}
+
+.required {
+	color: #f00; /* red */
+}
+
+.notice {
+	color: #f00; /* red */
+}
+
+.disabled {
+	color: #999; /* gray */
+}
+
+form br {
+	clear: both;
+	height: 1em;
+}
+
+div.buttonHolder {
+	text-align: center;
+}
+
+button {
+	color: #fff;
+	background-color: #139bdf;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	cursor: pointer;
+}
+
+/* DIR_button_green and DIR_button_gray should be replaced by button.green and button.gray,
+     but those classes are still coming from the Java code, so I left them in there as well for now
+		 so that the pages look right even before that is fixed. */
+button.green, button.DIR_button_green {
+	background-color: #74A816;
+}
+button.orange, button.DIR_button_orange {
+	background-color: #F05F18;
+}
+button.gray, button.DIR_button_gray {
+	background-color: #bdbdbe;
+}
+
+button.calendar {
+	margin: 1em .5em 0;
+	float: none;
+}
+
+div.scroll-box {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 20em;
+	text-align: left;
+	border: 1px solid #ccc;
+}
+
+
+
+/**********************************************************************\
+
+	@group Additional Styles
+	
+\**********************************************************************/
+
+/* NoScript */
+
+noscript {
+	margin-bottom: 5px;
+	width: 752px;
+	border: 1px solid #dc4d08;
+	padding: 3px;
+	color: #dc4d08;
+	font-weight: bold;
+	font-size: .92em;
+}
+
+noscript.unica {
+	display: none;
+}
+noscript.unica img {
+	display: block;
+	margin-left: -1000em;
+}
+
+div.print-friendly {
+	text-align: right;
+}
+
+
+/**********************************************************************\
+
+	@group Partially Migrated
+	
+\**********************************************************************/
+
+/* townMeetingsRegistrationFormContent.jsp */
+
+#phone_area_code, #phone_body_1 {
+	width: 30px;
+}
+#phone_body_2 {
+	width: 65px;
+}
+#middle_initial {
+	width: 1.5em;
+}
+
+.Meetings li { 
+	list-style: none;
+}
+
+/* Style to give yellow shading to the fields that fail the validation */
+.validateFail {
+	background-color: #F0E68C;
+}
