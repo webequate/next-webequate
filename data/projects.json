@@ -30,7 +30,6 @@
     "tags": "Web Development, Responsive Design, HTML, CSS, JavaScript",
     "description": "Redesign and rebuild of the JackRabbit.com e-commerce website homepage.",
     "mainImage": "images/portfolio/modals/m-jackrabbit.jpg",
-    "link": "https://www.jackrabbit.com",
     "screenshots": {
       "path": "images/portfolio/jr/screenshot/jr-homepage-redesign",
       "mobile": "jackrabbit-360.png",
@@ -73,7 +72,6 @@
     "tags": "Web Development, HTML, CSS, JavaScript, Responsive Design, E-Commerce",
     "description": "Running shoe release calendar for JackRabbit.com, with custom CMS setup and integration.",
     "mainImage": "images/portfolio/modals/m-release.jpg",
-    "link": "https://www.jackrabbit.com/info/release-calendar",
     "screenshots": {
       "path": "images/portfolio/jr/screenshot/jr-release-calendar",
       "mobile": "jackrabbit-release-calendar-360.png",
@@ -145,7 +143,6 @@
     "tags": "Web Development, HTML, CSS, JavaScript, Responsive Design",
     "description": "Landing page built as an addition to the JackRabbit.com e-commerce website.",
     "mainImage": "images/portfolio/modals/m-train.jpg",
-    "link": "https://www.jackrabbit.com/info/train-to-be-your-best",
     "screenshots": {
       "path": "images/portfolio/jr/screenshot/jr-train-to-be-your-best",
       "mobile": "jackrabbit-train-to-be-your-best-360.png",
@@ -167,7 +164,6 @@
     "tags": "Web Design, Web Development, HTML, CSS, Responsive Design",
     "description": "A responsive web site for artist Anna Elise Johnson, built with Next.js, React, TypeScript, and MongoDB.",
     "mainImage": "images/portfolio/modals/m-anna-2.jpg",
-    "details": "http://www.webequate.com/samplework/index.html#anna",
     "link": "http://www.annaelisejohnson.com",
     "status": {
       "active": true,
