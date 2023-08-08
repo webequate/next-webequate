@@ -28,7 +28,7 @@ const ScreenshotLink: React.FC<ScreenshotLinkProps> = ({ name, path, url }) => {
     <Link
       href={`/${path}/${url}`}
       target="_blank"
-      className="flex justify-between mx-2 md:mx-4"
+      className="flex justify-between mx-2 md:mx-3  hover:text-accent-dark dark:hover:text-accent-light"
     >
       <i className="mr-1 mt-1">{iconFromName(name)}</i>
       <span>{name}</span>

@@ -90,6 +90,8 @@ const Project = ({
           <ProjectFooter
             description={project.description}
             tags={project.tags}
+            details={project.details}
+            link={project.link}
             path={project.screenshots?.path}
             mobile={project.screenshots?.mobile}
             tablet={project.screenshots?.tablet}
