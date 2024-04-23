@@ -1,6 +1,7 @@
 // pages/index.tsx
 import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
@@ -28,6 +29,16 @@ const HomePage: NextPage<HomePageProps> = ({
 }) => {
   return (
     <div className="mx-auto">
+      <Head>
+        <title>{`${name}`}</title>
+        <meta
+          name="description"
+          content="WebEquate. A full service web development partner. Intelligent Design, Creative Evolution."
+          key="desc"
+        />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
       <Header socialLink={socialLinks[0]} />
 
       <motion.div

@@ -26,17 +26,27 @@ const Layout: React.FC<LayoutProps> = ({ title = "WebEquate", children }) => {
           content="WebEquate. Your full service web development partner."
           key="desc"
         />
-        <meta property="og:title" content="Allen Johnson's Portfolio" />
+        <meta
+          property="og:title"
+          content="Allen Johnson's Portfolio"
+          key="ogtitle"
+        />
         <meta
           property="og:description"
           content="WebEquate. Your full service web development partner."
+          key="ogdesc"
         />
         <meta
           property="og:image"
           content="https://www.webequate.com/images/webequate-og.jpg"
+          key="ogimage"
         />
-        <meta property="og:url" content="https://portfolio.webequate.com" />
-        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://portfolio.webequate.com"
+          key="ogurl"
+        />
+        <meta property="og:type" content="website" key="ogtype" />
         <link rel="icon" href="/webequate.png" />
       </Head>
       <main className="min-h-screen bg-white dark:bg-neutral-900 sm:border-x border-dark-3 dark:border-light-3 px-4 sm:px-8 lg:px-16">
