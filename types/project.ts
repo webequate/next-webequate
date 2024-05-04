@@ -19,7 +19,7 @@ export type ProjectStatus = {
 };
 
 export type Project = {
-  _id: string;
+  // _id: string;
   id: string;
   name: string;
   type: string;

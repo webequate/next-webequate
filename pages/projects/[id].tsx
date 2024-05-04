@@ -1,11 +1,11 @@
 // pages/projects/[id].tsx
-import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import type { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
+import projectsData from "@/data/projects.json";
 import Header from "@/components/Header";
 import ProjectHeader from "@/components/ProjectHeader";
 import Image from "next/image";
@@ -118,14 +118,14 @@ const Project = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
-
-  const projectsCollection = db.collection<Project>("projects");
-  const projects: Project[] = await projectsCollection
-    .find({ "status.webequate": true })
-    .sort({ "status.webequateOrder": 1 })
-    .toArray();
+  // Filter and sort projects data
+  const projects: Project[] = projectsData
+    .filter((project) => project.status.webequate)
+    .sort((a, b) => {
+      const orderA = a.status?.webequateOrder ?? 0;
+      const orderB = b.status?.webequateOrder ?? 0;
+      return orderA - orderB;
+    });
 
   const paths = projects.map((project) => ({
     params: { id: project.id },
@@ -141,14 +141,14 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async ({
     return { notFound: true };
   }
 
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
-
-  const projectsCollection = db.collection<Project>("projects");
-  const projects: Project[] = await projectsCollection
-    .find({ "status.webequate": true })
-    .sort({ "status.webequateOrder": 1 })
-    .toArray();
+  // Filter and sort projects data
+  const projects: Project[] = projectsData
+    .filter((project) => project.status.webequate)
+    .sort((a, b) => {
+      const orderA = a.status?.webequateOrder ?? 0;
+      const orderB = b.status?.webequateOrder ?? 0;
+      return orderA - orderB;
+    });
 
   const projectIndex = projects.findIndex((p) => p.id === params.id);
   const project = projects[projectIndex];
@@ -164,9 +164,9 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async ({
     props: {
       name: basics.name,
       socialLinks: basics.socialLinks,
-      project: JSON.parse(JSON.stringify(project)),
-      prevProject: prevProject ? JSON.parse(JSON.stringify(prevProject)) : null,
-      nextProject: nextProject ? JSON.parse(JSON.stringify(nextProject)) : null,
+      project: project,
+      prevProject: prevProject ? prevProject : null,
+      nextProject: nextProject ? nextProject : null,
     },
     revalidate: 60,
   };

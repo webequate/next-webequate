@@ -1,14 +1,12 @@
 // pages/index.tsx
-import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { Project } from "@/types/project";
+import type { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
+import projectsData from "@/data/projects.json";
 import Header from "@/components/Header";
-import Social from "@/components/Social";
-import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
 
@@ -75,14 +73,16 @@ const HomePage: NextPage<HomePageProps> = ({
 };
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
+  // Filter and sort projects data
+  const projects: Project[] = projectsData
+    .filter((project) => project.status.webequateFeatured)
+    .sort((a, b) => {
+      const orderA = a.status?.webequateFeaturedOrder ?? 0;
+      const orderB = b.status?.webequateFeaturedOrder ?? 0;
+      return orderA - orderB;
+    });
 
-  const projectsCollection = db.collection<Project>("projects");
-  const projects: Project[] = await projectsCollection
-    .find({ "status.webequateFeatured": true })
-    .sort({ "status.webequateFeaturedOrder": 1 })
-    .toArray();
+  console.log(projects);
 
   return {
     props: {
@@ -90,7 +90,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       titles: basics.titles,
       summaryItems: basics.summaryItems,
       socialLinks: basics.socialLinks,
-      projects: JSON.parse(JSON.stringify(projects)),
+      projects: projects,
     },
     revalidate: 60,
   };

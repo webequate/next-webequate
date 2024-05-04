@@ -1,11 +1,11 @@
 // pages/projects.tsx
-import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { Project } from "@/types/project";
+import type { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
+import projectsData from "@/data/projects.json";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
@@ -52,20 +52,20 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({
 };
 
 export const getStaticProps: GetStaticProps<ProjectsPageProps> = async () => {
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
-
-  const projectsCollection = db.collection<Project>("projects");
-  const projects: Project[] = await projectsCollection
-    .find({ "status.webequate": true })
-    .sort({ "status.webequateOrder": 1 })
-    .toArray();
+  // Filter and sort projects data
+  const projects: Project[] = projectsData
+    .filter((project) => project.status.webequate)
+    .sort((a, b) => {
+      const orderA = a.status?.webequateOrder ?? 0;
+      const orderB = b.status?.webequateOrder ?? 0;
+      return orderA - orderB;
+    });
 
   return {
     props: {
       name: basics.name,
       socialLinks: basics.socialLinks,
-      projects: JSON.parse(JSON.stringify(projects)),
+      projects: projects,
     },
     revalidate: 60,
   };
