@@ -1,0 +1,42 @@
+[
+  {
+    "id": "web-dev",
+    "title": "Website Development",
+    "description": "We create responsive, efficient, and engaging websites tailored to your business needs, using the latest technologies and best practices in web development.",
+    "icon": "/icons/web-development.png",
+    "display": true,
+    "order": 1
+  },
+  {
+    "id": "ecommerce",
+    "title": "E-commerce Solutions",
+    "description": "Boost your online sales with our custom e-commerce solutions. We integrate the best tools and functionalities to provide a seamless shopping experience for your customers.",
+    "icon": "/icons/ecommerce.png",
+    "display": true,
+    "order": 2
+  },
+  {
+    "id": "seo",
+    "title": "SEO and Online Marketing",
+    "description": "Enhance your online visibility and drive more traffic to your site with our expert SEO services and targeted online marketing strategies.",
+    "icon": "/icons/seo.png",
+    "display": true,
+    "order": 3
+  },
+  {
+    "id": "maintenance",
+    "title": "Maintenance and Support",
+    "description": "Keep your website in top condition with our ongoing support and maintenance services. We offer regular updates, security checks, and performance optimizations.",
+    "icon": "/icons/maintenance.png",
+    "display": true,
+    "order": 4
+  },
+  {
+    "id": "uiux",
+    "title": "UI/UX Design",
+    "description": "Create stunning, user-friendly designs with our UI/UX design services. We focus on delivering intuitive and engaging user experiences across all platforms.",
+    "icon": "/icons/uiux.png",
+    "display": true,
+    "order": 5
+  }
+]

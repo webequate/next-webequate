@@ -60,6 +60,13 @@ const Header: React.FC<HeaderProps> = ({ socialLink }) => {
                 About
               </Link>
               <Link
+                href="/services"
+                aria-label="Services"
+                className={route === "/services" ? "active" : ""}
+              >
+                Services
+              </Link>
+              <Link
                 href="/projects"
                 aria-label="Projects"
                 className={route === "/projects" ? "active" : ""}
@@ -102,6 +109,13 @@ const Header: React.FC<HeaderProps> = ({ socialLink }) => {
             className={route === "/about" ? "active" : ""}
           >
             About
+          </Link>
+          <Link
+            href="/services"
+            aria-label="Services"
+            className={route === "/services" ? "active" : ""}
+          >
+            Services
           </Link>
           <Link
             href="/projects"

@@ -23,6 +23,9 @@ const Footer: React.FC<FooterProps> = ({ name, socialLinks }) => {
               <Link href="/about" aria-label="About">
                 About
               </Link>
+              <Link href="/services" aria-label="Services">
+                Services
+              </Link>
               <Link href="/projects" aria-label="Projects">
                 Projects
               </Link>
