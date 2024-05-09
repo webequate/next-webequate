@@ -54,10 +54,10 @@ const ServicesPage: NextPage<ServicesPageProps> = ({
 export const getStaticProps: GetStaticProps<ServicesPageProps> = async () => {
   // Filter and sort services data
   const services: Service[] = servicesData
-    .filter((service) => service.display)
+    .filter((service) => service.status.active)
     .sort((a, b) => {
-      const orderA = a.order ?? 0;
-      const orderB = b.order ?? 0;
+      const orderA = a.status.activeOrder ?? 0;
+      const orderB = b.status.activeOrder ?? 0;
       return orderA - orderB;
     });
 

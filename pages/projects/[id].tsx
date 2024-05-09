@@ -120,10 +120,10 @@ const Project = ({
 export const getStaticPaths: GetStaticPaths = async () => {
   // Filter and sort projects data
   const projects: Project[] = projectsData
-    .filter((project) => project.status.webequate)
+    .filter((project) => project.status.active)
     .sort((a, b) => {
-      const orderA = a.status?.webequateOrder ?? 0;
-      const orderB = b.status?.webequateOrder ?? 0;
+      const orderA = a.status?.activeOrder ?? 0;
+      const orderB = b.status?.activeOrder ?? 0;
       return orderA - orderB;
     });
 
@@ -143,10 +143,10 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async ({
 
   // Filter and sort projects data
   const projects: Project[] = projectsData
-    .filter((project) => project.status.webequate)
+    .filter((project) => project.status.active)
     .sort((a, b) => {
-      const orderA = a.status?.webequateOrder ?? 0;
-      const orderB = b.status?.webequateOrder ?? 0;
+      const orderA = a.status?.activeOrder ?? 0;
+      const orderB = b.status?.activeOrder ?? 0;
       return orderA - orderB;
     });
 

@@ -5,6 +5,10 @@ export type Service = {
   title: string;
   description: string;
   icon: string;
-  display: boolean;
-  order: number;
+  status: {
+    active: boolean;
+    activeOrder: number;
+    featured: boolean;
+    featuredOrder: number;
+  };
 };

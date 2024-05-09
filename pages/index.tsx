@@ -3,11 +3,15 @@ import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import type { Project } from "@/types/project";
+import type { Service } from "@/types/service";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
 import projectsData from "@/data/projects.json";
+import servicesData from "@/data/services.json";
 import Header from "@/components/Header";
+import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
+import ServiceGrid from "@/components/ServiceGrid";
 import Footer from "@/components/Footer";
 
 type HomePageProps = {
@@ -16,6 +20,7 @@ type HomePageProps = {
   summaryItems: string[];
   socialLinks: SocialLink[];
   projects: Project[];
+  services: Service[];
 };
 
 const HomePage: NextPage<HomePageProps> = ({
@@ -24,6 +29,7 @@ const HomePage: NextPage<HomePageProps> = ({
   summaryItems,
   socialLinks,
   projects,
+  services,
 }) => {
   return (
     <div className="mx-auto">
@@ -63,7 +69,12 @@ const HomePage: NextPage<HomePageProps> = ({
           ))}
         </div>
         <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
+          <Heading text="Featured Projects" />
           <ProjectGrid projects={projects} path="featured" />
+        </div>
+        <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
+          <Heading text="Featured Services" />
+          <ServiceGrid services={services} />
         </div>
       </motion.div>
 
@@ -75,14 +86,23 @@ const HomePage: NextPage<HomePageProps> = ({
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   // Filter and sort projects data
   const projects: Project[] = projectsData
-    .filter((project) => project.status.webequateFeatured)
+    .filter((project) => project.status.featured)
     .sort((a, b) => {
-      const orderA = a.status?.webequateFeaturedOrder ?? 0;
-      const orderB = b.status?.webequateFeaturedOrder ?? 0;
+      const orderA = a.status?.featuredOrder ?? 0;
+      const orderB = b.status?.featuredOrder ?? 0;
       return orderA - orderB;
     });
-
   console.log(projects);
+
+  // Filter and sort services data
+  const services: Service[] = servicesData
+    .filter((services) => services.status.featured)
+    .sort((a, b) => {
+      const orderA = a.status?.featuredOrder ?? 0;
+      const orderB = b.status?.featuredOrder ?? 0;
+      return orderA - orderB;
+    });
+  console.log(services);
 
   return {
     props: {
@@ -91,6 +111,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       summaryItems: basics.summaryItems,
       socialLinks: basics.socialLinks,
       projects: projects,
+      services: services,
     },
     revalidate: 60,
   };
