@@ -1,5 +1,22 @@
 [
   {
+    "id": "portfolio",
+    "name": "Portfolio",
+    "type": "Web Design & Development",
+    "company": "WebEquate, Denver",
+    "thumbImage": "images/portfolio/portfolio.jpg",
+    "tags": "Web Design, Web Development, HTML, CSS, Responsive Design",
+    "description": "A responsive web site for Allen Johnson's professional portfolio, built with Next.js, React, TypeScript, and MongoDB.",
+    "mainImage": "images/portfolio/modals/m-portfolio.jpg",
+    "link": "http://portfolio.webequate.com",
+    "status": {
+      "active": true,
+      "activeOrder": 1,
+      "featured": true,
+      "featuredOrder": 3
+    }
+  },
+  {
     "id": "aliens",
     "name": "Allen's Aliens",
     "type": "Web Development & Social Media",
@@ -12,9 +29,9 @@
     "link": "http://www.allensaliens.com",
     "status": {
       "active": true,
-      "activeOrder": 1,
+      "activeOrder": 2,
       "featured": true,
-      "featuredOrder": 1
+      "featuredOrder": 2
     }
   },
   {
@@ -29,9 +46,9 @@
     "link": "http://www.annaelisejohnson.com",
     "status": {
       "active": true,
-      "activeOrder": 2,
-      "featured": true,
-      "featuredOrder": 2
+      "activeOrder": 3,
+      "featured": false,
+      "featuredOrder": 3
     }
   },
   {
@@ -46,7 +63,9 @@
     "link": "http://www.maryjjohnson.com",
     "status": {
       "active": true,
-      "activeOrder": 3
+      "activeOrder": 4,
+      "featured": false,
+      "featuredOrder": 4
     }
   },
   {
@@ -61,9 +80,9 @@
     "link": "http://www.rogerhaydenjohnson.com",
     "status": {
       "active": true,
-      "activeOrder": 3,
+      "activeOrder": 5,
       "featured": true,
-      "featuredOrder": 3
+      "featuredOrder": 2
     }
   },
   {
@@ -78,7 +97,9 @@
     "link": "http://www.webequate.com",
     "status": {
       "active": true,
-      "activeOrder": 5
+      "activeOrder": 6,
+      "featured": false,
+      "featuredOrder": 6
     }
   }
 ]

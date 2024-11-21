@@ -42,7 +42,6 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className="text-base text-dark-2 dark:text-light-2"
       >
-        <Heading text="Projects" />
         <ProjectGrid projects={projects} path="projects" />
       </motion.div>
 

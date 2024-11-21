@@ -1,62 +1,146 @@
 [
   {
-    "id": "web-dev",
-    "title": "Website Development",
-    "description": "We create responsive, efficient, and engaging websites tailored to your business needs, using the latest technologies and best practices in web development.",
-    "icon": "/icons/web-development.png",
+    "id": "api-integration",
+    "title": "API Integration and Development",
+    "description": "Enhance your website's functionality with seamless API integrations or custom API development. We ensure smooth communication between your systems and third-party platforms.",
+    "icon": "FaProjectDiagram",
     "status": {
       "active": true,
       "activeOrder": 1,
+      "featured": false,
+      "featuredOrder": null
+    }
+  },
+  {
+    "id": "analytics-reporting",
+    "title": "Analytics and Reporting",
+    "description": "Unlock valuable insights with our analytics and reporting services. Track performance, user behavior, and key metrics to make data-driven decisions for your business.",
+    "icon": "FaChartPie",
+    "status": {
+      "active": true,
+      "activeOrder": 2,
       "featured": true,
-      "featuredOrder": 1
+      "featuredOrder": 6
+    }
+  },
+  {
+    "id": "cms",
+    "title": "Content Management Systems",
+    "description": "Empower your team with an easy-to-manage CMS solution. We specialize in developing and customizing platforms like WordPress, Drupal, and more, enabling you to control your content effortlessly.",
+    "icon": "FaServer",
+    "status": {
+      "active": true,
+      "activeOrder": 3,
+      "featured": false,
+      "featuredOrder": null
+    }
+  },
+  {
+    "id": "conversion-optimization",
+    "title": "Conversion Rate Optimization",
+    "description": "Maximize your website’s potential with our conversion optimization services. We analyze user behavior and implement strategies to turn visitors into customers.",
+    "icon": "FaChartBar",
+    "status": {
+      "active": true,
+      "activeOrder": 4,
+      "featured": false,
+      "featuredOrder": null
+    }
+  },
+  {
+    "id": "custom-web-apps",
+    "title": "Custom Web Applications",
+    "description": "Build powerful, scalable, and secure custom web applications tailored to your unique business needs. From concept to deployment, we deliver solutions that drive results.",
+    "icon": "FaLaptopCode",
+    "status": {
+      "active": true,
+      "activeOrder": 5,
+      "featured": false,
+      "featuredOrder": null
     }
   },
   {
     "id": "ecommerce",
     "title": "E-commerce Solutions",
     "description": "Boost your online sales with our custom e-commerce solutions. We integrate the best tools and functionalities to provide a seamless shopping experience for your customers.",
-    "icon": "/icons/ecommerce.png",
+    "icon": "FaShoppingCart",
     "status": {
       "active": true,
-      "activeOrder": 2,
-      "featured": true,
-      "featuredOrder": 2
-    }
-  },
-  {
-    "id": "seo",
-    "title": "SEO and Online Marketing",
-    "description": "Enhance your online visibility and drive more traffic to your site with our expert SEO services and targeted online marketing strategies.",
-    "icon": "/icons/seo.png",
-    "status": {
-      "active": true,
-      "activeOrder": 3,
-      "featured": true,
-      "featuredOrder": 3
+      "activeOrder": 6,
+      "featured": false,
+      "featuredOrder": null
     }
   },
   {
     "id": "maintenance",
     "title": "Maintenance and Support",
     "description": "Keep your website in top condition with our ongoing support and maintenance services. We offer regular updates, security checks, and performance optimizations.",
-    "icon": "/icons/maintenance.png",
+    "icon": "FaTools",
     "status": {
       "active": true,
-      "activeOrder": 4,
+      "activeOrder": 7,
       "featured": true,
       "featuredOrder": 4
+    }
+  },
+  {
+    "id": "performance-optimization",
+    "title": "Performance Optimization",
+    "description": "Ensure your website runs at lightning speed with our performance optimization services. From load time improvements to mobile-first strategies, we enhance user experience and SEO rankings.",
+    "icon": "FaRocket",
+    "status": {
+      "active": true,
+      "activeOrder": 8,
+      "featured": true,
+      "featuredOrder": 5
+    }
+  },
+  {
+    "id": "seo",
+    "title": "SEO and Online Marketing",
+    "description": "Enhance your online visibility and drive more traffic to your site with our expert SEO services and targeted online marketing strategies.",
+    "icon": "FaChartLine",
+    "status": {
+      "active": true,
+      "activeOrder": 9,
+      "featured": false,
+      "featuredOrder": null
     }
   },
   {
     "id": "uiux",
     "title": "UI/UX Design",
     "description": "Create stunning, user-friendly designs with our UI/UX design services. We focus on delivering intuitive and engaging user experiences across all platforms.",
-    "icon": "/icons/uiux.png",
+    "icon": "FaPencilRuler",
     "status": {
       "active": true,
-      "activeOrder": 5,
+      "activeOrder": 10,
       "featured": true,
-      "featuredOrder": 5
+      "featuredOrder": 2
+    }
+  },
+  {
+    "id": "web-hosting",
+    "title": "Web Hosting and Deployment",
+    "description": "Simplify your website's deployment and hosting with our reliable, secure, and high-performance hosting services. We handle the technical details so you can focus on your business.",
+    "icon": "FaCloudUploadAlt",
+    "status": {
+      "active": true,
+      "activeOrder": 11,
+      "featured": true,
+      "featuredOrder": 3
+    }
+  },
+  {
+    "id": "web-dev",
+    "title": "Website Development",
+    "description": "We create responsive, efficient, and engaging websites tailored to your business needs, using the latest technologies and best practices in web development.",
+    "icon": "FaCode",
+    "status": {
+      "active": true,
+      "activeOrder": 12,
+      "featured": true,
+      "featuredOrder": 1
     }
   }
 ]

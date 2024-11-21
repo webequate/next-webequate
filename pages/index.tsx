@@ -1,6 +1,6 @@
-// pages/index.tsx
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Project } from "@/types/project";
 import type { Service } from "@/types/service";
@@ -71,10 +71,26 @@ const HomePage: NextPage<HomePageProps> = ({
         <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
           <Heading text="Featured Projects" />
           <ProjectGrid projects={projects} path="featured" />
+          <div className="text-center mt-6">
+            <Link
+              href="/projects"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              View All Projects
+            </Link>
+          </div>
         </div>
         <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
           <Heading text="Featured Services" />
           <ServiceGrid services={services} />
+          <div className="text-center mt-6">
+            <Link
+              href="/services"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              View All Services
+            </Link>
+          </div>
         </div>
       </motion.div>
 
@@ -92,17 +108,22 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       const orderB = b.status?.featuredOrder ?? 0;
       return orderA - orderB;
     });
-  console.log(projects);
 
-  // Filter and sort services data
+  // Filter and sort featured services data
   const services: Service[] = servicesData
-    .filter((services) => services.status.featured)
+    .map((service) => ({
+      ...service,
+      status: {
+        ...service.status,
+        featuredOrder: service.status.featuredOrder ?? 0,
+      },
+    }))
+    .filter((service) => service.status.featured) // Only include featured services
     .sort((a, b) => {
-      const orderA = a.status?.featuredOrder ?? 0;
-      const orderB = b.status?.featuredOrder ?? 0;
+      const orderA = a.status.featuredOrder;
+      const orderB = b.status.featuredOrder;
       return orderA - orderB;
     });
-  console.log(services);
 
   return {
     props: {
@@ -111,7 +132,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       summaryItems: basics.summaryItems,
       socialLinks: basics.socialLinks,
       projects: projects,
-      services: services,
+      services: services, // Only featured services
     },
     revalidate: 60,
   };

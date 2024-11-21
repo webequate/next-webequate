@@ -42,7 +42,6 @@ const ServicesPage: NextPage<ServicesPageProps> = ({
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className="text-base text-dark-2 dark:text-light-2"
       >
-        <Heading text="Services" />
         <ServiceGrid services={services} />
       </motion.div>
 
@@ -55,6 +54,13 @@ export const getStaticProps: GetStaticProps<ServicesPageProps> = async () => {
   // Filter and sort services data
   const services: Service[] = servicesData
     .filter((service) => service.status.active)
+    .map((service) => ({
+      ...service,
+      status: {
+        ...service.status,
+        featuredOrder: service.status.featuredOrder ?? 0,
+      },
+    }))
     .sort((a, b) => {
       const orderA = a.status.activeOrder ?? 0;
       const orderB = b.status.activeOrder ?? 0;
@@ -65,7 +71,7 @@ export const getStaticProps: GetStaticProps<ServicesPageProps> = async () => {
     props: {
       name: basics.name,
       socialLinks: basics.socialLinks,
-      services: services,
+      services: services, // Pass services directly
     },
     revalidate: 60,
   };

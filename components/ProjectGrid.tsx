@@ -26,8 +26,8 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, path }) => {
           />
           <div className="absolute inset-0 bg-black opacity-0 md:group-hover:opacity-50 transition duration-300 rounded shadow-md"></div>
           <div className="absolute inset-0 items-center justify-center opacity-0 md:group-hover:opacity-100 transition duration-300 p-4">
-            <h2 className="text-xl mb-2">{project.name}</h2>
-            <p className="mb-2">{project.type}</p>
+            <h2 className="text-xl mb-1">{project.name}</h2>
+            <p className="mb-1">{project.type}</p>
             <p>@ {project.company}</p>
           </div>
           <div className="absolute inset-0 flex items-center justify-center text-white opacity-0 md:group-hover:opacity-100 transition duration-300">
