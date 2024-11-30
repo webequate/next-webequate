@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       {/* Your existing application layout */}
-      <ThemeProvider attribute="class" defaultTheme="light">
+      <ThemeProvider attribute="class" defaultTheme="dark">
         <AnimatePresence>
           <div className="mx-auto max-w-7xl sm:px-8 lg:px-16">
             <Layout>
