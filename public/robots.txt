@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://webequate.com
+
+# Sitemaps
+Sitemap: https://webequate.com/sitemap.xml
