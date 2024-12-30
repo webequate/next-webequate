@@ -1,6 +1,6 @@
 // next-sitemap.config.js
 module.exports = {
-  siteUrl: "https://www.webequate.com",
+  siteUrl: "https://webequate.com",
   exclude: ["/featured", "/featured/**"],
   generateRobotsTxt: true,
 };
