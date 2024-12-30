@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://webequate.com
+Host: https://www.webequate.com
 
 # Sitemaps
-Sitemap: https://webequate.com/sitemap.xml
+Sitemap: https://www.webequate.com/sitemap.xml
