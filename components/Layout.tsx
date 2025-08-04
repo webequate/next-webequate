@@ -28,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "WebEquate", children }) => {
         />
         <meta
           property="og:title"
-          content="Allen Johnson's Portfolio"
+          content="WebEquate - Intelligent Design, Creative Evolution"
           key="ogtitle"
         />
         <meta

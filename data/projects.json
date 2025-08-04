@@ -5,15 +5,13 @@
     "type": "Web Design & Development",
     "company": "WebEquate, Denver",
     "thumbImage": "images/portfolio/portfolio.jpg",
-    "tags": "Web Design, Web Development, HTML, CSS, Responsive Design",
-    "description": "A responsive web site for Allen Johnson's professional portfolio, built with Next.js, React, TypeScript, and MongoDB.",
+    "tags": "Web Development, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
+    "description": "A responsive web site for Allen Johnson's professional portfolio, built with Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-portfolio.jpg",
     "link": "http://portfolio.webequate.com",
     "status": {
       "active": true,
-      "activeOrder": 1,
-      "featured": true,
-      "featuredOrder": 3
+      "activeOrder": 4
     }
   },
   {
@@ -21,17 +19,17 @@
     "name": "Allen's Aliens",
     "type": "Web Development & Social Media",
     "company": "WebEquate, Denver",
-    "thumbImage": "images/portfolio/aliens-2.jpg",
-    "tags": "Web Development, Social Media, Next.js, React, TypeScript, MongoDB, TailwindCSS",
-    "description": "A social media marketing campaign, including glow-in-the-dark aliens, double-sided glossy business cards, Instagram photo feed, Facebook page, and responsive landing page built with Next.js, React, TypeScript, and MongoDB.",
-    "mainImage": "images/portfolio/modals/m-aliens-2.jpg",
+    "thumbImage": "images/portfolio/aliens.jpg",
+    "tags": "Web Development, Social Media, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
+    "description": "A social media marketing campaign, including glow-in-the-dark aliens, double-sided glossy business cards, Instagram photo feed, Facebook page, and responsive landing page built with Next.js, React, TypeScript, and TailwindCSS.",
+    "mainImage": "images/portfolio/modals/m-aliens.jpg",
     "details": "https://www.instagram.com/real_allens_aliens",
-    "link": "http://www.allensaliens.com",
+    "link": "http://allensaliens.com",
     "status": {
       "active": true,
-      "activeOrder": 2,
+      "activeOrder": 3,
       "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 3
     }
   },
   {
@@ -39,16 +37,14 @@
     "name": "Anna Elise Johnson",
     "type": "Web Design & Development",
     "company": "WebEquate, Denver",
-    "thumbImage": "images/portfolio/anna-2.jpg",
-    "tags": "Web Design, Web Development, HTML, CSS, Responsive Design",
-    "description": "A responsive web site for artist Anna Elise Johnson, built with Next.js, React, TypeScript, and MongoDB.",
-    "mainImage": "images/portfolio/modals/m-anna-2.jpg",
-    "link": "http://www.annaelisejohnson.com",
+    "thumbImage": "images/portfolio/anna.jpg",
+    "tags": "Web Development, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
+    "description": "Official website for artist Anna Elise Johnson. Responsive design and development on a tech stack of Next.js, React, TypeScript, and TailwindCSS.",
+    "mainImage": "images/portfolio/modals/m-anna.jpg",
+    "link": "http://annaelisejohnson.com",
     "status": {
       "active": true,
-      "activeOrder": 3,
-      "featured": false,
-      "featuredOrder": 3
+      "activeOrder": 5
     }
   },
   {
@@ -57,15 +53,13 @@
     "type": "Web Design & Development",
     "company": "WebEquate, Denver",
     "thumbImage": "images/portfolio/mary.jpg",
-    "tags": "Web Design, Web Development, HTML, CSS, Responsive Design",
-    "description": "A responsive web site for primary source consultant Mary J Johnson, built with Next.js, React, TypeScript, and MongoDB.",
+    "tags": "Web Development, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
+    "description": "A responsive web site for primary source consultant Mary J Johnson, built with Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-mary.jpg",
-    "link": "http://www.maryjjohnson.com",
+    "link": "http://maryjjohnson.com",
     "status": {
-      "active": true,
-      "activeOrder": 4,
-      "featured": false,
-      "featuredOrder": 4
+      "active": false,
+      "activeOrder": 7
     }
   },
   {
@@ -74,13 +68,13 @@
     "type": "Web Design & Development",
     "company": "WebEquate, Denver",
     "thumbImage": "images/portfolio/roger.jpg",
-    "tags": "Web Design, Web Development, PHP, MySQL, Social Media",
-    "description": "Official website for artist Roger Hayden Johnson. Responsive design on a PHP & MySQL back end. Instagram & Facebook social media marketing.",
+    "tags": "Web Development, Responsive Design, Social Media, Next.js, React, TypeScript, TailwindCSS",
+    "description": "Official website for artist Roger Hayden Johnson. Responsive design and development on a tech stack of Next.js, React, TypeScript, and TailwindCSS. Social media marketing.",
     "mainImage": "images/portfolio/modals/m-roger.jpg",
-    "link": "http://www.rogerhaydenjohnson.com",
+    "link": "http://rogerhaydenjohnson.com",
     "status": {
       "active": true,
-      "activeOrder": 5,
+      "activeOrder": 2,
       "featured": true,
       "featuredOrder": 2
     }
@@ -91,15 +85,30 @@
     "type": "Web Design & Development",
     "company": "WebEquate, Denver",
     "thumbImage": "images/portfolio/webequate.jpg",
-    "tags": "Web Design, Web Development, HTML, CSS, Responsive Design",
-    "description": "A responsive web site for full service web development firm WebEquate, built with Next.js, React, TypeScript, and MongoDB.",
+    "tags": "Web Development, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
+    "description": "A responsive web site for full service web development firm WebEquate, built with Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-webequate.jpg",
-    "link": "http://www.webequate.com",
+    "link": "http://webequate.com",
     "status": {
       "active": true,
-      "activeOrder": 6,
-      "featured": false,
-      "featuredOrder": 6
+      "activeOrder": 6
+    }
+  },
+  {
+    "id": "ai",
+    "name": "Allen Alien AI",
+    "type": "Web Design & Development",
+    "company": "WebEquate, Denver",
+    "thumbImage": "images/portfolio/ai.jpg",
+    "tags": "Web Development, Responsive Design, Social Media, Next.js, React, TypeScript, TailwindCSS",
+    "description": "A responsive web site showcasing AI image and video generation, built with Next.js, React, TypeScript, and TailwindCSS.",
+    "mainImage": "images/portfolio/modals/m-ai.jpg",
+    "link": "http://allenalienai.com",
+    "status": {
+      "active": true,
+      "activeOrder": 1,
+      "featured": true,
+      "featuredOrder": 1
     }
   }
 ]

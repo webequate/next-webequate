@@ -12,10 +12,6 @@ export type ProjectStatus = {
   activeOrder?: number;
   featured?: boolean;
   featuredOrder?: number;
-  webequate?: boolean;
-  webequateOrder?: number;
-  webequateFeatured?: boolean;
-  webequateFeaturedOrder?: number;
 };
 
 export type Project = {
