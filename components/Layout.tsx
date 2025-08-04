@@ -38,14 +38,10 @@ const Layout: React.FC<LayoutProps> = ({ title = "WebEquate", children }) => {
         />
         <meta
           property="og:image"
-          content="https://www.webequate.com/images/webequate-og.jpg"
+          content="https://webequate.com/images/webequate-og.jpg"
           key="ogimage"
         />
-        <meta
-          property="og:url"
-          content="https://portfolio.webequate.com"
-          key="ogurl"
-        />
+        <meta property="og:url" content="https://webequate.com" key="ogurl" />
         <meta property="og:type" content="website" key="ogtype" />
         <link rel="icon" href="/webequate.png" />
       </Head>
