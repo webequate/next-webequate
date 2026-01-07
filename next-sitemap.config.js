@@ -3,4 +3,6 @@ module.exports = {
   siteUrl: "https://webequate.com",
   exclude: ["/featured", "/featured/**"],
   generateRobotsTxt: true,
+  changefreq: undefined,
+  priority: undefined,
 };
