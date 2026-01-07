@@ -5,9 +5,14 @@ import { useEffect } from "react";
 interface LayoutProps {
   title?: string;
   children: React.ReactNode;
+  canonicalUrl?: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ title = "WebEquate", children }) => {
+const Layout: React.FC<LayoutProps> = ({
+  title = "WebEquate",
+  children,
+  canonicalUrl,
+}) => {
   useEffect(() => {
     document.body.classList.add("flex");
     document.body.classList.add("flex-col");
@@ -43,6 +48,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "WebEquate", children }) => {
         />
         <meta property="og:url" content="https://webequate.com" key="ogurl" />
         <meta property="og:type" content="website" key="ogtype" />
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         <link rel="icon" href="/webequate.png" />
       </Head>
       <main className="min-h-screen bg-white dark:bg-neutral-900 sm:border-x border-dark-3 dark:border-light-3 px-4 sm:px-8 lg:px-16">

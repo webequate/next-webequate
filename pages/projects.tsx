@@ -32,6 +32,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({
           key="desc"
         />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://webequate.com/projects" />
       </Head>
 
       <Header socialLink={socialLinks[0]} />
