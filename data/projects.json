@@ -8,7 +8,7 @@
     "tags": "Web Development, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
     "description": "A responsive web site for Allen Johnson's professional portfolio, built with Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-portfolio.jpg",
-    "link": "http://portfolio.webequate.com",
+    "link": "https://portfolio.webequate.com",
     "status": {
       "active": true,
       "activeOrder": 4
@@ -24,7 +24,7 @@
     "description": "A social media marketing campaign, including glow-in-the-dark aliens, double-sided glossy business cards, Instagram photo feed, Facebook page, and responsive landing page built with Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-aliens.jpg",
     "details": "https://www.instagram.com/real_allens_aliens",
-    "link": "http://allensaliens.com",
+    "link": "https://allensaliens.com",
     "status": {
       "active": true,
       "activeOrder": 3,
@@ -41,7 +41,7 @@
     "tags": "Web Development, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
     "description": "Official website for artist Anna Elise Johnson. Responsive design and development on a tech stack of Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-anna.jpg",
-    "link": "http://annaelisejohnson.com",
+    "link": "https://annaelisejohnson.com",
     "status": {
       "active": true,
       "activeOrder": 5
@@ -56,7 +56,7 @@
     "tags": "Web Development, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
     "description": "A responsive web site for primary source consultant Mary J Johnson, built with Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-mary.jpg",
-    "link": "http://maryjjohnson.com",
+    "link": "https://maryjjohnson.com",
     "status": {
       "active": false,
       "activeOrder": 7
@@ -71,7 +71,7 @@
     "tags": "Web Development, Responsive Design, Social Media, Next.js, React, TypeScript, TailwindCSS",
     "description": "Official website for artist Roger Hayden Johnson. Responsive design and development on a tech stack of Next.js, React, TypeScript, and TailwindCSS. Social media marketing.",
     "mainImage": "images/portfolio/modals/m-roger.jpg",
-    "link": "http://rogerhaydenjohnson.com",
+    "link": "https://rogerhaydenjohnson.com",
     "status": {
       "active": true,
       "activeOrder": 2,
@@ -88,7 +88,7 @@
     "tags": "Web Development, Responsive Design, Next.js, React, TypeScript, TailwindCSS",
     "description": "A responsive web site for full service web development firm WebEquate, built with Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-webequate.jpg",
-    "link": "http://webequate.com",
+    "link": "https://webequate.com",
     "status": {
       "active": true,
       "activeOrder": 6
@@ -103,7 +103,7 @@
     "tags": "Web Development, Responsive Design, Social Media, Next.js, React, TypeScript, TailwindCSS",
     "description": "A responsive web site showcasing AI image and video generation, built with Next.js, React, TypeScript, and TailwindCSS.",
     "mainImage": "images/portfolio/modals/m-ai.jpg",
-    "link": "http://allenalienai.com",
+    "link": "https://allenalienai.com",
     "status": {
       "active": true,
       "activeOrder": 1,
