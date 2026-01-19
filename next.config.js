@@ -32,19 +32,4 @@ module.exports = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.webequate.com",
-          },
-        ],
-        destination: "https://webequate.com/:path*",
-        permanent: true,
-      },
-    ];
-  },
 };
