@@ -72,11 +72,7 @@ const Project = ({
           content={`WebEquate's project ${project.name}`}
           key="desc"
         />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href={`https://webequate.com/featured/${project.id}`}
-        />
+        <meta name="robots" content="noindex, follow" />
       </Head>
 
       <Header socialLink={socialLinks[0]} />

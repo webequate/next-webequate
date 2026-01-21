@@ -1,18 +1,25 @@
 import React from "react";
 import Head from "next/head";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 interface LayoutProps {
   title?: string;
   children: React.ReactNode;
   canonicalUrl?: string;
+  ogUrl?: string;
 }
 
 const Layout: React.FC<LayoutProps> = ({
   title = "WebEquate",
   children,
   canonicalUrl,
+  ogUrl,
 }) => {
+  const router = useRouter();
+  const currentUrl =
+    ogUrl || canonicalUrl || `https://webequate.com${router.asPath}`;
+
   useEffect(() => {
     document.body.classList.add("flex");
     document.body.classList.add("flex-col");
@@ -46,7 +53,7 @@ const Layout: React.FC<LayoutProps> = ({
           content="https://webequate.com/images/webequate-og.jpg"
           key="ogimage"
         />
-        <meta property="og:url" content="https://webequate.com" key="ogurl" />
+        <meta property="og:url" content={currentUrl} key="ogurl" />
         <meta property="og:type" content="website" key="ogtype" />
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         <link rel="icon" href="/webequate.png" />
