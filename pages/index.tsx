@@ -77,7 +77,7 @@ const HomePage: NextPage<HomePageProps> = ({
               href="/projects"
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              View All Projects
+              More Projects
             </Link>
           </div>
         </div>
@@ -89,7 +89,7 @@ const HomePage: NextPage<HomePageProps> = ({
               href="/services"
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              View All Services
+              More Services
             </Link>
           </div>
         </div>
