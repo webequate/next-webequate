@@ -1,5 +1,5 @@
 module.exports = {
-  webpack(config) {
+  webpack(config, { isServer }) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")
@@ -23,6 +23,15 @@ module.exports = {
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i;
+
+    // Externalize MJML and related packages in server builds
+    if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push({
+        mjml: "mjml",
+        "mjml-core": "mjml-core",
+      });
+    }
 
     return config;
   },

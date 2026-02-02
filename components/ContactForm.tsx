@@ -1,3 +1,5 @@
+"use client";
+
 // components/ContactForm.tsx
 import { useState } from "react";
 import { ContactForm as ContactFormData } from "@/interfaces/ContactForm";
