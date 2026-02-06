@@ -1,10 +1,17 @@
-"use client";
-
+import type { Metadata } from "next";
+import { generateSeoMetadata } from "@/lib/seo";
 import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import AboutContent from "@/components/AboutContent";
 import AboutDetails from "@/components/AboutDetails";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = generateSeoMetadata({
+  title: "About | WebEquate",
+  description:
+    "Learn about WebEquate and our approach to web development. Meet the team behind the projects.",
+  path: "/about",
+});
 
 const AboutPage = () => {
   return (

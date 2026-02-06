@@ -1,11 +1,18 @@
-"use client";
-
+import type { Metadata } from "next";
+import { generateSeoMetadata } from "@/lib/seo";
 import basics from "@/data/basics.json";
 import projectsData from "@/data/projects.json";
 import Header from "@/components/Header";
 import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
 import type { Project } from "@/types/project";
+
+export const metadata: Metadata = generateSeoMetadata({
+  title: "Projects | WebEquate",
+  description:
+    "View our portfolio of web development projects. Explore the work we've done for clients.",
+  path: "/projects",
+});
 
 const ProjectsPage = () => {
   const projects: Project[] = projectsData

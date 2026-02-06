@@ -1,11 +1,18 @@
-"use client";
-
+import type { Metadata } from "next";
+import { generateSeoMetadata } from "@/lib/seo";
 import basics from "@/data/basics.json";
 import servicesData from "@/data/services.json";
 import Header from "@/components/Header";
 import ServiceGrid from "@/components/ServiceGrid";
 import Footer from "@/components/Footer";
 import type { Service } from "@/types/service";
+
+export const metadata: Metadata = generateSeoMetadata({
+  title: "Services | WebEquate",
+  description:
+    "Discover our web development services including design, development, and deployment.",
+  path: "/services",
+});
 
 const ServicesPage = () => {
   const services: Service[] = servicesData
