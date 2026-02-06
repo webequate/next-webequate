@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import basics from "@/data/basics.json";
 import projectsData from "@/data/projects.json";
@@ -7,10 +6,27 @@ import servicesData from "@/data/services.json";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
-import ServiceGrid from "@/components/ServiceGrid";
+import ServiceGridClient from "@/components/ServiceGridClient";
 import Footer from "@/components/Footer";
 import type { Project } from "@/types/project";
 import type { Service } from "@/types/service";
+
+export const metadata: Metadata = {
+  title: "WebEquate | Full Service Web Development",
+  description:
+    "WebEquate is your full service web development partner. We build custom websites, web applications, and digital solutions.",
+  openGraph: {
+    title: "WebEquate | Full Service Web Development",
+    description:
+      "WebEquate is your full service web development partner. We build custom websites, web applications, and digital solutions.",
+    url: "https://webequate.com",
+  },
+  twitter: {
+    title: "WebEquate | Full Service Web Development",
+    description:
+      "WebEquate is your full service web development partner. We build custom websites, web applications, and digital solutions.",
+  },
+};
 
 const HomePage = () => {
   const projects: Project[] = projectsData
@@ -69,7 +85,7 @@ const HomePage = () => {
       </div>
       <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
         <Heading text="Featured Services" />
-        <ServiceGrid services={services} />
+        <ServiceGridClient services={services} />
         <div className="text-center mt-6">
           <Link
             href="/services"

@@ -1,11 +1,27 @@
-"use client";
-
+import type { Metadata } from "next";
 import basics from "@/data/basics.json";
 import servicesData from "@/data/services.json";
 import Header from "@/components/Header";
-import ServiceGrid from "@/components/ServiceGrid";
+import ServiceGridClient from "@/components/ServiceGridClient";
 import Footer from "@/components/Footer";
 import type { Service } from "@/types/service";
+
+export const metadata: Metadata = {
+  title: "Services | WebEquate",
+  description:
+    "Discover our web development services. We offer custom web design, full-stack development, and ongoing support for businesses of all sizes.",
+  openGraph: {
+    title: "Services | WebEquate",
+    description:
+      "Discover our web development services. We offer custom web design, full-stack development, and ongoing support for businesses of all sizes.",
+    url: "https://webequate.com/services",
+  },
+  twitter: {
+    title: "Services | WebEquate",
+    description:
+      "Discover our web development services. We offer custom web design, full-stack development, and ongoing support for businesses of all sizes.",
+  },
+};
 
 const ServicesPage = () => {
   const services: Service[] = servicesData
@@ -28,7 +44,7 @@ const ServicesPage = () => {
       <Header socialLink={basics.socialLinks[0]} />
 
       <div className="text-base text-dark-2 dark:text-light-2">
-        <ServiceGrid services={services} />
+        <ServiceGridClient services={services} />
       </div>
 
       <Footer name={basics.name} socialLinks={basics.socialLinks} />

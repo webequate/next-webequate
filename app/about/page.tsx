@@ -1,10 +1,26 @@
-"use client";
-
+import type { Metadata } from "next";
 import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import AboutContent from "@/components/AboutContent";
 import AboutDetails from "@/components/AboutDetails";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "About | WebEquate",
+  description:
+    "Learn about WebEquate and our team. We are passionate about creating exceptional web experiences for our clients.",
+  openGraph: {
+    title: "About | WebEquate",
+    description:
+      "Learn about WebEquate and our team. We are passionate about creating exceptional web experiences for our clients.",
+    url: "https://webequate.com/about",
+  },
+  twitter: {
+    title: "About | WebEquate",
+    description:
+      "Learn about WebEquate and our team. We are passionate about creating exceptional web experiences for our clients.",
+  },
+};
 
 const AboutPage = () => {
   return (

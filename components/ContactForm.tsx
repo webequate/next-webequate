@@ -48,7 +48,9 @@ const ContactForm: React.FC = () => {
         onSubmit={handleSubmit}
         className="bg-light-1 dark:bg-dark-1 rounded-xl text-left lg:mr-4 p-6 pb-2 sm:p-8"
       >
-        <Heading text="Contact Form" />
+        <div className="flex justify-start">
+          <Heading text="Contact Form" />
+        </div>
         <FormInput
           inputLabel="Full Name"
           labelFor="name"

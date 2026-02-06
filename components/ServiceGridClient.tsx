@@ -1,19 +1,25 @@
+"use client";
+
+import { motion } from "framer-motion";
 import * as Icons from "react-icons/fa";
 import type { Service } from "@/types/service";
 
-interface ServiceGridProps {
+interface ServiceGridClientProps {
   services: Service[];
 }
 
-const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
+const ServiceGridClient: React.FC<ServiceGridClientProps> = ({ services }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
       {services.map((service) => {
         const Icon = Icons[service.icon as keyof typeof Icons];
 
         return (
-          <div
+          <motion.div
             key={service.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className="p-6 shadow-lg rounded-lg bg-white dark:bg-gray-800"
           >
             <div className="flex items-center space-x-6">
@@ -31,11 +37,11 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         );
       })}
     </div>
   );
 };
 
-export default ServiceGrid;
+export default ServiceGridClient;

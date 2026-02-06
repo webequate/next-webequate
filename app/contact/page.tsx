@@ -1,10 +1,26 @@
-"use client";
-
+import type { Metadata } from "next";
 import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import ContactForm from "@/components/ContactForm";
 import ContactDetails from "@/components/ContactDetails";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Contact | WebEquate",
+  description:
+    "Get in touch with WebEquate. We'd love to hear about your next project and discuss how we can help bring your vision to life.",
+  openGraph: {
+    title: "Contact | WebEquate",
+    description:
+      "Get in touch with WebEquate. We'd love to hear about your next project and discuss how we can help bring your vision to life.",
+    url: "https://webequate.com/contact",
+  },
+  twitter: {
+    title: "Contact | WebEquate",
+    description:
+      "Get in touch with WebEquate. We'd love to hear about your next project and discuss how we can help bring your vision to life.",
+  },
+};
 
 const ContactPage = () => {
   return (

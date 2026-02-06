@@ -1,11 +1,27 @@
-"use client";
-
+import type { Metadata } from "next";
 import basics from "@/data/basics.json";
 import projectsData from "@/data/projects.json";
 import Header from "@/components/Header";
 import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
 import type { Project } from "@/types/project";
+
+export const metadata: Metadata = {
+  title: "Projects | WebEquate",
+  description:
+    "Explore our portfolio of custom web development projects. We specialize in building responsive, high-performance websites and applications.",
+  openGraph: {
+    title: "Projects | WebEquate",
+    description:
+      "Explore our portfolio of custom web development projects. We specialize in building responsive, high-performance websites and applications.",
+    url: "https://webequate.com/projects",
+  },
+  twitter: {
+    title: "Projects | WebEquate",
+    description:
+      "Explore our portfolio of custom web development projects. We specialize in building responsive, high-performance websites and applications.",
+  },
+};
 
 const ProjectsPage = () => {
   const projects: Project[] = projectsData
