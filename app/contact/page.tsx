@@ -1,17 +1,10 @@
-import type { Metadata } from "next";
-import { generateSeoMetadata } from "@/lib/seo";
+"use client";
+
 import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import ContactForm from "@/components/ContactForm";
 import ContactDetails from "@/components/ContactDetails";
 import Footer from "@/components/Footer";
-
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Contact | WebEquate",
-  description:
-    "Get in touch with WebEquate. Reach out to discuss your web development project.",
-  path: "/contact",
-});
 
 const ContactPage = () => {
   return (
