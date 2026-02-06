@@ -4,6 +4,7 @@ import servicesData from "@/data/services.json";
 import Header from "@/components/Header";
 import ServiceGrid from "@/components/ServiceGrid";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import type { Service } from "@/types/service";
 
 export const metadata: Metadata = {
@@ -43,9 +44,11 @@ const ServicesPage = () => {
     <div className="mx-auto">
       <Header socialLink={basics.socialLinks[0]} />
 
-      <div className="text-base text-dark-2 dark:text-light-2">
-        <ServiceGrid services={services} />
-      </div>
+      <PageTransition>
+        <div className="text-base text-dark-2 dark:text-light-2">
+          <ServiceGrid services={services} />
+        </div>
+      </PageTransition>
 
       <Footer name={basics.name} socialLinks={basics.socialLinks} />
     </div>

@@ -8,6 +8,7 @@ import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
 import ServiceGrid from "@/components/ServiceGrid";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import type { Project } from "@/types/project";
 import type { Service } from "@/types/service";
 
@@ -56,45 +57,50 @@ const HomePage = () => {
     <div className="mx-auto">
       <Header socialLink={basics.socialLinks[0]} />
 
-      <div className="w-full text-center">
-        {basics.titles.map((title, index) => (
-          <h2
-            key={index}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gradient-dark dark:text-gradient-light mb-6"
-          >
-            <span>{title}</span>
-          </h2>
-        ))}
-        {basics.summaryItems.map((summaryItem, index) => (
-          <p key={index} className="text-lg text-dark-2 dark:text-light-2 mb-4">
-            {summaryItem}
-          </p>
-        ))}
-      </div>
-      <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
-        <Heading text="Featured Projects" />
-        <ProjectGrid projects={projects} path="featured" />
-        <div className="text-center mt-6">
-          <Link
-            href="/projects"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            More Projects
-          </Link>
+      <PageTransition>
+        <div className="w-full text-center">
+          {basics.titles.map((title, index) => (
+            <h2
+              key={index}
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gradient-dark dark:text-gradient-light mb-6"
+            >
+              <span>{title}</span>
+            </h2>
+          ))}
+          {basics.summaryItems.map((summaryItem, index) => (
+            <p
+              key={index}
+              className="text-lg text-dark-2 dark:text-light-2 mb-4"
+            >
+              {summaryItem}
+            </p>
+          ))}
         </div>
-      </div>
-      <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
-        <Heading text="Featured Services" />
-        <ServiceGrid services={services} />
-        <div className="text-center mt-6">
-          <Link
-            href="/services"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            More Services
-          </Link>
+        <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
+          <Heading text="Featured Projects" />
+          <ProjectGrid projects={projects} path="featured" />
+          <div className="text-center mt-6">
+            <Link
+              href="/projects"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              More Projects
+            </Link>
+          </div>
         </div>
-      </div>
+        <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
+          <Heading text="Featured Services" />
+          <ServiceGrid services={services} />
+          <div className="text-center mt-6">
+            <Link
+              href="/services"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              More Services
+            </Link>
+          </div>
+        </div>
+      </PageTransition>
 
       <Footer name={basics.name} socialLinks={basics.socialLinks} />
     </div>
