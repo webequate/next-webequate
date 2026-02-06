@@ -8,13 +8,14 @@ interface ServiceGridProps {
 const ServiceGrid: React.FC<ServiceGridProps> = ({ services }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
-      {services.map((service) => {
+      {services.map((service, index) => {
         const Icon = Icons[service.icon as keyof typeof Icons];
 
         return (
           <div
             key={service.id}
-            className="p-6 shadow-lg rounded-lg bg-white dark:bg-gray-800"
+            className="p-6 shadow-lg rounded-lg bg-white dark:bg-gray-800 fade-up"
+            style={{ animationDelay: `${index * 0.05}s` }}
           >
             <div className="flex items-center space-x-6">
               <div className="w-12 h-12 flex items-center justify-center">

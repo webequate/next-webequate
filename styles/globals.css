@@ -49,6 +49,28 @@ a {
   }
 }
 
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out both;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}
+
 @layer components {
   .home-link {
     @apply flex flex-shrink-0 items-center text-dark-2 dark:text-light-2 bg-light-1 dark:bg-dark-1 ring-1 ring-dark-3 dark:ring-light-3 p-1 ml-0 rounded-xl cursor-pointer transition duration-300;

@@ -15,7 +15,8 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, path }) => {
         <Link
           key={index}
           href={`/${path}/${project.id}`}
-          className="group relative cursor-pointer"
+          className="group relative cursor-pointer fade-up"
+          style={{ animationDelay: `${index * 0.05}s` }}
         >
           <Image
             src={`/${project.thumbImage}`}

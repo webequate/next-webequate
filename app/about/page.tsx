@@ -28,14 +28,20 @@ const AboutPage = () => {
       <Header socialLink={basics.socialLinks[0]} />
 
       <div className="flex flex-col lg:flex-row-reverse text-base text-dark-2 dark:text-light-2">
-        <div className="w-full lg:w-1/2 mb-2 lg:mb-0 md:ml-6">
+        <div
+          className="w-full lg:w-1/2 mb-2 lg:mb-0 md:ml-6 fade-up"
+          style={{ animationDelay: "0.05s" }}
+        >
           <AboutContent
             aboutIntro={basics.aboutIntro}
             aboutItems={basics.aboutItems}
           />
         </div>
 
-        <div className="w-full lg:w-1/2 mb-2 lg:mb-0 md:mr-6">
+        <div
+          className="w-full lg:w-1/2 mb-2 lg:mb-0 md:mr-6 fade-up"
+          style={{ animationDelay: "0.1s" }}
+        >
           <AboutDetails
             name={basics.name}
             location={basics.location}

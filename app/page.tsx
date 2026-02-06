@@ -6,7 +6,7 @@ import servicesData from "@/data/services.json";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
-import ServiceGridClient from "@/components/ServiceGridClient";
+import ServiceGrid from "@/components/ServiceGrid";
 import Footer from "@/components/Footer";
 import type { Project } from "@/types/project";
 import type { Service } from "@/types/service";
@@ -85,7 +85,7 @@ const HomePage = () => {
       </div>
       <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
         <Heading text="Featured Services" />
-        <ServiceGridClient services={services} />
+        <ServiceGrid services={services} />
         <div className="text-center mt-6">
           <Link
             href="/services"

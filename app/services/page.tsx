@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import basics from "@/data/basics.json";
 import servicesData from "@/data/services.json";
 import Header from "@/components/Header";
-import ServiceGridClient from "@/components/ServiceGridClient";
+import ServiceGrid from "@/components/ServiceGrid";
 import Footer from "@/components/Footer";
 import type { Service } from "@/types/service";
 
@@ -44,7 +44,7 @@ const ServicesPage = () => {
       <Header socialLink={basics.socialLinks[0]} />
 
       <div className="text-base text-dark-2 dark:text-light-2">
-        <ServiceGridClient services={services} />
+        <ServiceGrid services={services} />
       </div>
 
       <Footer name={basics.name} socialLinks={basics.socialLinks} />
