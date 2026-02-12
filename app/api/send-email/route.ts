@@ -93,10 +93,10 @@ export async function POST(request: Request) {
 
               <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
                 <a href="mailto:${formData.email}?subject=${encodeURIComponent(
-      `Re: ${formData.subject}`
-    )}&body=${encodeURIComponent(
-      `\n\n---\nOriginal Message:\n\n${formData.message}`
-    )}" class="reply-button">
+                  `Re: ${formData.subject}`
+                )}&body=${encodeURIComponent(
+                  `\n\n---\nOriginal Message:\n\n${formData.message}`
+                )}" class="reply-button">
                   Reply to ${formData.name}
                 </a>
               </div>

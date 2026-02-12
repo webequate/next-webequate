@@ -7,12 +7,13 @@ import ProjectDetailClient from "@/components/ProjectDetailClient";
 import type { Project } from "@/types/project";
 
 type FeaturedProjectPageProps = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
-export const generateMetadata = ({
+export const generateMetadata = async ({
   params,
-}: FeaturedProjectPageProps): Metadata => {
+}: FeaturedProjectPageProps): Promise<Metadata> => {
+  const { id } = await params;
   const projects: Project[] = projectsData
     .filter((project) => project.status?.featured)
     .sort((a, b) => {
@@ -21,7 +22,7 @@ export const generateMetadata = ({
       return orderA - orderB;
     });
 
-  const project = projects.find((p) => p.id === params.id);
+  const project = projects.find((p) => p.id === id);
 
   if (!project) {
     return {};
@@ -53,7 +54,8 @@ export const generateStaticParams = async () => {
   return projects.map((project) => ({ id: project.id }));
 };
 
-const FeaturedProjectPage = ({ params }: FeaturedProjectPageProps) => {
+const FeaturedProjectPage = async ({ params }: FeaturedProjectPageProps) => {
+  const { id } = await params;
   const projects: Project[] = projectsData
     .filter((project) => project.status?.featured)
     .sort((a, b) => {
@@ -62,7 +64,7 @@ const FeaturedProjectPage = ({ params }: FeaturedProjectPageProps) => {
       return orderA - orderB;
     });
 
-  const projectIndex = projects.findIndex((p) => p.id === params.id);
+  const projectIndex = projects.findIndex((p) => p.id === id);
   const project = projects[projectIndex];
 
   if (!project) {
