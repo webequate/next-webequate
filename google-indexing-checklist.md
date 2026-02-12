@@ -2,17 +2,17 @@
 
 Track which pages have been indexed by Google or have had indexing requested.
 
-- [ ] https://webequate.com
-- [ ] https://webequate.com/about
-- [ ] https://webequate.com/contact
-- [ ] https://webequate.com/projects
-- [ ] https://webequate.com/projects/ai
-- [ ] https://webequate.com/projects/aliens
-- [ ] https://webequate.com/projects/anna
-- [ ] https://webequate.com/projects/portfolio
-- [ ] https://webequate.com/projects/roger
-- [ ] https://webequate.com/projects/webequate
-- [ ] https://webequate.com/services
+- [x] https://webequate.com
+- [x] https://webequate.com/about
+- [x] https://webequate.com/contact
+- [x] https://webequate.com/projects
+- [x] https://webequate.com/projects/ai
+- [x] https://webequate.com/projects/aliens
+- [x] https://webequate.com/projects/anna
+- [x] https://webequate.com/projects/portfolio
+- [x] https://webequate.com/projects/roger
+- [x] https://webequate.com/projects/webequate
+- [x] https://webequate.com/services
 
 ---
 
