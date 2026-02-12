@@ -60,11 +60,11 @@ function buildHtmlEmail(formData: ContactForm, receivedAt: string): string {
   const email = escapeHtml(formData.email);
   const subject = escapeHtml(formData.subject || "New contact form submission");
   const message = escapeHtml(formData.message).replace(/\n/g, "<br />");
-  const logoUrl =
-    "https://webequate.com/assets/logo-webequate-light.png";
+  const logoUrl = "https://webequate.com/assets/logo-webequate-light.png";
   const replyMailto = buildReplyMailto(formData);
 
-  return `<!doctype html>
+  return `
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -111,7 +111,7 @@ function buildHtmlEmail(formData: ContactForm, receivedAt: string): string {
       </tr>
     </table>
   </body>
-</html>`;
+</html>`.trim();
 }
 
 function buildPlainText(formData: ContactForm, receivedAt: string): string {
