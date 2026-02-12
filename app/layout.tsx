@@ -1,9 +1,16 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+import { Russo_One } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Layout from "@/components/Layout";
 import Providers from "./providers";
 import type { ReactNode } from "react";
+
+const russoOne = Russo_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-russo-one",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://webequate.com"),
@@ -43,7 +50,7 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <html lang="en">
+    <html lang="en" className={russoOne.variable}>
       <body className="flex flex-col bg-light-1 dark:bg-black">
         <Providers>
           <div className="mx-auto max-w-7xl sm:px-8 lg:px-16">

@@ -14,6 +14,11 @@ const ContactForm: React.FC = () => {
     message: "",
     website: "", // honeypot field
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,22 +29,38 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const response = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    setIsLoading(true);
+    setMessage(null);
 
-    const result = await response.json();
-    alert(result.message);
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-      website: "", // honeypot field
-    });
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage({ type: "success", text: result.message });
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          website: "", // honeypot field
+        });
+      } else {
+        setMessage({ type: "error", text: result.message });
+      }
+    } catch (error) {
+      setMessage({
+        type: "error",
+        text: "Error sending email. Please try again.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -119,11 +140,25 @@ const ContactForm: React.FC = () => {
         <div>
           <button
             type="submit"
+            disabled={isLoading}
             aria-label="Send Message"
-            className="text-light-1 dark:text-light-1 bg-accent-dark dark:bg-accent-dark hover:bg-accent-light dark:hover:bg-accent-light font-general-medium flex justify-center items-center w-40 sm:w-40 mb-6 sm:mb-0 text-lg py-2.5 sm:py-3 rounded-lg duration-300"
+            className="text-light-1 dark:text-light-1 bg-accent-dark dark:bg-accent-dark hover:bg-accent-light dark:hover:bg-accent-light disabled:opacity-60 disabled:cursor-not-allowed font-general-medium flex justify-center items-center w-40 sm:w-40 mb-3 sm:mb-3 text-lg py-2.5 sm:py-3 rounded-lg duration-300"
           >
-            <span className="text-sm sm:text-lg">Send Message</span>
+            <span className="text-sm sm:text-lg">
+              {isLoading ? "Sending..." : "Send Message"}
+            </span>
           </button>
+          {message && (
+            <p
+              className={`text-sm sm:text-base font-medium ${
+                message.type === "success"
+                  ? "text-green-600 dark:text-green-400"
+                  : "text-red-600 dark:text-red-400"
+              }`}
+            >
+              {message.text}
+            </p>
+          )}
         </div>
       </form>
     </div>
