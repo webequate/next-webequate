@@ -1,5 +1,4 @@
 // components/ProjectFooter.tsx
-import Link from "next/link";
 import TagLink from "@/components/TagLink";
 import ExternalLink from "@/components/ExternalLink";
 import ScreenshotLink from "@/components/ScreenshotLink";

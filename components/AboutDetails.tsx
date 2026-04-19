@@ -9,10 +9,10 @@ interface AboutDetailsProps {
 }
 
 const AboutDetails: React.FC<AboutDetailsProps> = ({
-  name,
-  location,
-  phone,
-  website,
+  name: _name,
+  location: _location,
+  phone: _phone,
+  website: _website,
 }) => {
   return (
     <div className="text-base text-left text-dark-2 dark:text-light-2 mt-0">

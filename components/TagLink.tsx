@@ -11,8 +11,6 @@ const TagLink: React.FC<TagLinkProps> = ({ name }) => {
     switch (name) {
       case "Tag":
         return <FaTag />;
-      case "Tag":
-        return <FaTag />;
       default:
         return <FaTag />;
     }

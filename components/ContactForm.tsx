@@ -53,7 +53,7 @@ const ContactForm: React.FC = () => {
       } else {
         setMessage({ type: "error", text: result.message });
       }
-    } catch (error) {
+    } catch {
       setMessage({
         type: "error",
         text: "Error sending email. Please try again.",
