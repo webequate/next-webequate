@@ -537,6 +537,68 @@ Returns `[activeTheme: string, setTheme: Dispatch]`. Manages theme state in `loc
 
 ---
 
+## Testing
+
+The project uses **Vitest** with **React Testing Library** and **jsdom**. All test files live under `__tests__/` and mirror the source directory structure.
+
+### Stack
+
+| Package | Version | Role |
+|---|---|---|
+| `vitest` | 4.x | Test runner and assertion library |
+| `@vitejs/plugin-react` | 4.x | JSX transform for Vitest |
+| `vite-tsconfig-paths` | 5.x | Resolves `@/` alias inside tests |
+| `@testing-library/react` | 16.x | React component rendering (React 19 compatible) |
+| `@testing-library/user-event` | 14.x | Realistic user interactions |
+| `@testing-library/jest-dom` | 6.x | DOM assertion matchers |
+| `@testing-library/dom` | 10.x | Peer dependency for `@testing-library/react` |
+
+### Configuration
+
+- **`vitest.config.ts`** — Vite config for Vitest: `jsdom` environment, globals enabled, `vitest.setup.ts` as setup file, regex aliases for `next/image` and `next/link` pointing to lightweight stub components in `__tests__/mocks/`.
+- **`vitest.setup.ts`** — Imports `@testing-library/jest-dom` to extend `expect` with DOM matchers.
+- **`vitest.d.ts`** — Triple-slash references for `vitest/globals` and `@testing-library/jest-dom` type declarations; picked up automatically by TypeScript without modifying `tsconfig.json`.
+
+### Mocks
+
+| Mock | Path | Purpose |
+|---|---|---|
+| `next/image` | `__tests__/mocks/next-image.tsx` | Renders a plain `<img>` (avoids Next.js image optimisation in tests) |
+| `next/link` | `__tests__/mocks/next-link.tsx` | Renders a plain `<a>` (avoids Next.js router in tests) |
+
+### Test files
+
+| File | What it covers |
+|---|---|
+| `__tests__/lib/seo.test.ts` | `generateSeoMetadata()` — canonical URLs, OG image handling, Twitter cards, robots settings |
+| `__tests__/components/ContactForm.test.tsx` | Field rendering, input state, loading state, success/error/network paths, fetch payload (including honeypot field) |
+| `__tests__/components/SocialButton.test.tsx` | Icon per social name, href, `target="_blank"`, unknown name fallback |
+| `__tests__/components/ProjectHeader.test.tsx` | Title, prev/next links, invisible placeholders, path-based hrefs |
+| `__tests__/components/ContactDetails.test.tsx` | All conditional fields, mailto and https link construction |
+| `__tests__/components/ScreenshotLink.test.tsx` | Label text, href construction, `target="_blank"`, fallback icon |
+| `__tests__/components/ProjectFooter.test.tsx` | Description, tag splitting, links section, screenshots section |
+| `__tests__/components/ServiceGrid.test.tsx` | Title/description, valid icon, invalid icon fallback text |
+| `__tests__/hooks/useThemeSwitcher.test.tsx` | Default theme, localStorage restore, class toggling, no re-read after mount (regression guard for infinite-loop fix) |
+
+### Conventions
+
+- Use `describe` / `it` (not `test`) to stay consistent with the existing test files.
+- Import `{ describe, it, expect, vi, afterEach }` from `"vitest"` explicitly — do not rely on globals even though they are available.
+- Mock `fetch` with `vi.stubGlobal("fetch", ...)` and restore with `vi.unstubAllGlobals()` in `afterEach`.
+- Use `userEvent.setup()` inside each test (not shared across tests) for an isolated event queue.
+- Use `await screen.findByText(...)` for assertions that follow async operations.
+- Query by accessible names (`getByRole`, `getByLabelText`) rather than implementation details.
+- Do not mock child components — render the real tree so integration-level behaviour is verified.
+
+### Running tests
+
+```bash
+npm test            # single run (CI mode)
+npm run test:watch  # watch mode during development
+```
+
+---
+
 ## Commands
 
 ```bash
@@ -545,6 +607,8 @@ npm run build          # production build
 npm run lint           # eslint . (ESLint v9 flat config)
 npm run format         # prettier --write on all source files
 npm run build:sitemap  # next-sitemap + custom sort script
+npm test               # vitest run (single pass)
+npm run test:watch     # vitest (watch mode)
 ```
 
 ---
